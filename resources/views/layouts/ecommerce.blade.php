@@ -31,39 +31,12 @@
 <body>
 	<!--================Header Menu Area =================-->
 	<header class="header_area">
-		<div class="top_menu row m0">
-			<div class="container-fluid">
-				<div class="float-left">
-					<p>Call Us: -</p>
-				</div>
-				<div class="float-right">
-					
-
-					@if (Route::has('login'))
-						<ul class="right_side">
-							<li>
-							@auth
-								<a href="{{ url('admin/home') }}">Beranda</a>
-							@else
-								<a href="{{ route('login') }}">Login</a>
-
-								@if (Route::has('register'))
-									<a href="{{ route('register') }}">Register</a>
-								@endif
-							@endauth
-							
-							</li>
-						</ul>
-					@endif
-				</div>
-			</div>
-		</div>
-		<div class="main_menu"  style="background-color:#0c48a8">
-			<nav class="navbar navbar-expand-lg navbar-light">
+		<div class="main_menu" >
+			<nav class="navbar navbar-expand-lg navbar-light" style="background-color:#0c48a8">
 				<div class="container-fluid">
 					<!-- Brand and toggle get grouped for better mobile display -->
                     <a class="navbar-brand logo_h" href="{{ url('/') }}">
-						<img src="https://katamata.files.wordpress.com/2011/12/lambang-its-png-v1.png" alt="" height="100px">
+						<img src="{{ asset('/ecommerce/img/logo_halal.png') }}" alt="" height="100px">
 					</a>
 					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
 					 aria-expanded="false" aria-label="Toggle navigation">

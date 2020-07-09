@@ -27,8 +27,8 @@
                                     <p class="text-danger">{{ $errors->first('name') }}</p>
                                 </div>
                                 <div class="form-group">
-                                    <label for="no_wa">No Whatsapp</label>
-                                    <input type="text" id="int5" name="no_wa" class="form-control" value="{{ old('no_wa') }}" required>
+                                    <label for="no_wa">No Whatsapp (contoh : 085xxxxxxxxx)</label>
+                                    <input type="text" id="int4" name="no_wa" class="form-control" value="{{ old('no_wa') }}" required>
                                     <p class="text-danger">{{ $errors->first('no_wa') }}</p>
                                 </div>
                                 <div class="form-group">
@@ -40,11 +40,6 @@
                                     <p class="text-danger">{{ $errors->first('status') }}</p>
                                 </div>
                                 <div class="form-group">
-                                    <label for="map_alamat">Map Alamat</label>
-                                    <input type="text" name="map_alamat" class="form-control" value="{{ old('map_alamat') }}" required>
-                                    <p class="text-danger">{{ $errors->first('map_alamat') }}</p>
-                                </div>
-                                <div class="form-group">
                                     <label for="alamat">Alamat</label>
                                     <input type="text" name="alamat" class="form-control" value="{{ old('alamat') }}" required>
                                     <p class="text-danger">{{ $errors->first('alamat') }}</p>
@@ -54,9 +49,44 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="description">Deskripsi</label>
-                                    <textarea name="description" id="description" class="form-control">{{ old('description') }}</textarea>
+                                    <textarea name="description" id="description" placeholder="informasi mengenai deskripsi yang menarik" class="form-control">{{ old('description') }}</textarea>
                                     <p class="text-danger">{{ $errors->first('description') }}</p>
                                 </div>
+                                <div class="form-row">
+                                    <div class="col-md-12 mb-3">
+                                      <label class="form-control-label" for="validationCustom02">
+                                      Cara pengiriman yang disediakan 
+                                      </label>
+                
+                                      <div class="row">
+                                        <div class="col-md-6">
+                                          <div class="custom-control custom-checkbox mb-3">
+                                            <input class="custom-control-input" name="pengiriman[]" value="bebas ongkir dalam kota radius 5KM" id="customCheck1" type="checkbox">
+                                            <label class="custom-control-label" for="customCheck1">bebas ongkir dalam kota radius 5KM</label>
+                                          </div>
+                                          <div class="custom-control custom-checkbox mb-3">
+                                            <input class="custom-control-input" name="pengiriman[]" value="bebas ongkir dalam kota" id="customCheck2" type="checkbox">
+                                            <label class="custom-control-label" for="customCheck2">bebas ongkir dalam kota</label>
+                                          </div>
+                                          <div class="custom-control custom-checkbox mb-3">
+                                            <input class="custom-control-input" name="pengiriman[]" value="bayar ongkir dalam kota" id="customCheck3" type="checkbox">
+                                            <label class="custom-control-label" for="customCheck3">bayar ongkir dalam kota </label>
+                                          </div>
+                                          <div class="custom-control custom-checkbox mb-3">
+                                            <input class="custom-control-input" name="pengiriman[]" value="siap kirim luar kota dengan ongkos kirim" id="customCheck4" type="checkbox">
+                                            <label class="custom-control-label" for="customCheck4">siap kirim luar kota dengan ongkos kirim</label>
+                                          </div>
+                                          <div class="custom-control custom-checkbox mb-3">
+                                            <input class="custom-control-input" name="pengiriman[]" value="bisa diambil sendiri" id="customCheck5" type="checkbox">
+                                            <label class="custom-control-label" for="customCheck5">bisa diambil sendiri</label>
+                                          </div>
+           
+                                      </div>
+            
+                                     </div>
+                                    </div>
+                                  </div>
+                
                             </div>
                         </div>
                     </div>
@@ -85,19 +115,17 @@
                                     <p class="text-danger">{{ $errors->first('jumlah_lain') }}</p>
                                 </div>
                                 <div class="form-group">
-                                    <label for="image">Foto (Optional)</label>
+                                    <label for="image">Foto</label>
                                     <input type="file" name="image" class="form-control" value="{{ old('image') }}" required>
                                     <p class="text-danger">{{ $errors->first('image') }}</p>
                                 </div>
                                 <div class="form-group">
-                                    <label for="pengiriman">Cara Pengiriman</label>
-                                    <input type="text" name="pengiriman" class="form-control" value="{{ old('pengiriman') }}" required>
-                                    <p class="text-danger">{{ $errors->first('pengiriman') }}</p>
+                                    <label>Foto (Optional)</label>
+                                    <input type="file" name="image2" class="form-control" value="{{ old('image2') }}" required>
                                 </div>
                                 <div class="form-group">
-                                    <label for="pembayaran">Cara Pembayaran</label>
-                                    <input type="text" name="pembayaran" class="form-control" value="{{ old('pembayaran') }}" required>
-                                    <p class="text-danger">{{ $errors->first('pembayaran') }}</p>
+                                    <label>Foto (Optional)</label>
+                                    <input type="file" name="image3" class="form-control" value="{{ old('image3') }}" required>
                                 </div>
                                 
                                 <div class="form-group">

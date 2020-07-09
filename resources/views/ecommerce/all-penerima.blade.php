@@ -11,10 +11,6 @@
             <div class="container">
                 <div class="banner_content text-center">
                     <h2>Halal ITS</h2>
-                    <div class="page_link">
-                        <a href="{{ route('front.index') }}">Home</a>
-                        <a href="{{ route('front.product') }}">Produk</a>
-                    </div>
                 </div>
             </div>
         </div>
@@ -39,6 +35,9 @@
                                     <h6> alamat : {{ $row->alamat }}</h6> 
                                     <button type="button" class="btn btn-primary">
                                         <a href="https://api.whatsapp.com/send?phone=62{{ $row->no_wa }}&text=Assalamualaikum," style="color: white">Hubungi Sekarang</a>
+                                    </button>
+                                    <button type="button" class="btn btn-primary">
+                                        <a href="{{ url('/penerima/' . $row->slug) }}" style="color: white">detail</a>
                                     </button>     
                                 </div>
                             </div>

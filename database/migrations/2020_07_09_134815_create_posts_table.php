@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateJenisTernaksTable extends Migration
+class CreatePostsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,15 @@ class CreateJenisTernaksTable extends Migration
      */
     public function up()
     {
-        Schema::create('jenis_ternaks', function (Blueprint $table) {
+        Schema::create('posts', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->unsignedBigInteger('parent_id')->nullable();
             $table->string('slug');
+            $table->text('description')->nullable();
+            $table->text('link')->nullable();
+            $table->string('image')->nullable();
+            $table->integer('position');
+            $table->boolean('status')->default(true);
             $table->timestamps();
         });
     }
@@ -29,6 +33,6 @@ class CreateJenisTernaksTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('jenis_ternaks');
+        Schema::dropIfExists('posts');
     }
 }

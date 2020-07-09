@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-// Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home');
 
 // Route::get('admin/routes', 'HomeController@admin')->middleware('admin');
 
@@ -38,10 +38,10 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['prefix' => 'admin'], function() {
     Route::get('/home', 'HomeController@adminHome')->name('admin.home'); 
     Route::resource('category', 'CategoryController')->except(['create', 'show']);
-    Route::resource('jenis-ternak', 'JenisTernakController')->except(['create', 'show']);
     Route::resource('user', 'UserController')->except(['create', 'show']);
     Route::get('/user/{id}', 'UserController@profile')->name('user.profile');
     Route::resource('product', 'ProductController')->except(['show']);
+    Route::resource('post', 'PostController')->except(['show']);
     
     
     

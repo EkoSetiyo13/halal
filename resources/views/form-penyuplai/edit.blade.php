@@ -5,6 +5,12 @@
 @endsection
 
 @section('content')
+
+@php
+  $values = explode(",", $penyuplai->pengiriman);
+@endphp
+
+
 <main class="main">
     <ol class="breadcrumb">
         <li class="breadcrumb-item">Home</li>
@@ -29,7 +35,7 @@
                                     <p class="text-danger">{{ $errors->first('name') }}</p>
                                 </div>
                                 <div class="form-group">
-                                    <label for="no_wa">No Whatsapp</label>
+                                    <label for="no_wa">No Whatsapp (contoh : 085xxxxxxxxx)</label>
                                     <input type="text" id="int5" name="no_wa" class="form-control" value="{{ $penyuplai->no_wa }}" required>
                                     <p class="text-danger">{{ $errors->first('no_wa') }}</p>
                                 </div>
@@ -42,11 +48,6 @@
                                     <p class="text-danger">{{ $errors->first('status') }}</p>
                                 </div>
                                 <div class="form-group">
-                                    <label for="map_alamat">Map Alamat</label>
-                                    <input type="text" name="map_alamat" class="form-control" value="{{ $penyuplai->map_alamat }}" required>
-                                    <p class="text-danger">{{ $errors->first('map_alamat') }}</p>
-                                </div>
-                                <div class="form-group">
                                     <label for="alamat">Alamat</label>
                                     <input type="text" name="alamat" class="form-control" value="{{ $penyuplai->alamat }}" required>
                                     <p class="text-danger">{{ $errors->first('alamat') }}</p>
@@ -56,9 +57,43 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="description">Deskripsi</label>
-                                    <textarea name="description" id="description" class="form-control">{{$penyuplai->description }}</textarea>
+                                    <textarea name="description" placeholder="informasi mengenai deskripsi yang menarik" id="description" class="form-control">{{$penyuplai->description }}</textarea>
                                     <p class="text-danger">{{ $errors->first('description') }}</p>
                                 </div>
+                                <div class="form-row">
+                                    <div class="col-md-12 mb-3">
+                                      <label class="form-control-label" for="validationCustom02">
+                                      Cara pengiriman yang disediakan 
+                                      </label>
+                
+                                      <div class="row">
+                                        <div class="col-md-6">
+                                          <div class="custom-control custom-checkbox mb-3">
+                                            <input class="custom-control-input" name="pengiriman[]" value="bebas ongkir dalam kota radius 5KM" id="customCheck1" type="checkbox" @if(in_array("bebas ongkir dalam kota radius 5KM", $values)) checked @endif>
+                                            <label class="custom-control-label" for="customCheck1">bebas ongkir dalam kota radius 5KM</label>
+                                          </div>
+                                          <div class="custom-control custom-checkbox mb-3">
+                                            <input class="custom-control-input" name="pengiriman[]" value="bebas ongkir dalam kota" id="customCheck2" type="checkbox" @if(in_array("bebas ongkir dalam kota", $values)) checked @endif>
+                                            <label class="custom-control-label" for="customCheck2">bebas ongkir dalam kota</label>
+                                          </div>
+                                          <div class="custom-control custom-checkbox mb-3">
+                                            <input class="custom-control-input" name="pengiriman[]" value="bayar ongkir dalam kota" id="customCheck3" type="checkbox" @if(in_array("bayar ongkir dalam kota", $values)) checked @endif>
+                                            <label class="custom-control-label" for="customCheck3">bayar ongkir dalam kota </label>
+                                          </div>
+                                          <div class="custom-control custom-checkbox mb-3">
+                                            <input class="custom-control-input" name="pengiriman[]" value="siap kirim luar kota dengan ongkos kirim" id="customCheck5" type="checkbox" @if(in_array("siap kirim luar kota dengan ongkos kirim", $values)) checked @endif>
+                                            <label class="custom-control-label" for="customCheck4">siap kirim luar kota dengan ongkos kirim</label>
+                                          </div>
+                                          <div class="custom-control custom-checkbox mb-3">
+                                            <input class="custom-control-input" name="pengiriman[]" value="bisa diambil sendiri" id="customCheck5" type="checkbox" @if(in_array("bisa diambil sendiri", $values)) checked @endif>
+                                            <label class="custom-control-label" for="customCheck5">bisa diambil sendiri</label>
+                                          </div>
+           
+                                      </div>
+            
+                                     </div>
+                                    </div>
+                                  </div>
                             </div>
                         </div>
                     </div>
@@ -87,16 +122,6 @@
                                     <p class="text-danger">{{ $errors->first('jumlah_lain') }}</p>
                                 </div>
                                 <div class="form-group">
-                                    <label for="pengiriman">Cara Pengiriman</label>
-                                    <input type="text" name="pengiriman" class="form-control" value="{{ $penyuplai->pengiriman }}" required>
-                                    <p class="text-danger">{{ $errors->first('pengiriman') }}</p>
-                                </div>
-                                <div class="form-group">
-                                    <label for="pembayaran">Cara Pembayaran</label>
-                                    <input type="text" name="pembayaran" class="form-control" value="{{ $penyuplai->pembayaran }}" required>
-                                    <p class="text-danger">{{ $errors->first('pembayaran') }}</p>
-                                </div>
-                                <div class="form-group">
                                     <label for="image">Foto Produk</label>
                                     <br>
                                     <img src="{{ asset('storage/products/' . $penyuplai->image) }}" width="100px" height="100px" alt="{{ $penyuplai->name }}">
@@ -104,6 +129,22 @@
                                     <input type="file" name="image" class="form-control">
                                     <p><strong>Biarkan kosong jika tidak ingin mengganti gambar</strong></p>
                                     <p class="text-danger">{{ $errors->first('image') }}</p>
+                                </div>
+                                <div class="form-group">
+                                    <label>Foto Produk</label>
+                                    <br>
+                                    <img src="{{ asset('storage/products/' . $penyuplai->image2) }}" width="100px" height="100px" alt="{{ $penyuplai->name }}">
+                                    <hr>
+                                    <input type="file" name="image2" class="form-control">
+                                    <p><strong>Biarkan kosong jika tidak ingin mengganti gambar</strong></p>
+                                </div>
+                                <div class="form-group">
+                                    <label>Foto Produk</label>
+                                    <br>
+                                    <img src="{{ asset('storage/products/' . $penyuplai->image3) }}" width="100px" height="100px" alt="{{ $penyuplai->name }}">
+                                    <hr>
+                                    <input type="file" name="image3" class="form-control">
+                                    <p><strong>Biarkan kosong jika tidak ingin mengganti gambar</strong></p>
                                 </div>                                
                                 <div class="form-group">
                                     <button class="btn btn-primary btn-sm">Tambah</button>

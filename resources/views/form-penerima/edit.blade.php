@@ -29,7 +29,7 @@
                                     <p class="text-danger">{{ $errors->first('name') }}</p>
                                 </div>
                                 <div class="form-group">
-                                    <label for="no_wa">No Whatsapp</label>
+                                    <label for="no_wa">No Whatsapp (contoh : 085xxxxxxxxx)</label>
                                     <input type="text" id="int5" name="no_wa" class="form-control" value="{{ $penerima->no_wa }}" required>
                                     <p class="text-danger">{{ $errors->first('no_wa') }}</p>
                                 </div>
@@ -40,11 +40,6 @@
                                         <option value="0" {{ old('status') == '0' ? 'selected':'' }}>Draft</option>
                                     </select>
                                     <p class="text-danger">{{ $errors->first('status') }}</p>
-                                </div>
-                                <div class="form-group">
-                                    <label for="map_alamat">Map Alamat</label>
-                                    <input type="text" name="map_alamat" class="form-control" value="{{ $penerima->map_alamat }}" required>
-                                    <p class="text-danger">{{ $errors->first('map_alamat') }}</p>
                                 </div>
                                 <div class="form-group">
                                     <label for="alamat">Alamat</label>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -21,7 +22,7 @@ class UserController extends Controller
 
         $request->request->add(['slug' => $request->name]);
         User::create($request->except('_token'));
-        return redirect(route('user.index'))->with(['success' => 'Kategori Baru Ditambahkan!']);
+        return redirect(route('user.index'))->with(['success' => 'User Baru Ditambahkan!']);
     }
 
     public function edit($id)
@@ -39,18 +40,17 @@ class UserController extends Controller
         $user = User::find($id);
         $user->update([
             'name' => $request->name,
+            'password' => Hash::make($request->password),
+            'email' => $request->email,
         ]);
-        return redirect(route('user.index'))->with(['success' => 'Kategori Diperbaharui!']);
+        return redirect(route('user.index'))->with(['success' => 'User Diperbaharui!']);
     }
 
     public function destroy($id)
     {
-        $user = user::withCount(['child', 'product'])->find($id);
-        if ($user->child_count == 0 && $user->product_count == 0) {
-            $user->delete();
-            return redirect(route('user.index'))->with(['success' => 'Kategori Dihapus!']);
-        }
-        return redirect(route('user.index'))->with(['error' => 'Kategori Ini Memiliki Anak Kategori!']);
+        $user = user::find($id);
+        $user->delete();
+        return redirect(route('user.index'))->with(['success' => 'User Dihapus!']);
     }
 
     public function profile($id)

@@ -9,7 +9,7 @@
 			<div class="user_card">
 				<div class="d-flex justify-content-center">
 					<div class="brand_logo_container">
-						<img src="https://cdn.freebiesupply.com/logos/large/2x/pinterest-circle-logo-png-transparent.png" class="brand_logo" alt="Logo">
+						<img src="{{ asset('/ecommerce/img/logo_halal.png') }}" class="brand_logo" alt="Logo">
 					</div>
 				</div>
                 <h3 class="text-center" style="padding-top:50px">Login Halal ITS </h3>

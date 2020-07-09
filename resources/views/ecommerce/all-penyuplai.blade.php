@@ -31,10 +31,12 @@
                                     <a href="{{ url('/penyuplai/' . $row->slug) }}">
                                         <h3 class="card-title">{{ $row->name }}</h3>
                                     </a>
-                                    <p class="card-text">{{ $row->description }}</p>
                                     <h6> alamat : {{ $row->alamat }}</h6>
                                     <button type="button" class="btn btn-primary">
-                                        <a href="https://api.whatsapp.com/send?phone=62{{ $row->no_wa }}&text=Assalamualaikum," style="color: white">Hubungi Sekarang</a>
+                                        <a href="https://api.whatsapp.com/send?phone=62{{ substr($row->no_wa,1) }}&text=Assalamualaikum," style="color: white">chat wa</a>
+                                    </button>
+                                    <button type="button" class="btn btn-primary">
+                                        <a href="{{ url('/penyuplai/' . $row->slug) }}" style="color: white">detail</a>
                                     </button>      
                                 </div>
                             </div>

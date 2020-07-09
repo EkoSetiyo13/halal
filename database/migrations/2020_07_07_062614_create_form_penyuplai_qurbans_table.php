@@ -20,16 +20,17 @@ class CreateFormPenyuplaiQurbansTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->text('description')->nullable();
             $table->string('image')->nullable();
+            $table->string('image2')->nullable();
+            $table->string('image3')->nullable();
             $table->integer('jumlah_sapi');
             $table->integer('jumlah_kambing');
             $table->integer('jumlah_kerbau');
             $table->integer('jumlah_lain');
             $table->text('alamat');
             $table->text('map_alamat')->nullable();
-            $table->string('pengiriman');
-            $table->string('pembayaran');
+            $table->string('pengiriman')->nullable();
             $table->boolean('status')->default(true);
-            $table->integer('no_wa')->nullable();
+            $table->string('no_wa')->nullable();
             $table->timestamps();
         });
     }

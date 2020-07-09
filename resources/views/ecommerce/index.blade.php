@@ -39,7 +39,7 @@
 				<div class="col-lg-3 col-md-3 col-sm-6">
 									
 					<div class="card" style="width: 18rem;">
-						<img class="img-fluid" src="{{ asset('storage/products/' . $row->image) }}" alt="{{ $row->name }}">
+						<img class="img-fluid" style="height: 300px" src="{{ asset('storage/products/' . $row->image) }}" alt="{{ $row->name }}">
 						<div class="card-body">
 							<a href="{{ url('/penerima/' . $row->slug) }}">
 								<h3 class="card-title">{{ $row->name }}</h3>
@@ -48,6 +48,9 @@
 							<h6> alamat : {{ $row->alamat }}</h6> 
 							<button type="button" class="btn btn-primary">
 								<a href="https://api.whatsapp.com/send?phone=62{{ $row->no_wa }}&text=Assalamualaikum," style="color: white">Hubungi Sekarang</a>
+							</button>
+							<button type="button" class="btn btn-primary">
+								<a href="{{ url('/penerima/' . $row->slug) }}" style="color: white">detail</a>
 							</button>     
 						</div>
 					</div>
@@ -64,6 +67,40 @@
 		</div>
 	</section>
 
+	{{-- ================================================================== --}}
+
+	{{-- <section class="hot_deals_area section_gap">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-6">
+					<div class="hot_deal_box">
+						<img class="img-fluid" src="{{ $post1->image }}" alt="">
+						<div class="content">
+							<h2>{{ $post1->name }}</h2>
+							<p>shop now</p>
+						</div>
+						<a class="hot_deal_link" href="#"></a>
+					</div>
+				</div>
+
+				<div class="col-lg-6">
+					<div class="hot_deal_box">
+						<img class="img-fluid" src="{{ asset('ecommerce/img/product/hot_deals/deal1.jpg') }}" alt="">
+						<div class="content">
+							<h2>Hot Deals of this Month</h2>
+							<p>shop now</p>
+						</div>
+						<a class="hot_deal_link" href="#"></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section> --}}
+
+
+
+
+	{{-- =================================================================== --}}
 
 	<section class="feature_product_area section_gap">
 		<div class="main_box">
@@ -80,15 +117,17 @@
 			<div class="col-lg-3 col-md-3 col-sm-6">
 								
 				<div class="card" style="width: 18rem;">
-					<img class="img-fluid" src="{{ asset('storage/products/' . $row->image) }}" alt="{{ $row->name }}">
+					<img class="img-fluid" style="height: 300px" src="{{ asset('storage/products/' . $row->image) }}" alt="{{ $row->name }}">
 					<div class="card-body">
 						<a href="{{ url('/penyuplai/' . $row->slug) }}">
 							<h3 class="card-title">{{ $row->name }}</h3>
 						</a>
-						<p class="card-text">{{ $row->description }}</p>
 						<h6> alamat : {{ $row->alamat }}</h6>
 						<button type="button" class="btn btn-primary">
-							<a href="https://api.whatsapp.com/send?phone=62{{ $row->no_wa }}&text=Assalamualaikum," style="color: white">Hubungi Sekarang</a>
+							<a href="https://api.whatsapp.com/send?phone=62{{ $row->no_wa }}&text=Assalamualaikum," style="color: white">Chat Wa</a>
+						</button>
+						<button type="button" class="btn btn-primary">
+							<a href="{{ url('/penyuplai/' . $row->slug) }}" style="color: white">detail</a>
 						</button>      
 					</div>
 				</div>
@@ -107,7 +146,7 @@
 	<!--================End Feature Product Area =================-->
 
 	<!--================Hot Deals Area =================-->
-	{{-- <section class="hot_deals_area section_gap">
+	<section class="hot_deals_area section_gap">
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-lg-6">
@@ -133,6 +172,6 @@
 				</div>
 			</div>
 		</div>
-	</section> --}}
+	</section>
 	<!--================End Hot Deals Area =================-->
 @endsection

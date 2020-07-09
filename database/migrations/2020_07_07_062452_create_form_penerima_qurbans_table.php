@@ -24,10 +24,11 @@ class CreateFormPenerimaQurbansTable extends Migration
             $table->integer('jumlah_kambing');
             $table->integer('jumlah_kerbau');
             $table->integer('jumlah_lain');
+            $table->integer('jumlah_warga');
             $table->text('alamat');
             $table->text('map_alamat')->nullable();
             $table->boolean('status')->default(true);
-            $table->integer('no_wa')->nullable();
+            $table->string('no_wa')->nullable();
             $table->timestamps();
         });
     }

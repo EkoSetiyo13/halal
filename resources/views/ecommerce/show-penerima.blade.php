@@ -11,10 +11,6 @@
 			<div class="container">
 				<div class="banner_content text-center">
                     <h2>{{ $penerima->name }}</h2>
-					<div class="page_link">
-                        <a href="{{ url('/') }}">Home</a>
-                        <a href="#">{{ $penerima->name }}</a>
-					</div>
 				</div>
 			</div>
 		</div>
@@ -30,7 +26,7 @@
 							<div class="carousel-inner">
 								<h3 class="text-center">{{ $penerima->name }}</h3>
 								<div class="carousel-item active">
-									<img class="d-block w-100" src="{{ asset('storage/products/' . $penerima->image) }}" alt="{{ $penerima->name }}">
+									<img class="d-block w-100" style="height: 300px" src="{{ asset('storage/products/' . $penerima->image) }}" alt="{{ $penerima->name }}">
 								</div>
 							</div>
 						</div>

@@ -42,43 +42,39 @@ class FormPenyuplaiQurbanController extends Controller
 
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'name' => 'required|string|max:100',
-            'description' => 'required',
-            'jumlah_sapi' => 'required|integer',
-            'jumlah_kambing' => 'required|integer',
-            'jumlah_kerbau' => 'required|integer',
-            'jumlah_lain' => 'required|integer',
-            'user_id' => 'required|integer',
-            'image' => 'required|image|mimes:png,jpeg,jpg',
-            'pembayaran' => 'required|string',
-            'pengiriman' => 'required|string',
-            'alamat' => 'required|string',
-        ]);
-
-        if ($request->hasFile('image')) {
+        
             $file = $request->file('image');
-            $filename = time() . Str::slug($request->name) . '.' . $file->getClientOriginalExtension();
+            $filename = time() . Str::slug($request->name . 'A') . '.' . $file->getClientOriginalExtension();
             $file->storeAs('public/products', $filename);
+
+            $file = $request->file('image2');
+            $filename2 = time() . Str::slug($request->name . 'B') . '.' . $file->getClientOriginalExtension();
+            $file->storeAs('public/products', $filename2);
+
+            $file = $request->file('image3');
+            $filename3 = time() . Str::slug($request->name .'C') . '.' . $file->getClientOriginalExtension();
+            $file->storeAs('public/products', $filename3);
+            
 
             $penyuplai = FormPenyuplaiQurban::create([
                 'name' => $request->name,
                 'slug' => $request->name,
                 'description' => $request->description,
                 'image' => $filename,
+                'image2' => $filename2,
+                'image3' => $filename3,
                 'jumlah_sapi' => $request->jumlah_sapi,
                 'jumlah_kambing' => $request->jumlah_kambing,
                 'jumlah_kerbau' => $request->jumlah_lain,
                 'jumlah_lain' => $request->jumlah_lain,
                 'user_id' => $request->user_id,
                 'status' => $request->status,
-                'pengiriman' => $request->pengiriman,
-                'pembayaran' => $request->pembayaran,
                 'alamat' => $request->alamat,
+                'no_wa' => $request->no_wa,
                 'map_alamat' => $request->map_alamat,
+                'pengiriman' => implode(",", $request->pengiriman)
             ]);
             return redirect(route('form-penyuplai.index'))->with(['success' => 'Produk Baru Ditambahkan']);
-        }
     }
 
     public function edit($id)
@@ -89,27 +85,30 @@ class FormPenyuplaiQurbanController extends Controller
 
     public function update(Request $request, $id)
     {
-        $this->validate($request, [
-            'name' => 'required|string|max:100',
-            'description' => 'required',
-            'jumlah_sapi' => 'required|integer',
-            'jumlah_kambing' => 'required|integer',
-            'jumlah_kerbau' => 'required|integer',
-            'jumlah_lain' => 'required|integer',
-            'user_id' => 'required|integer',
-            'image' => 'nullable|image|mimes:png,jpeg,jpg',
-            'pembayaran' => 'required|string',
-            'pengiriman' => 'required|string',
-            'alamat' => 'required|string',
-        ]);
 
         $penyuplai = FormPenyuplaiQurban::find($id);
         $filename = $penyuplai->image;
+        $filename2 = $penyuplai->image2;
+        $filename3 = $penyuplai->image3;
         if ($request->hasFile('image')) {
             $file = $request->file('image');
-            $filename = time() . Str::slug($request->name) . '.' . $file->getClientOriginalExtension();
+            $filename = time() . Str::slug($request->name .  'A') . '.' . $file->getClientOriginalExtension();
             $file->storeAs('public/products', $filename);
             File::delete(storage_path('app/public/products/' . $penyuplai->image));
+        }
+        
+        if ($request->hasFile('image2')) {
+            $file = $request->file('image2');
+            $filename2 = time() . Str::slug($request->name . 'B') . '.' . $file->getClientOriginalExtension();
+            $file->storeAs('public/products', $filename2);
+            File::delete(storage_path('app/public/products/' . $penyuplai->image2));
+        }
+
+        if ($request->hasFile('image3')) {
+            $file = $request->file('image3');
+            $filename3 = time() . Str::slug($request->name .'C') . '.' . $file->getClientOriginalExtension();
+            $file->storeAs('public/products', $filename3);
+            File::delete(storage_path('app/public/products/' . $penyuplai->image3));
         }
 
         $penyuplai->update([
@@ -117,16 +116,18 @@ class FormPenyuplaiQurbanController extends Controller
             'slug' => $request->name,
             'description' => $request->description,
             'image' => $filename,
+            'image2' => $filename2,
+            'image3' => $filename3,
             'jumlah_sapi' => $request->jumlah_sapi,
             'jumlah_kambing' => $request->jumlah_kambing,
             'jumlah_kerbau' => $request->jumlah_kerbau,
             'jumlah_lain' => $request->jumlah_lain,
             'user_id' => $request->user_id,
             'status' => $request->status,
-            'pengiriman' => $request->pengiriman,
-            'pembayaran' => $request->pembayaran,
             'alamat' => $request->alamat,
+            'no_wa' => $request->no_wa,
             'map_alamat' => $request->map_alamat,
+            'pengiriman' => implode(",", $request->pengiriman)
         ]);
         return redirect(route('form-penyuplai.index'))->with(['success' => 'Data Produk Diperbaharui']);
     }

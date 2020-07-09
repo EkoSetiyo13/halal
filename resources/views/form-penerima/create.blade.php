@@ -27,8 +27,8 @@
                                     <p class="text-danger">{{ $errors->first('name') }}</p>
                                 </div>
                                 <div class="form-group">
-                                    <label for="no_wa">No Whatsapp</label>
-                                    <input type="text" id="int5" name="no_wa" class="form-control" value="{{ old('no_wa') }}" required>
+                                    <label for="no_wa">No Whatsapp (contoh : 085xxxxxxxxx)</label>
+                                    <input type="text" id="int4" name="no_wa" class="form-control" value="{{ old('no_wa') }}" required>
                                     <p class="text-danger">{{ $errors->first('no_wa') }}</p>
                                 </div>
                                 <div class="form-group">
@@ -38,11 +38,6 @@
                                         <option value="0" {{ old('status') == '0' ? 'selected':'' }}>Draft</option>
                                     </select>
                                     <p class="text-danger">{{ $errors->first('status') }}</p>
-                                </div>
-                                <div class="form-group">
-                                    <label for="map_alamat">Map Alamat</label>
-                                    <input type="text" name="map_alamat" class="form-control" value="{{ old('map_alamat') }}" required>
-                                    <p class="text-danger">{{ $errors->first('map_alamat') }}</p>
                                 </div>
                                 <div class="form-group">
                                     <label for="alamat">Alamat</label>
@@ -63,7 +58,11 @@
                     <div class="col-md-4">
                         <div class="card">
                             <div class="card-body">
-                                
+                                <div class="form-group">
+                                    <label for="jumlah_warga">Jumlah Warga Berhak</label>
+                                    <input type="text" id="int5" name="jumlah_warga" class="form-control" value="{{ old('jumlah_warga') }}" required>
+                                    <p class="text-danger">{{ $errors->first('jumlah_warga') }}</p>
+                                </div>
                                 <div class="form-group">
                                     <label for="jumlah_sapi">Jumlah Hewan Sapi</label>
                                     <input type="text" id="int" name="jumlah_sapi" class="form-control" value="{{ old('jumlah_sapi') }}" required>

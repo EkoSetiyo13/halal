@@ -39,7 +39,7 @@
       <!-- Brand -->
       <div class="sidenav-header d-flex align-items-center">
         <a class="navbar-brand">
-          <img src="{{ asset('/argon/assets/img/brand/blue.png') }}" class="navbar-brand-img" alt="...">
+          <img src="{{ asset('/ecommerce/img/logo_halal.png') }}" class="navbar-brand-img" alt="...">
         </a>
         <div class="ml-auto">
           <!-- Sidenav toggler -->

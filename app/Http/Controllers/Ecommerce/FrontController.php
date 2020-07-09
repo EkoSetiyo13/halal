@@ -8,6 +8,7 @@ use App\Product;
 use App\Category;
 use App\FormPenerimaQurban;
 use App\FormPenyuplaiQurban;
+use App\Post;
 
 class FrontController extends Controller
 {
@@ -16,7 +17,8 @@ class FrontController extends Controller
         $products = Product::orderBy('created_at', 'DESC')->paginate(10);
         $penerima = FormPenerimaQurban::orderBy('created_at', 'DESC')->paginate(10);
         $penyuplai = FormPenyuplaiQurban::orderBy('created_at', 'DESC')->paginate(10);
-        return view('ecommerce.index', compact('products', 'penerima', 'penyuplai'));
+        $post1  = Post::find(1);
+        return view('ecommerce.index', compact('products', 'penerima', 'penyuplai', 'post1'));
     }
 
     public function product()
