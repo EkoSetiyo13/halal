@@ -24,5 +24,17 @@ class ExampleController extends Controller
         
     }
 
+    public function error()
+    {
+        return view('error');
+        
+    }
+
+    public function coba()
+    {
+        return view('template.index');
+        
+    }
+
     
 }

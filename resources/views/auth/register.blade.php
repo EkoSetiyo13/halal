@@ -93,11 +93,11 @@
                 <div class="container">
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         
-                        <li class="nav-item" style="margin-left: 100px">
+                        <li class="nav-item" >
                             <a class="nav-link active show" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Buat Akun Penyuplai</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Buat Akun Instansi Penerima</a>
+                            <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Buat Akun Penerima</a>
                         </li>
                     </ul>
                     <div class="tab-content" id="myTabContent">
@@ -111,7 +111,7 @@
                                     <input id="role" type="hidden" class="form-control" name="nama_role" value="penyuplai" required autocomplete="name" autofocus>
 
                                     <div class="form-group row">
-                                        <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+                                        <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nama Lembaga') }}</label>
 
                                         <div class="col-md-6">
                                             <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
@@ -125,16 +125,10 @@
                                     </div>
 
                                     <div class="form-group row">
-                                        <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                                        <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Username / Email') }}</label>
 
                                         <div class="col-md-6">
-                                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-
-                                            @error('email')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                            @enderror
+                                            <input id="email" type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
                                         </div>
                                     </div>
 
@@ -153,7 +147,7 @@
                                     </div>
 
                                     <div class="form-group row">
-                                        <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+                                        <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Konfirmasi Password') }}</label>
 
                                         <div class="col-md-6">
                                             <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
@@ -182,7 +176,7 @@
 
 
                                     <div class="form-group row">
-                                        <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
+                                        <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nama Lembaga') }}</label>
 
                                         <div class="col-md-6">
                                             <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
@@ -196,10 +190,10 @@
                                     </div>
 
                                     <div class="form-group row">
-                                        <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
+                                        <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('Username / Email') }}</label>
 
                                         <div class="col-md-6">
-                                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
+                                            <input id="email" type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
                                             @error('email')
                                                 <span class="invalid-feedback" role="alert">
@@ -224,7 +218,7 @@
                                     </div>
 
                                     <div class="form-group row">
-                                        <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+                                        <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Konfirmasi Password') }}</label>
 
                                         <div class="col-md-6">
                                             <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">

@@ -63,55 +63,13 @@ class FrontController extends Controller
         return view('ecommerce.show-penyuplai', compact('penyuplai'));
     }
 
-    public function verifyCustomerRegistration($token)
+    public function kontak()
     {
-        $customer = Customer::where('activate_token', $token)->first();
-        if ($customer) {
-            $customer->update([
-                'activate_token' => null,
-                'status' => 1
-            ]);
-            return redirect(route('customer.login'))->with(['success' => 'Verifikasi Berhasil, Silahkan Login']);
-        }
-        return redirect(route('customer.login'))->with(['error' => 'Invalid Verifikasi Token']);
+        $nomer = array("1", "2", "3");
+        $random = array_rand($nomer, 2);
+        $admin1 = $nomer[$random[0]];
+        $admin2 = $nomer[$random[1]];
+        return view('ecommerce.cara-pendaftaran', compact('admin1', 'admin2'));
     }
 
-    public function customerSettingForm()
-    {
-        $customer = auth()->guard('customer')->user()->load('district');
-        $provinces = Province::orderBy('name', 'ASC')->get();
-        return view('ecommerce.setting', compact('customer', 'provinces'));
-    }
-
-
-    public function referalProduct($user, $product)
-    {
-        $code = $user . '-' . $product;
-        $product = Product::find($product);
-        $cookie = cookie('dw-afiliasi', json_encode($code), 2880);
-        return redirect(route('front.show_product', $product->slug))->cookie($cookie);
-    }
-
-    public function referalPenerima($user, $penerima)
-    {
-        $code = $user . '-' . $penerima;
-        $penerima = FormPenerimaQurban::find($penerima);
-        $cookie = cookie('dw-afiliasi', json_encode($code), 2880);
-        return redirect(route('front.show_penerima', $penerima->slug))->cookie($cookie);
-    }
-
-    public function referalPenyuplai($user, $penyuplai)
-    {
-        $code = $user . '-' . $penyuplai;
-        $penyuplai = FormPenyuplaiQurban::find($penyuplai);
-        $cookie = cookie('dw-afiliasi', json_encode($code), 2880);
-        return redirect(route('front.show_penyuplai', $penyuplai->slug))->cookie($cookie);
-    }
-
-    public function listCommission()
-    {
-        $user = auth()->guard('customer')->user();
-        $orders = Order::where('ref', $user->id)->where('status', 4)->paginate(10);
-        return view('ecommerce.affiliate', compact('orders'));
-    }
 }

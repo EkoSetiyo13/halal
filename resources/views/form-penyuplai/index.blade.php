@@ -63,6 +63,11 @@
                                                     @method('DELETE')
                                                     <a href="{{ route('form-penyuplai.edit', $row->id) }}" class="btn btn-warning btn-sm">Edit</a>
                                                     <button class="btn btn-danger btn-sm">Hapus</button>
+                                                    @if (Auth::user()->is_admin == 1)
+                                                        <a href="https://api.whatsapp.com/send?phone=62{{ substr($row->no_wa, 1) }}&text=Assalamualaikum," class="btn btn-success btn-sm">Chat Wa</a>
+                                                    @else
+                                                        
+                                                    @endif
                                                 </form>
                                             </td>
                                         </tr>

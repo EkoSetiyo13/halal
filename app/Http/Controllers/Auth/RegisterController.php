@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Auth;
 
 class RegisterController extends Controller
 {
@@ -28,7 +29,17 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = 'admin/home';
+    public function redirectTo()
+    {
+        if (Auth::user()->is_admin == 1) {
+            return '/admin/home';
+        } else if (Auth::user()->nama_role == 'penyuplai') {
+            return '/member/form-penyuplai';
+        } else {
+            return '/member/form-penerima';
+        }
+    }
+    
 
     /**
      * Create a new controller instance.
@@ -50,7 +61,7 @@ class RegisterController extends Controller
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'email' => ['required', 'string', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
             'is_admin' => ['required', 'integer', 'max:255'],
             'is_member' => ['required', 'integer', 'max:255'],

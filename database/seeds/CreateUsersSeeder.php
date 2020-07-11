@@ -14,19 +14,19 @@ class CreateUsersSeeder extends Seeder
     {
         $user = [
             [
-               'name'=>'Admin',
-               'email'=>'admin@halal.com',
+               'name'=>'Admin 1',
+               'email'=>'admin@halal.its.ac.id',
                 'is_admin'=>'1',
                 'is_member'=>'0',
                 'nama_role'=>'admin',
                'password'=> bcrypt('123456'),
             ],
             [
-               'name'=>'User',
-               'email'=>'user@halal.com',
-                'is_admin'=>'0',
-                'is_member'=>'1',
-                'nama_role'=>'penyuplai',
+               'name'=>'Admin 2',
+               'email'=>'user@halal.its.ac.id',
+                'is_admin'=>'1',
+                'is_member'=>'0',
+                'nama_role'=>'admin',
                'password'=> bcrypt('123456'),
             ],
             [

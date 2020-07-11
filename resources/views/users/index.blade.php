@@ -51,7 +51,6 @@
                                                     @method('DELETE')
                                                     <a href="{{ route('user.edit', $val->id) }}" class="btn btn-warning btn-sm">Edit</a>
                                                     <button class="btn btn-danger btn-sm">Hapus</button>
-                                                    <a href="#" class="btn btn-success btn-sm">Chat Wa</a>
                                                 </form>
                                             </td>
                                         </tr>

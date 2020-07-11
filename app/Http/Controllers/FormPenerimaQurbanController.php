@@ -51,7 +51,7 @@ class FormPenerimaQurbanController extends Controller
             'jumlah_kerbau' => 'required|integer',
             'jumlah_lain' => 'required|integer',
             'user_id' => 'required|integer',
-            'no_wa' => 'required|integer',
+            'no_wa' => 'required|string',
             'image' => 'required|image|mimes:png,jpeg,jpg',
             'alamat' => 'required|string',
         ]);

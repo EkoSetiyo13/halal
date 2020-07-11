@@ -22,61 +22,128 @@
 	</section>
 	<!--================End Home Banner Area =================-->
 
-	<!--================Feature Product Area =================-->
+	{{-- =================================================================== --}}
 
-	<section class="feature_product_area section_gap">
+		<section class="feature_product_area section_gap">
+			<div class="main_box">
+				<div class="container-fluid">
+					<div class="row">
+						<div class="main_title">
+							<h2>Penyuplai terbaru</h2>
+							<p>Berqurbanlah Anda</p>
+						</div>
+					</div>
+
+
+					<div class="row">	
+						@forelse($penyuplai as $row)
+						<div class="col-md-3 col-sm-6 mb-3">
+							<div class="card border-warning">
+								<img src="{{ asset('storage/products/' . $row->image) }}" alt="{{ $row->name }}" class="card-img-top" style="height: 200px">
+					
+								<div class="card-body">
+									<div class="card-title"><h4>
+										{{ $row->name }}
+									</h4></div>
+									<h6> alamat : {{ $row->alamat }}</h6>
+									{{ substr($row->description, -100) }}
+								</div>
+					
+								<div class="card-footer">
+									<button type="button" class="btn btn-primary">
+										<a href="https://api.whatsapp.com/send?phone=62{{ $row->no_wa }}&text=Assalamualaikum," style="color: white">Chat Wa</a>
+									</button>
+									<button type="button" class="btn btn-primary">
+										<a href="{{ url('/penyuplai/' . $row->slug) }}" style="color: white">detail</a>
+									</button>
+								</div>
+							</div>
+						</div>
+						@empty	
+						@endforelse
+					</div>
+				</div>
+			</div>
+		</section>
+		<!--================End Feature Product Area =================-->
+
+		
+
+			<!--================End Feature Product Area =================-->
+
+
+		<section class="feature_product_area section_gap" style="margin-top: -100px">
 		<div class="main_box">
 			<div class="container-fluid">
 				<div class="row">
 					<div class="main_title">
-						<h2>Penerima Qurban Terbaru</h2>
-						<p>Salurkan Qurban Anda</p>
+						<h2>Penerima terbaru</h2>
+						<p>Salurkan hewan qurban anda ke mereka</p>
 					</div>
-				</div>
-				<div class="row">
-          
-          @forelse($penerima as $row)
-				<div class="col-lg-3 col-md-3 col-sm-6">
-									
-					<div class="card" style="width: 18rem;">
-						<img class="img-fluid" style="height: 300px" src="{{ asset('storage/products/' . $row->image) }}" alt="{{ $row->name }}">
-						<div class="card-body">
-							<a href="{{ url('/penerima/' . $row->slug) }}">
-								<h3 class="card-title">{{ $row->name }}</h3>
-							</a>
-							<p class="card-text">{{ $row->description }}</p>
-							<h6> alamat : {{ $row->alamat }}</h6> 
-							<button type="button" class="btn btn-primary">
-								<a href="https://api.whatsapp.com/send?phone=62{{ $row->no_wa }}&text=Assalamualaikum," style="color: white">Hubungi Sekarang</a>
-							</button>
-							<button type="button" class="btn btn-primary">
-								<a href="{{ url('/penerima/' . $row->slug) }}" style="color: white">detail</a>
-							</button>     
-						</div>
-					</div>
-				</div>
-          @empty
-                    
-          @endforelse
 				</div>
 
-				<div class="row">
-					{{ $penerima->links() }}
+
+				<div class="row">	
+					@forelse($penerima as $row)
+					<div class="col-md-3 col-sm-6 mb-3">
+						<div class="card border-primary">
+							<img src="{{ asset('storage/products/' . $row->image) }}" alt="{{ $row->name }}" class="card-img-top" style="height: 200px">
+				
+							<div class="card-body">
+								<div class="card-title"><h4>
+									{{ $row->name }}
+								</h4></div>
+								<h6> alamat : {{ $row->alamat }}</h6>
+								{{ substr($row->description, -100) }}
+							</div>
+				
+							<div class="card-footer">
+								<button type="button" class="btn btn-primary">
+									<a href="https://api.whatsapp.com/send?phone=62{{ $row->no_wa }}&text=Assalamualaikum," style="color: white">Chat Wa</a>
+								</button>
+								<button type="button" class="btn btn-primary">
+									<a href="{{ url('/penerima/' . $row->slug) }}" style="color: white">detail</a>
+								</button>
+							</div>
+						</div>
+					</div>
+					@empty	
+
+					@endforelse
 				</div>
 			</div>
 		</div>
 	</section>
 
-	{{-- ================================================================== --}}
+	<!--================Hot Deals Area =================-->
+
+	<section class="hot_deals_area section_gap">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-lg-6">
+					<div>
+						<img class="img-fluid" src="{{ asset('/ecommerce/img/instagram/1.jpeg') }}" alt="">
+					</div>
+				</div>
+
+				<div class="col-lg-6">
+					<div >
+						<img class="img-fluid" src="{{ asset('/ecommerce/img/instagram/2.jpeg') }}" alt="">
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
 
 	{{-- <section class="hot_deals_area section_gap">
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-lg-6">
 					<div class="hot_deal_box">
-						<img class="img-fluid" src="{{ $post1->image }}" alt="">
+						<img class="img-fluid" src="{{ asset('ecommerce/img/product/hot_deals/deal1.jpg') }}" alt="">
 						<div class="content">
-							<h2>{{ $post1->name }}</h2>
+							<h2>Hot Deals of this Month</h2>
 							<p>shop now</p>
 						</div>
 						<a class="hot_deal_link" href="#"></a>
@@ -96,82 +163,5 @@
 			</div>
 		</div>
 	</section> --}}
-
-
-
-
-	{{-- =================================================================== --}}
-
-	<section class="feature_product_area section_gap">
-		<div class="main_box">
-			<div class="container-fluid">
-				<div class="row">
-					<div class="main_title">
-						<h2>Penyuplai terbaru</h2>
-						<p>Berqurbanlah Anda</p>
-					</div>
-				</div>
-				<div class="row">
-          
-          @forelse($penyuplai as $row)
-			<div class="col-lg-3 col-md-3 col-sm-6">
-								
-				<div class="card" style="width: 18rem;">
-					<img class="img-fluid" style="height: 300px" src="{{ asset('storage/products/' . $row->image) }}" alt="{{ $row->name }}">
-					<div class="card-body">
-						<a href="{{ url('/penyuplai/' . $row->slug) }}">
-							<h3 class="card-title">{{ $row->name }}</h3>
-						</a>
-						<h6> alamat : {{ $row->alamat }}</h6>
-						<button type="button" class="btn btn-primary">
-							<a href="https://api.whatsapp.com/send?phone=62{{ $row->no_wa }}&text=Assalamualaikum," style="color: white">Chat Wa</a>
-						</button>
-						<button type="button" class="btn btn-primary">
-							<a href="{{ url('/penyuplai/' . $row->slug) }}" style="color: white">detail</a>
-						</button>      
-					</div>
-				</div>
-		</div>
-          @empty
-                    
-          @endforelse
-				</div>
-
-				<div class="row">
-					{{ $penyuplai->links() }}
-				</div>
-			</div>
-		</div>
-	</section>
-	<!--================End Feature Product Area =================-->
-
-	<!--================Hot Deals Area =================-->
-	<section class="hot_deals_area section_gap">
-		<div class="container-fluid">
-			<div class="row">
-				<div class="col-lg-6">
-					<div class="hot_deal_box">
-						<img class="img-fluid" src="{{ asset('ecommerce/img/product/hot_deals/deal1.jpg') }}" alt="">
-						<div class="content">
-							<h2>Hot Deals of this Month</h2>
-							<p>shop now</p>
-						</div>
-						<a class="hot_deal_link" href="#"></a>
-					</div>
-				</div>
-
-				<div class="col-lg-6">
-					<div class="hot_deal_box">
-						<img class="img-fluid" src="{{ asset('ecommerce/img/product/hot_deals/deal1.jpg') }}" alt="">
-						<div class="content">
-							<h2>Hot Deals of this Month</h2>
-							<p>shop now</p>
-						</div>
-						<a class="hot_deal_link" href="#"></a>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
 	<!--================End Hot Deals Area =================-->
 @endsection

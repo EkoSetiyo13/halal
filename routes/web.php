@@ -25,6 +25,7 @@ Route::get('/', 'Ecommerce\FrontController@index')->name('front.index');
 Route::get('/product', 'Ecommerce\FrontController@product')->name('front.product');
 Route::get('/penerima', 'Ecommerce\FrontController@penerima')->name('front.penerima');
 Route::get('/penyuplai', 'Ecommerce\FrontController@penyuplai')->name('front.penyuplai');
+Route::get('/cara-pendaftaran', 'Ecommerce\FrontController@kontak')->name('front.cara-pendaftaran');
 Route::get('/category/{slug}', 'Ecommerce\FrontController@categoryProduct')->name('front.category');
 Route::get('/product/{slug}', 'Ecommerce\FrontController@show')->name('front.show_product');
 Route::get('/penerima/{slug}', 'Ecommerce\FrontController@showPenerima')->name('front.show_penerima');
@@ -35,7 +36,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 //Route::get('admin/home', 'HomeController@adminHome')->name('admin.home')->middleware('is_admin');
 
-Route::group(['prefix' => 'admin'], function() {
+Route::group(['prefix' => 'admin', 'middleware' => 'is_admin'], function() {
     Route::get('/home', 'HomeController@adminHome')->name('admin.home'); 
     Route::resource('category', 'CategoryController')->except(['create', 'show']);
     Route::resource('user', 'UserController')->except(['create', 'show']);
@@ -66,3 +67,9 @@ Route::group(['prefix' => 'member'], function() {
 });
 
 Route::get('/example', 'ExampleController@index')->name('example');
+Route::get('/coba', 'ExampleController@coba');
+Route::get('/error', 'ExampleController@error');
+
+Route::fallback(function() {
+    return view('error');
+});
