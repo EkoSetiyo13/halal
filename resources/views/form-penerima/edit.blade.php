@@ -20,11 +20,11 @@
                     <div class="col-md-8">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Edit Produk</h4>
+                                <h4 class="card-title">Edit Penerima</h4>
                             </div>
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label for="name">Nama Produk</label>
+                                    <label for="name">Nama Penerima</label>
                                     <input type="text" name="name" class="form-control" value="{{ $penerima->name }}" required>
                                     <p class="text-danger">{{ $errors->first('name') }}</p>
                                 </div>

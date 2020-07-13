@@ -1,14 +1,14 @@
 @extends('layouts.admin')
 
 @section('title')
-    <title>List Product</title>
+    <title>List Penyuplai</title>
 @endsection
 
 @section('content')
 <main class="main">
     <ol class="breadcrumb">
         <li class="breadcrumb-item">Home</li>
-        <li class="breadcrumb-item active">Product</li>
+        <li class="breadcrumb-item active">Penyuplai</li>
     </ol>
     <div class="container-fluid">
         <div class="animated fadeIn">

@@ -22,7 +22,7 @@
                             </div>
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label for="name">Nama Penyuplai</label>
+                                    <label for="name">Nama Penerima</label>
                                     <input type="text" name="name" class="form-control" value="{{ old('name') }}" required>
                                     <p class="text-danger">{{ $errors->first('name') }}</p>
                                 </div>

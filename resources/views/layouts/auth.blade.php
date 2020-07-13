@@ -9,7 +9,7 @@
     <meta name="keyword" content="Bootstrap,Admin,Template,Open,Source,jQuery,CSS,HTML,RWD,Dashboard">
     
     @yield('title')
-
+	<link rel="icon" href="{{ asset('/ecommerce/img/logo_halal.png') }}" type="image/png">
     <link href="{{ asset('assets/css/coreui-icons.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/flag-icon.min.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/font-awesome.min.css') }}" rel="stylesheet">

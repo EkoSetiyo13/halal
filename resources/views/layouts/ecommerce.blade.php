@@ -4,7 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="icon" href="img/favicon.png" type="image/png">   
+	<link rel="icon" href="{{ asset('/ecommerce/img/logo_halal.png') }}" type="image/png">   
 	<link rel="stylesheet" href="{{ asset('ecommerce/css/bootstrap.css') }}">
 	<link rel="stylesheet" href="{{ asset('ecommerce/vendors/linericon/style.css') }}">
 	<link rel="stylesheet" href="{{ asset('ecommerce/css/font-awesome.min.css') }}">
@@ -69,20 +69,29 @@
 						<img src="https://www.its.ac.id/wp-content/uploads/2017/10/logo-its-1.png" alt="" width="100%">
 					</div>
 				</div>
-				<div class="col-lg-6  col-md-6 col-sm-6">
-					<div class="single-footer-widget">
-						<h6 class="footer_title" style="color:white">Lokasi Halal ITS</h6>
+				<div class="col-lg-4  col-md-6 col-sm-6">
+					<div>
+						<h6 class="footer_title" style="color:white">Struktur Organisasi</h6>
 						<p style="color:white">
-							Ruang TU Gedung Departemen Sistem Informasi Lt.2 <br>
-							Kampus Institut Teknologi <br>
-							Sepuluh Nopember Surabaya <br>
-							Phone 1: 031-5999944 <br>
-							Phone 2: 031-5964965 <br>
-							Email : - <br>
+							Kepala Pusat Kajian Halal <br>
+							<b>Setiyo Gunawan, S.T., Ph.D</b> <br>
+							Wakil Kepala Pusat Kajian Halal <br>
+							<b>Nur Aini Rakhmawati, S.Kom., M.Sc.Eng., Ph.D. </b>
+							
+						</p>
+					</div>
+				</div>
+				<div class="col-lg-4  col-md-6 col-sm-6">
+					<div >
+						<h6 class="footer_title" style="color:white">Alamat Kantor :</h6>
+						<p style="color:white">
+							Direktorat Riset dan Pengabdian kepada Masyarakat<br>
+							Gedung Pusat Riset ITS Lantai 5 <br>
+							Kampus ITS Sukolilo Surabaya <br>
 						</p>
 					</div>
 				</div>				
-				<div class="col-lg-4 col-md-6 col-sm-6">
+				<div class="col-lg-2 col-md-6 col-sm-6">
 					<div class="single-footer-widget f_social_wd">
 						<h6 class="footer_title" style="color:white">Temukan kami</h6>
 						{{-- <p style="color:white">Let us be social</p> --}}
@@ -92,6 +101,12 @@
 							</a>
 							<a href="https://www.instagram.com/itshalalcenter/?hl=id" style="color:white">
 								<i class="fa fa-instagram"></i>
+							</a>
+							<a href="itshalalcenter@its.ac.id" style="color:white">
+								<i class="fa fa-envelope"></i>
+							</a>
+							<a href="https://play.google.com/store/apps/developer?id=Nur+Aini+R+%28Pusat+Kajian+Halal+ITS%29" style="color:white">
+								<i class="fa  fa-play "></i>
 							</a>
 						</div>
 					</div>

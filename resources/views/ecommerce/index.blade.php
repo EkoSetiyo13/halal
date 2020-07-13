@@ -15,6 +15,7 @@
 						<h3>Selamat 
 							<br />Hari Raya Kurban</h3>
 						<p>Daging (hewan kurban) dan darahnya itu sekali-kali tidak sampai kepada Allah, tetapi sampai kepada-Nya adalah ketakwaanmu” – QS. Al Hajj:37</p>
+						<a class="white_bg_btn" href="/cara-pendaftaran">Daftar Sekarang</a>
 					</div>
 				</div>
 			</div>
@@ -51,7 +52,7 @@
 					
 								<div class="card-footer">
 									<button type="button" class="btn btn-primary">
-										<a href="https://api.whatsapp.com/send?phone=62{{ $row->no_wa }}&text=Assalamualaikum, %0ASaya%20ingin%20mendaftar%20sebagai%20penyuplai%20di%20Halal%20ITS" style="color: white">Chat Wa</a>
+										<a href="https://api.whatsapp.com/send?phone=62{{ $row->no_wa }}&text=Assalamualaikum, %0ASaya%20mendapat%20kontak%20anda%20dari%20Halal%20ITS" style="color: white">Chat Wa</a>
 									</button>
 									<button type="button" class="btn btn-primary">
 										<a href="{{ url('/penyuplai/' . $row->slug) }}" style="color: white">detail</a>
@@ -99,7 +100,7 @@
 				
 							<div class="card-footer">
 								<button type="button" class="btn btn-primary">
-									<a href="https://api.whatsapp.com/send?phone=62{{ $row->no_wa }}&text=Assalamualaikum, %0ASaya%20ingin%20mendaftar%20sebagai%20penerima%20di%20Halal%20ITS" style="color: white">Chat Wa</a>
+									<a href="https://api.whatsapp.com/send?phone=62{{ $row->no_wa }}&text=Assalamualaikum, %0ASaya%20mendapat%20kontak%20anda%20dari%20Halal%20ITS" style="color: white">Chat Wa</a>
 								</button>
 								<button type="button" class="btn btn-primary">
 									<a href="{{ url('/penerima/' . $row->slug) }}" style="color: white">detail</a>

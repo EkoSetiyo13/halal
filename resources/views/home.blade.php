@@ -104,5 +104,58 @@
             </div>
         </div>
     </div>
+
+    <div class="container-fluid">
+        <div class="animated fadeIn">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">Aktifitas Admin</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-2">
+                                    <div class="callout callout-info">
+                                        <small class="text-muted">Admin 1</small>
+                                        <br>
+                                        <strong class="h4">{{$admin1}}</strong>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="callout callout-danger">
+                                        <small class="text-muted">Admin 2</small>
+                                        <br>
+                                        <strong class="h4">{{$admin2}}</strong>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="callout callout-primary">
+                                        <small class="text-muted">Admin 3</small>
+                                        <br>
+                                        <strong class="h4">{{$admin3}}</strong>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="callout callout-success">
+                                        <small class="text-muted">Admin 4</small>
+                                        <br>
+                                        <strong class="h4">{{$admin4}}</strong>
+                                    </div>
+                                </div>
+                                <div class="col-md-2">
+                                    <div class="callout callout-success">
+                                        <small class="text-muted">Admin 5</small>
+                                        <br>
+                                        <strong class="h4">{{$admin5}}</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </main>
 @endsection

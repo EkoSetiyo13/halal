@@ -49,13 +49,40 @@ class HomeController extends Controller
         $postinganPenerimaNonAktif = FormPenerimaQurban::where('status', '=', 0)->count();
         $postinganPenyuplai = FormPenyuplaiQurban::where('status', '=', 1)->count();
         $postinganPenyuplaiNonAktif = FormpenyuplaiQurban::where('status', '=', 0)->count();
+        
+
+        $penyuplaiAdmin1 = FormPenyuplaiQurban::where('user_id', '=', '1')->count();
+        $penerimaAdmin1 = FormPenerimaQurban::where('user_id', '=', '1')->count();
+        $admin1 = $penerimaAdmin1 + $penyuplaiAdmin1;
+
+        $penyuplaiAdmin2 = FormPenyuplaiQurban::where('user_id', '=', '2')->count();
+        $penerimaAdmin2 = FormPenerimaQurban::where('user_id', '=', '2')->count();
+        $admin2 = $penerimaAdmin2 + $penyuplaiAdmin2;
+
+        $penyuplaiAdmin3 = FormPenyuplaiQurban::where('user_id', '=', '3')->count();
+        $penerimaAdmin3 = FormPenerimaQurban::where('user_id', '=', '3')->count();
+        $admin3 = $penerimaAdmin3 + $penyuplaiAdmin3;
+
+        $penyuplaiAdmin4 = FormPenyuplaiQurban::where('user_id', '=', '4')->count();
+        $penerimaAdmin4 = FormPenerimaQurban::where('user_id', '=', '4')->count();
+        $admin4 = $penerimaAdmin4 + $penyuplaiAdmin4;
+
+        $penyuplaiAdmin5 = FormPenyuplaiQurban::where('user_id', '=', '5')->count();
+        $penerimaAdmin5 = FormPenerimaQurban::where('user_id', '=', '5')->count();
+        $admin5 = $penerimaAdmin5 + $penyuplaiAdmin5;
+
         return view('home', compact(
             'userPenyuplai',
             'userPenerima',
             'postinganPenerima',
             'postinganPenerimaNonAktif',
             'postinganPenyuplai',
-            'postinganPenyuplaiNonAktif'
+            'postinganPenyuplaiNonAktif',
+            'admin1',
+            'admin2',
+            'admin3',
+            'admin4',
+            'admin5',
         ));
     }
 }
