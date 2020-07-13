@@ -31,6 +31,7 @@ class CreateFormPenyuplaiQurbansTable extends Migration
             $table->string('pengiriman')->nullable();
             $table->boolean('status')->default(true);
             $table->string('no_wa')->nullable();
+            $table->boolean('is_pelapor')->nullable();
             $table->timestamps();
         });
     }

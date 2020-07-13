@@ -75,7 +75,8 @@ class FormPenerimaQurbanController extends Controller
                 'status' => $request->status,
                 'alamat' => $request->alamat,
                 'map_alamat' => $request->map_alamat,
-                'no_wa' => $request->no_wa
+                'no_wa' => $request->no_wa,
+                'is_pelapor' => $request->status,
             ]);
             return redirect(route('form-penerima.index'))->with(['success' => 'Produk Baru Ditambahkan']);
         }
@@ -123,7 +124,8 @@ class FormPenerimaQurbanController extends Controller
             'status' => $request->status,
             'alamat' => $request->alamat,
             'map_alamat' => $request->map_alamat,
-            'no_wa' => $request->no_wa
+            'no_wa' => $request->no_wa,
+            'is_pelapor' => $request->is_pelapor,
         ]);
         return redirect(route('form-penerima.index'))->with(['success' => 'Data Produk Diperbaharui']);
     }

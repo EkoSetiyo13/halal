@@ -64,28 +64,34 @@
 	<footer class="footer-area section_gap" style="background-color:#0c48a8">
 		<div class="container" >
 			<div class="row" >
+				<div class="col-lg-2  col-md-3 col-sm-3">
+					<div class="single-footer-widget">
+						<img src="https://www.its.ac.id/wp-content/uploads/2017/10/logo-its-1.png" alt="" width="100%">
+					</div>
+				</div>
 				<div class="col-lg-6  col-md-6 col-sm-6">
 					<div class="single-footer-widget">
-						<h6 class="footer_title" style="color:white">About Us</h6>
-						<p style="color:white">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore dolore magna aliqua.</p>
+						<h6 class="footer_title" style="color:white">Lokasi Halal ITS</h6>
+						<p style="color:white">
+							Ruang TU Gedung Departemen Sistem Informasi Lt.2 <br>
+							Kampus Institut Teknologi <br>
+							Sepuluh Nopember Surabaya <br>
+							Phone 1: 031-5999944 <br>
+							Phone 2: 031-5964965 <br>
+							Email : - <br>
+						</p>
 					</div>
 				</div>				
-				<div class="col-lg-6 col-md-6 col-sm-6">
+				<div class="col-lg-4 col-md-6 col-sm-6">
 					<div class="single-footer-widget f_social_wd">
-						<h6 class="footer_title" style="color:white">Follow Us</h6>
-						<p style="color:white">Let us be social</p>
+						<h6 class="footer_title" style="color:white">Temukan kami</h6>
+						{{-- <p style="color:white">Let us be social</p> --}}
 						<div class="f_social">
-							<a href="#" style="color:white">
-								<i class="fa fa-facebook"></i>
+							<a href="https://www.youtube.com/channel/UC1w8exIbcFjTh-snkojwlPw/" style="color:white">
+								<i class="fa fa-youtube"></i>
 							</a>
-							<a href="#" style="color:white">
-								<i class="fa fa-twitter"></i>
-							</a>
-							<a href="#" style="color:white">
-								<i class="fa fa-dribbble"></i>
-							</a>
-							<a href="#" style="color:white">
-								<i class="fa fa-behance"></i>
+							<a href="https://www.instagram.com/itshalalcenter/?hl=id" style="color:white">
+								<i class="fa fa-instagram"></i>
 							</a>
 						</div>
 					</div>

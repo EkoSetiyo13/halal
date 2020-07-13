@@ -120,15 +120,28 @@
 	<section class="hot_deals_area section_gap">
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-lg-6">
+				<div class="col-md-6 col-sm-6 mb-3">
 					<div>
 						<img class="img-fluid" src="{{ asset('/ecommerce/img/instagram/1.jpeg') }}" alt="">
 					</div>
 				</div>
 
-				<div class="col-lg-6">
+				<div class="col-md-6 col-sm-6 mb-3">
 					<div >
 						<img class="img-fluid" src="{{ asset('/ecommerce/img/instagram/2.jpeg') }}" alt="">
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-6 col-sm-6 mb-3">
+					<div>
+						<img class="img-fluid" src="{{ asset('/ecommerce/img/instagram/3.jpeg') }}" alt="">
+					</div>
+				</div>
+
+				<div class="col-md-6 col-sm-6 mb-3">
+					<div >
+						<img class="img-fluid" src="{{ asset('/ecommerce/img/instagram/4.jpeg') }}" alt="">
 					</div>
 				</div>
 			</div>

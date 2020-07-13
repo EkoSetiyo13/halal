@@ -8,7 +8,7 @@
 <main class="main">
     <ol class="breadcrumb">
         <li class="breadcrumb-item">Home</li>
-        <li class="breadcrumb-item active">Product</li>
+        <li class="breadcrumb-item active">Penerima</li>
     </ol>
     <div class="container-fluid">
         <div class="animated fadeIn">
@@ -36,8 +36,8 @@
                                 <div class="form-group">
                                     <label for="status">Status</label>
                                     <select name="status" class="form-control" required>
-                                        <option value="1" {{ old('status') == '1' ? 'selected':'' }}>Publish</option>
-                                        <option value="0" {{ old('status') == '0' ? 'selected':'' }}>Draft</option>
+                                        <option value="1" {{ $penerima->status == '1' ? 'selected':'' }}>Publish</option>
+                                        <option value="0" {{ $penerima->status == '0' ? 'selected':'' }}>Draft</option>
                                     </select>
                                     <p class="text-danger">{{ $errors->first('status') }}</p>
                                 </div>
@@ -85,6 +85,14 @@
                                     <input type="file" name="image" class="form-control">
                                     <p><strong>Biarkan kosong jika tidak ingin mengganti gambar</strong></p>
                                     <p class="text-danger">{{ $errors->first('image') }}</p>
+                                </div>
+                                <div class="form-group">
+                                    <label for="is_pelapor">Apakah Anda Instansi yang memposting ini?</label>
+                                    <select name="is_pelapor" class="form-control" required>
+                                        <option value="1" {{ $penerima->is_pelapor == '1' ? 'selected':'' }}>Ya</option>
+                                        <option value="0" {{ $penerima->is_pelapor == '0' ? 'selected':'' }}>Tidak</option>
+                                    </select>
+                                    <p class="text-danger">{{ $errors->first('is_pelapor') }}</p>
                                 </div>
                                 <div class="form-group">
                                     <button class="btn btn-primary btn-sm">Update</button>

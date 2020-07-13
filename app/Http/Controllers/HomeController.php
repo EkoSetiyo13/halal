@@ -45,10 +45,10 @@ class HomeController extends Controller
     {
         $userPenyuplai = User::where('nama_role', '=', '2')->count();
         $userPenerima = User::where('nama_role', '=', '3')->count();
-        $postinganPenerima = FormPenerimaQurban::where('status', '=', true)->count();
-        $postinganPenerimaNonAktif = FormPenerimaQurban::where('status', '=', false)->count();
-        $postinganPenyuplai = FormPenerimaQurban::where('status', '=', true)->count();
-        $postinganPenyuplaiNonAktif = FormPenerimaQurban::where('status', '=', false)->count();
+        $postinganPenerima = FormPenerimaQurban::where('status', '=', 1)->count();
+        $postinganPenerimaNonAktif = FormPenerimaQurban::where('status', '=', 0)->count();
+        $postinganPenyuplai = FormPenyuplaiQurban::where('status', '=', 1)->count();
+        $postinganPenyuplaiNonAktif = FormpenyuplaiQurban::where('status', '=', 0)->count();
         return view('home', compact(
             'userPenyuplai',
             'userPenerima',

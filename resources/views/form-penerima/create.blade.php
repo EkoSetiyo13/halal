@@ -87,6 +87,14 @@
                                     <label for="image">Foto (Optional)</label>
                                     <input type="file" name="image" class="form-control" value="{{ old('image') }}" required>
                                     <p class="text-danger">{{ $errors->first('image') }}</p>
+                                </div>
+                                <div class="form-group">
+                                    <label for="is_pelapor">Apakah Anda Instansi yang memposting ini?</label>
+                                    <select name="is_pelapor" class="form-control" required>
+                                        <option value="1" {{ old('is_pelapor') == '1' ? 'selected':'' }}>Ya</option>
+                                        <option value="0" {{ old('is_pelapor') == '0' ? 'selected':'' }}>Tidak</option>
+                                    </select>
+                                    <p class="text-danger">{{ $errors->first('is_pelapor') }}</p>
                                 </div>                                
                                 <div class="form-group">
                                     <button class="btn btn-primary btn-sm">Tambah</button>

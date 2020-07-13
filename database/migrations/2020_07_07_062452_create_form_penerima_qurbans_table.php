@@ -29,6 +29,7 @@ class CreateFormPenerimaQurbansTable extends Migration
             $table->text('map_alamat')->nullable();
             $table->boolean('status')->default(true);
             $table->string('no_wa')->nullable();
+            $table->boolean('is_pelapor')->nullable();
             $table->timestamps();
         });
     }

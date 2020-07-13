@@ -72,7 +72,8 @@ class FormPenyuplaiQurbanController extends Controller
                 'alamat' => $request->alamat,
                 'no_wa' => $request->no_wa,
                 'map_alamat' => $request->map_alamat,
-                'pengiriman' => implode(",", $request->pengiriman)
+                'pengiriman' => implode(",", $request->pengiriman),
+                'is_pelapor' => $request->is_pelapor,
             ]);
             return redirect(route('form-penyuplai.index'))->with(['success' => 'Produk Baru Ditambahkan']);
     }
@@ -127,7 +128,8 @@ class FormPenyuplaiQurbanController extends Controller
             'alamat' => $request->alamat,
             'no_wa' => $request->no_wa,
             'map_alamat' => $request->map_alamat,
-            'pengiriman' => implode(",", $request->pengiriman)
+            'pengiriman' => implode(",", $request->pengiriman),
+            'is_pelapor' => $request->is_pelapor,
         ]);
         return redirect(route('form-penyuplai.index'))->with(['success' => 'Data Produk Diperbaharui']);
     }
