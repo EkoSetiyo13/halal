@@ -31,11 +31,14 @@
                                 <div class="form-group">
                                     <p class="text-danger">{{ $errors->first('name') }}</p>
                                 </div>
+                                @if (Auth::user()->is_admin == 1)
                                 <div class="form-group">
                                     <label for="password">Password</label>
                                     <input type="text" name="password" class="form-control" value="{{ $user->password }}" required>
                                     <p class="text-danger">{{ $errors->first('password') }}</p>
                                 </div>
+                                @else
+                                @endif
                                 <div class="form-group">
                                     <p class="text-danger">{{ $errors->first('password') }}</p>
                                 </div>
