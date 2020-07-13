@@ -41,7 +41,7 @@
                 
                             <div class="card-footer">
                                 <button type="button" class="btn btn-primary">
-                                    <a href="https://api.whatsapp.com/send?phone=62{{ $row->no_wa }}&text=Assalamualaikum," style="color: white">Chat Wa</a>
+                                    <a href="https://api.whatsapp.com/send?phone=62{{ $row->no_wa }}&text=Assalamualaikum, %0ASaya%20ingin%20mendaftar%20sebagai%20penyuplai%20di%20Halal%20ITS" style="color: white">Chat Wa</a>
                                 </button>
                                 <button type="button" class="btn btn-primary">
                                     <a href="{{ url('/penyuplai/' . $row->slug) }}" style="color: white">detail</a>
