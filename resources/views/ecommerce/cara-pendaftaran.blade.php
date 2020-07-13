@@ -34,13 +34,13 @@
                     <p>Opsi 1 : lakukan registrasi dan isi dashboard sesuai dengan field yang disediakan</p>
                     <a class="btn btn-primary" href="{{ route('register') }}" role="button">Daftar</a>
                     <p>Opsi 2 : hubungi admin melaluai admin untuk mendaftar dan mengupdate kondisi sesuai format yang disediakan</p>
-                    <a class="btn btn-primary" href="https://api.whatsapp.com/send?phone=62{{ $admin1 }}&text=Assalamualaikum," role="button">Chat Admin</a>
+                    <a class="btn btn-primary" href="https://api.whatsapp.com/send?phone=62{{ $admin1 }}&text=Assalamualaikum, %0ASaya%20ingin%20mendaftar%20sebagai%20penyuplai%20di%20Halal%20ITS" role="button">Chat Admin</a>
                     <hr class="my-4">
                     <h4>Cara Pendaftaran Penerima</h4>
                     <p>Opsi 1 : lakukan registrasi dan isi dashboard sesuai dengan field yang disediakan</p>
                     <a class="btn btn-primary" href="{{ route('register') }}" role="button">Daftar</a>
                     <p>Opsi 2 : hubungi admin melaluai admin untuk mendaftar dan mengupdate kondisi sesuai format yang disediakan</p>
-                    <a class="btn btn-primary" href="https://api.whatsapp.com/send?phone=62{{ $admin2 }}&text=Assalamualaikum," role="button">Chat Admin</a>
+                    <a class="btn btn-primary" href="https://api.whatsapp.com/send?phone=62{{ $admin2 }}&text=Assalamualaikum, %0ASaya%20ingin%20mendaftar%20sebagai%20penerima%20di%20Halal%20ITS" role="button">Chat Admin</a>
                   </div>       
             </div>
         </div>
