@@ -82,7 +82,7 @@ class HomeController extends Controller
             'admin2',
             'admin3',
             'admin4',
-            'admin5',
+            'admin5'
         ));
     }
 }
