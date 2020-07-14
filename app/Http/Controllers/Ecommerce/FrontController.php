@@ -65,7 +65,7 @@ class FrontController extends Controller
 
     public function kontak()
     {
-        $nomer = array("0895396033024", "0816342045", "0895396033024", "0816342045");
+        $nomer = array("0895396033024", "0816342045", "082231922979", "085741677040");
         $random = array_rand($nomer, 2);
         $admin1 = $nomer[$random[0]];
         $admin2 = $nomer[$random[1]];
