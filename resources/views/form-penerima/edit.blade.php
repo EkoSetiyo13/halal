@@ -58,6 +58,11 @@
                         <div class="card">
                             <div class="card-body">
                                 <div class="form-group">
+                                    <label for="jumlah_warga">Jumlah Warga Berhak</label>
+                                    <input type="text" id="int" name="jumlah_warga" class="form-control" value="{{ $penerima->jumlah_warga }}" required>
+                                    <p class="text-danger">{{ $errors->first('jumlah_warga') }}</p>
+                                </div>
+                                <div class="form-group">
                                     <label for="jumlah_sapi">Jumlah Hewan Sapi</label>
                                     <input type="text" id="int" name="jumlah_sapi" class="form-control" value="{{ $penerima->jumlah_sapi }}" required>
                                     <p class="text-danger">{{ $errors->first('jumlah_sapi') }}</p>
