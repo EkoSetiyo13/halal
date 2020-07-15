@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="icon" href="{{ asset('/ecommerce/img/logo_halal.png') }}" type="image/png">   
 	<link rel="stylesheet" href="{{ asset('ecommerce/css/bootstrap.css') }}">
+	<link rel="stylesheet" href="{{ asset('ecommerce/css/bootstrap.min.css') }}">
 	<link rel="stylesheet" href="{{ asset('ecommerce/vendors/linericon/style.css') }}">
 	<link rel="stylesheet" href="{{ asset('ecommerce/css/font-awesome.min.css') }}">
 	<link rel="stylesheet" href="{{ asset('ecommerce/vendors/owl-carousel/owl.carousel.min.css') }}">
@@ -131,6 +132,8 @@
 	<script src="{{ asset('ecommerce/vendors/counter-up/jquery.counterup.js') }}"></script>
 	<script src="{{ asset('ecommerce/js/mail-script.js') }}"></script>
 	<script src="{{ asset('ecommerce/js/theme.js') }}"></script>
+	<script src="{{ asset('ecommerce/js/jquery.slim.min.js') }}"></script>
+	<script src="{{ asset('ecommerce/js/bootstrap.bundle.min.js') }}"></script>
 
 	<script type="text/javascript">
 		$( '#topheader .navbar-nav a' ).on( 'click', function () {

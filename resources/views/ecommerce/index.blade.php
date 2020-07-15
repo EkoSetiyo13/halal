@@ -6,19 +6,9 @@
 
 @section('content')
     <!--================Home Banner Area =================-->
-	<section class="home_banner_area">
-		<div class="overlay"></div>
+	<section class="masthead">
 		<div class="banner_inner d-flex align-items-center">
-			<div class="container">
-				<div class="banner_content row">
-					<div class="offset-lg-2 col-lg-8">
-						<h3>Selamat 
-							<br />Hari Raya Kurban</h3>
-						<p>Daging (hewan kurban) dan darahnya itu sekali-kali tidak sampai kepada Allah, tetapi sampai kepada-Nya adalah ketakwaanmu” – QS. Al Hajj:37</p>
-						<a class="white_bg_btn" href="/cara-pendaftaran">Daftar Sekarang</a>
-					</div>
-				</div>
-			</div>
+			
 		</div>
 	</section>
 	<!--================End Home Banner Area =================-->
