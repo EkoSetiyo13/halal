@@ -99,7 +99,7 @@ class FormPenerimaQurbanController extends Controller
             'jumlah_lain' => 'required|integer',
             'image' => 'nullable|image|mimes:png,jpeg,jpg',
             'alamat' => 'required|string',
-            'no_wa' => 'required|integer',
+            'no_wa' => 'required|string',
         ]);
 
         $penerima = FormPenerimaQurban::find($id);
