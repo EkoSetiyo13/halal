@@ -23,7 +23,7 @@
               <div class="collapse" id="navbar-dashboards">
               <ul class="nav">                   
 
-                    @if (Auth::user()->id == 1)
+                    @if (Auth::user()->nama_role == "admin")
 
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('form-penyuplai.index') }}">
