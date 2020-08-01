@@ -15,8 +15,8 @@ class FrontController extends Controller
     public function index()
     {
         $products = Product::orderBy('created_at', 'DESC')->paginate(10);
-        $penerima = FormPenerimaQurban::where('status', '=', 1)->orderBy('created_at', 'DESC')->paginate(5);
-        $penyuplai = FormPenyuplaiQurban::where('status', '=', 1)->orderBy('created_at', 'DESC')->paginate(5);
+        $penerima = FormPenerimaQurban::where('status', '=', 1)->orderBy('created_at', 'DESC')->paginate(4);
+        $penyuplai = FormPenyuplaiQurban::where('status', '=', 1)->orderBy('created_at', 'DESC')->paginate(4);
         $post1  = Post::find(1);
         return view('ecommerce.index', compact('products', 'penerima', 'penyuplai', 'post1'));
     }
