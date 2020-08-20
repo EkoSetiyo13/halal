@@ -37,4 +37,10 @@ class ExampleController extends Controller
     }
 
     
+    public function barcode()
+    {
+        return view('barcode');
+    }
+
+    
 }

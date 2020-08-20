@@ -11,10 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
@@ -73,3 +69,36 @@ Route::get('/error', 'ExampleController@error');
 Route::fallback(function() {
     return view('error');
 });
+
+Route::get('/users', 'UmkmController@index')->name('users.index');
+Route::post('/users/import', 'UmkmController@import')->name('users.import');
+Route::get('/users/export', 'UmkmController@export')->name('users.export');
+
+Route::resource('umkm', 'UmkmController')->except(['show']);
+
+Route::get('/barcode', 'ExampleController@barcode');
+
+
+  Route::get('qr-code-with-image', function () {
+    $image = QrCode::format('png')
+                   ->size(200)->errorCorrection('H')
+                   ->generate('W3Adda Laravel Tutorial');
+   return view('code', compact('image'));
+   });
+
+Route::get('/halal', function () {
+    return view('halal/home/home');
+});
+
+Route::get('/template', function () {
+    return view('halal/home/example');
+})->name('halal');
+
+Route::get('/binaan', function () {
+    return view('halal/home/binaan');
+})->name('binaan');
+
+Route::get('/binaan/{id}', function () {
+    return view('halal/home/detail-binaan');
+})->name('detail-binaan');
+

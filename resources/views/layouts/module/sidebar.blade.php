@@ -63,6 +63,23 @@
               </div>
             </li>
 
+            <li class="nav-item">
+                <a class="nav-link" href="#navbar-umkm" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-dashboard">
+                  <i class="ni ni-book-bookmark text-primary"></i>
+                  <span class="nav-link-text">Manajemen UMKM</span>
+                </a>
+                <div class="collapse" id="navbar-umkm">
+                <ul class="nav">                     
+                      <li class="nav-item">
+                          <a class="nav-link" href="{{ route('umkm.index') }}">
+                              <i class="ni ni-delivery-fast text-info"></i>
+                                  <span class="nav-link-text">Daftar Umkm</span>
+                          </a>
+                      </li>          
+                  </ul>
+                </div>
+              </li>
+
             @if (Auth::user()->is_admin == true)
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('user.index') }}">

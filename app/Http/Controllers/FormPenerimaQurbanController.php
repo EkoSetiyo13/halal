@@ -76,7 +76,7 @@ class FormPenerimaQurbanController extends Controller
                 'alamat' => $request->alamat,
                 'map_alamat' => $request->map_alamat,
                 'no_wa' => $request->no_wa,
-                'is_pelapor' => $request->status,
+                'is_pelapor' => $request->is_pelapor,
             ]);
             return redirect(route('form-penerima.index'))->with(['success' => 'Produk Baru Ditambahkan']);
         }
