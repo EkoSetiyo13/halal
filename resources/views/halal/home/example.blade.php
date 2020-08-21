@@ -67,7 +67,7 @@
 				</div>
 			</div>
 		</div>
-    </section> --}}
+    </section> 
     
     <section class="section" id="about">
         <div class="container">
