@@ -35,15 +35,15 @@ class UmkmController extends Controller
         $import = Excel::import(new UmkmsImport(), storage_path('app/public/excel/'.$nama_file));
         Storage::delete($path);
 
-        return response()->json($import);
+        //return response()->json($import);
 
-        // if($import) {
-        //     //redirect
-        //     return redirect()->route('users.index')->with(['success' => 'Data Berhasil Diimport!']);
-        // } else {
-        //     //redirect
-        //     return redirect()->route('users.index')->with(['error' => 'Data Gagal Diimport!']);
-        // }
+        if($import) {
+            //redirect
+            return redirect()->route('users.index')->with(['success' => 'Data Berhasil Diimport!']);
+        } else {
+            //redirect
+            return redirect()->route('users.index')->with(['error' => 'Data Gagal Diimport!']);
+        }
     }
 
     public function export()
