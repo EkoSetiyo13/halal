@@ -11,6 +11,16 @@
 <br>
 <br>
     <div class="row">
+				<div class="col-md-4">
+					<h5>Data Dari Controller</h5>
+		{!! $image !!}
+			</div>
+
+			<div class="col-md-4">
+				<h5>Data Dari Controller PNG</h5>
+				<img src="data:image/png;base64, {!! $imagePng !!} ">
+			</div>
+
 			<div class="col-md-4">
 				    <h5>Simple Qr Code With String</h5>
     {!! QrCode::size(200)->generate('W3Adda Laravel Tutorial'); !!}

@@ -19,6 +19,7 @@ class CreateUmkmsTable extends Migration
             $table->string('nama_pemilik');
             $table->string('nama_umkm');
             $table->string('nama_produk');
+            $table->string('tipe_binaan');
             $table->string('alamat');
             $table->string('desa');
             $table->string('kecamatan');

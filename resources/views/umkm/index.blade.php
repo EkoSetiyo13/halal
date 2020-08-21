@@ -42,9 +42,9 @@
                                     </div>
                                     <thead>
                                         <tr>
-                                            <th>#</th>
-                                            <th scope="col">NAMA LENGKAP</th>
-                                            <th scope="col">ALAMAT EMAIL</th>
+                                            <th>Nomer Binaan</th>
+                                            <th scope="col">Nama UKM</th>
+                                            <th scope="col">Nama Produk</th>
                                             <th>Status</th>
                                             <th>Aksi</th>
                                         </tr>
@@ -53,11 +53,11 @@
                                         @forelse ($umkms as $umkm)
                                         <tr>
                                             <td>
-                                                <strong>{{ $umkm->id }}</strong><br>
+                                                <strong>{{ $umkm->no_umkm }}</strong><br>
                                             </td>
-                                            <td>{{ $umkm->name }}</td>
-                                            <td>{{ $umkm->email }}</td>
-                                            <td>{!! $umkm->status_label !!}</td>
+                                            <td>{{ $umkm->nama_umkm }}</td>
+                                            <td>{{ $umkm->nama_produk }}</td>
+                                            <td>{!! $umkm->status !!}</td>
                                             <td>
                                                 <form action="{{ route('umkm.destroy', $umkm->id) }}" method="post">
                                                     @csrf

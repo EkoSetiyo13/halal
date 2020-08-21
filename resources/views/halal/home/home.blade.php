@@ -23,6 +23,11 @@ https://templatemo.com/tm-537-art-factory
     <link rel="stylesheet" type="text/css" href="assets/assets/css/templatemo-art-factory.css">
     <link rel="stylesheet" type="text/css" href="assets/assets/css/owl-carousel.css">
 
+    {{-- <link rel="stylesheet" type="text/css" href="{{ asset('ecommerce/assets/css/bootstrap.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('ecommerce/assets/css/font-awesome.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('ecommerce/assets/css/font-awesome.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('ecommerce/assets/css/font-awesome.css') }}"> --}}
+
     </head>
     
     <body>
@@ -457,6 +462,15 @@ https://templatemo.com/tm-537-art-factory
     
     <!-- Global Init -->
     <script src="assets/assets/js/custom.js"></script>
+{{-- 
+    <script src="{{ asset('ecommerce/assets/js/jquery-2.1.0.min.js') }}"></script>
+    <script src="{{ asset('ecommerce/assets/js/popper.js') }}"></script>
+    <script src="{{ asset('ecommerce/assets/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('ecommerce/assets/js/owl-carousel.js') }}"></script>
+    <script src="{{ asset('ecommerce/assets/js/scrollreveal.min.js') }}"></script>
+    <script src="{{ asset('ecommerce/assets/js/waypoints.min.js') }}"></script>
+    <script src="{{ asset('ecommerce/assets/js/imgfix.min.js') }}"></script>
+    <script src="{{ asset('ecommerce/assets/js/custom.js') }}"></script> --}}
 
   </body>
 </html>

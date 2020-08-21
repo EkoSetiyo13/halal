@@ -6,7 +6,7 @@
 
 @section('content')
 
-    <div class="welcome-area" id="welcome" style="margin-top: 110px">
+    <div class="welcome-area" id="welcome" style="margin-top: 80px">
 
         <!-- ***** Header Text Start ***** -->
         <div class="header-text">
@@ -26,7 +26,7 @@
         <!-- ***** Header Text End ***** -->
     </div>
 
-    <section class="feature_product_area section_gap" style="margin-top: -100px">
+    {{-- <section class="feature_product_area section_gap" style="margin-top: -100px">
 		<div class="main_box">
 			<div class="container-fluid">
 				<div class="row">
@@ -67,7 +67,7 @@
 				</div>
 			</div>
 		</div>
-    </section>
+    </section> --}}
     
     <section class="section" id="about">
         <div class="container">

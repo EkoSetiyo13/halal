@@ -74,31 +74,22 @@ Route::get('/users', 'UmkmController@index')->name('users.index');
 Route::post('/users/import', 'UmkmController@import')->name('users.import');
 Route::get('/users/export', 'UmkmController@export')->name('users.export');
 
-Route::resource('umkm', 'UmkmController')->except(['show']);
+Route::resource('umkm', 'UmkmController')->except(['daftar.umkm']);
 
 Route::get('/barcode', 'ExampleController@barcode');
 
 
-  Route::get('qr-code-with-image', function () {
-    $image = QrCode::format('png')
-                   ->size(200)->errorCorrection('H')
-                   ->generate('W3Adda Laravel Tutorial');
-   return view('code', compact('image'));
-   });
 
-Route::get('/halal', function () {
+
+Route::get('/contoh', function () {
     return view('halal/home/home');
 });
 
-Route::get('/template', function () {
-    return view('halal/home/example');
-})->name('halal');
 
-Route::get('/binaan', function () {
-    return view('halal/home/binaan');
-})->name('binaan');
+Route::get('/halal', 'Halal\HalalController@home')->name('halal');
+Route::get('/binaan', 'Halal\HalalController@binaan')->name('binaan');
+Route::get('/binaan/{no_binaan}', 'Halal\HalalController@detailBinaan')->name('detail.binaan');
+Route::get('/qrcode', 'Halal\HalalController@qrCode');
 
-Route::get('/binaan/{id}', function () {
-    return view('halal/home/detail-binaan');
-})->name('detail-binaan');
+
 

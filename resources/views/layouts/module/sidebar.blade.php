@@ -15,6 +15,30 @@
             </li> --}}
             @else
             @endif
+
+            <li class="nav-item">
+                <a class="nav-link" href="#navbar-web" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-dashboard">
+                  <i class="ni ni-book-bookmark text-primary"></i>
+                  <span class="nav-link-text">Webiste</span>
+                </a>
+                <div class="collapse" id="navbar-web">
+                <ul class="nav">                     
+                      <li class="nav-item">
+                          <a class="nav-link" href="/halal">
+                              <i class="ni ni-delivery-fast text-info"></i>
+                                  <span class="nav-link-text">Website Halal</span>
+                          </a>
+                      </li> 
+                      <li class="nav-item">
+                        <a class="nav-link" href="/">
+                            <i class="ni ni-delivery-fast text-info"></i>
+                                <span class="nav-link-text">Website Kurban</span>
+                        </a>
+                    </li>          
+                </ul>
+                </div>
+            </li>
+
             <li class="nav-item">
               <a class="nav-link" href="#navbar-dashboards" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-dashboard">
                 <i class="ni ni-book-bookmark text-primary"></i>

@@ -583,6 +583,60 @@ a {
         .banner_area .banner_inner .banner_content .page_link a:hover {
           color: #1641ff; }
 
+          .banner_halal {
+            position: relative;
+            z-index: 1;
+            min-height: 395px; }
+            .banner_halal .banner_inner {
+              position: relative;
+              overflow: hidden;
+              width: 100%;
+              min-height: 395px;
+              background: url(../img/login.jpg) no-repeat center bottom;
+              position: relative;
+              z-index: 1;
+              height: 100%;
+              background-position: center;
+              background-repeat: no-repeat;
+              background-size: cover; }
+              .banner_halal .banner_inner .overlay {
+                background: rgba(0, 0, 0, 0.33);
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0; }
+              .banner_halal .banner_inner .banner_content {
+                position: relative;
+                z-index: 10; }
+                .banner_halal .banner_inner .banner_content h2 {
+                  color: #ffffff;
+                  font-size: 48px;
+                  font-family: "Roboto", sans-serif;
+                  margin-bottom: 12px;
+                  font-weight: 500;
+                  margin-top: 120px; }
+                .banner_halal .banner_inner .banner_content .page_link a {
+                  font-size: 14px;
+                  color: #ffffff;
+                  font-family: "Roboto", sans-serif;
+                  margin-right: 32px;
+                  position: relative; }
+                  .banner_halal .banner_inner .banner_content .page_link a:before {
+                    content: "\e87a";
+                    font-family: 'Linearicons-Free';
+                    font-size: 14px;
+                    position: absolute;
+                    right: -25px;
+                    top: 50%;
+                    transform: translateY(-50%); }
+                  .banner_halal .banner_inner .banner_content .page_link a:last-child {
+                    margin-right: 0px; }
+                    .banner_halal .banner_inner .banner_content .page_link a:last-child:before {
+                      display: none; }
+                  .banner_halal .banner_inner .banner_content .page_link a:hover {
+                    color: #1641ff; }
+
 /* End Home Banner Area css
 ============================================================================================ */
 /*---------------------------------------------------- */

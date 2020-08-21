@@ -30,26 +30,20 @@ class UmkmController extends Controller
         ]);
 
         $file = $request->file('file');
-
-        // membuat nama file unik
         $nama_file = $file->hashName();
-
-        //temporary file
         $path = $file->storeAs('public/excel/',$nama_file);
-
-        // import data
         $import = Excel::import(new UmkmsImport(), storage_path('app/public/excel/'.$nama_file));
-
-        //remove from server
         Storage::delete($path);
 
-        if($import) {
-            //redirect
-            return redirect()->route('users.index')->with(['success' => 'Data Berhasil Diimport!']);
-        } else {
-            //redirect
-            return redirect()->route('users.index')->with(['error' => 'Data Gagal Diimport!']);
-        }
+        return response()->json($import);
+
+        // if($import) {
+        //     //redirect
+        //     return redirect()->route('users.index')->with(['success' => 'Data Berhasil Diimport!']);
+        // } else {
+        //     //redirect
+        //     return redirect()->route('users.index')->with(['error' => 'Data Gagal Diimport!']);
+        // }
     }
 
     public function export()
@@ -134,10 +128,31 @@ class UmkmController extends Controller
     {
 
         $umkm = Umkm::find($id);
-        
 
+        $filename = $umkm->image;
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $filename = time() . Str::slug($request->nama_pemilik) . '.' . $file->getClientOriginalExtension();
+            $file->storeAs('public/products', $filename);
+            File::delete(storage_path('app/public/products/' . $umkm->image));
+        }
+        
         $umkm->update([
-            'name' => $request->name,
+            'no_umkm' => $request->no_umkm, 
+            'nama_pemilik' => $request->nama_pemilik,
+            'nama_umkm' => $request->nama_umkm, 
+            'nama_produk' => $request->nama_produk, 
+            'tipe_binaan' => $request->tipe_binaan,
+            'alamat' => $request->alamat, 
+            'desa' => $request->desa, 
+            'kecamatan' => $request->kecamatan,
+            'kota' => $request->kota, 
+            'no_wa' => $request->no_wa,  
+            'email' => $request->email,
+            'instagram' => $request->instagram, 
+            'facebook' => $request->facebook,
+            'status' => $request->status,
+            'image' => $filename,
         ]);
         return redirect(route('umkm.index'))->with(['success' => 'Data Produk Diperbaharui']);
     }

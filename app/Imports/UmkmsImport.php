@@ -20,16 +20,16 @@ class UmkmsImport implements ToModel
             'nama_pemilik'  => $row[1],
             'nama_umkm'     => $row[2],
             'nama_produk'   => $row[3],
-            'alamat'        => $row[4],
-            'desa'          => $row[5],
-            'kecamatan'     => $row[6],
-            'kota'          => $row[7],
-            'image'         => $row[8],
-            
+            'tipe_binaan'   => $row[4],
+            'alamat'        => $row[5],
+            'desa'          => $row[6],
+            'kecamatan'     => $row[7],
+            'kota'          => $row[8],
+            'status'        => $row[9],
             'no_wa'         => $row[10],
             'email'         => $row[11],
             'instagram'     => $row[12],
-            'facebook'      => $row[13],
+            'facebook'      => $row[13]
         ]);
     }
 }

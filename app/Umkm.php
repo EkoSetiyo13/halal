@@ -13,6 +13,7 @@ class Umkm extends Model
         'nama_pemilik', 
         'nama_umkm', 
         'nama_produk', 
+        'tipe_binaan',
         'alamat', 
         'desa', 
         'kecamatan',
@@ -31,6 +32,11 @@ class Umkm extends Model
             return '<span class="badge badge-secondary">Draft</span>';
         }
         return '<span class="badge badge-success">Aktif</span>';
+    }
+
+    public function setSlugAttribute($value)
+    {
+        $this->attributes['nama_pemilik'] = Str::slug($value); 
     }
 
 }

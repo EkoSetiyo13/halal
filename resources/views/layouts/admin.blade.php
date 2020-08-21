@@ -31,7 +31,6 @@
   <!-- Argon CSS -->
   <link rel="stylesheet" href="{{ asset('/argon/assets/css/argon.css?v=1.1.0') }}" type="text/css">
 
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="//cdn.datatables.net/1.10.20/css/jquery.dataTables.min.css">
 </head>
 
