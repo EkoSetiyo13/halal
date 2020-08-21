@@ -43,7 +43,7 @@
                             <img src="{{ asset('storage/products/' . $data->image) }}" alt="{{ $data->nama_umkm }}" class="card-img-top" style="height: 200px">
                             <h5 style="height: 100px" class="service-title"> {{$data->nama_pemilik}} </h5>
                             <p style="height: 50px">No Binaan : <b> {{$data->no_umkm}} </b> </p>
-                            <a href="{{ url('/binaan/' . $data->no_umkm) }}" class="main-button">Detail</a>
+                            <a href="{{ url('/binaan/2020-' . $data->no_umkm) }}" class="main-button">Detail</a>
                         </div>
                     </div>
                     

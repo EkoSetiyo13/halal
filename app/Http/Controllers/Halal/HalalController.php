@@ -26,11 +26,11 @@ class HalalController extends Controller
     {
         $data = $no_binaan;
         $binaan = Umkm::where('no_umkm', $no_binaan)->first();
-        $qrcodeWithLogo = QrCode::format('png')->merge('assets/logo_halal_bg.png', 0.3, true)->size(100)->errorCorrection('H')->generate('halal.its.ac.id/binaan/' . $binaan->no_umkm);
-        $qrcode = QrCode::format('png')->size(100)->errorCorrection('H')->generate('halal.its.ac.id/binaan/' . $binaan->no_umkm);
+        $qrcodeWithLogo = QrCode::format('png')->merge('assets/logo_halal.png', 0.3, true)->size(100)->errorCorrection('H')->generate('halal.its.ac.id/binaan/2020-' . $binaan->no_umkm);
+        $qrcode = QrCode::format('png')->size(100)->errorCorrection('H')->generate('halal.its.ac.id/binaan/2020-' . $binaan->no_umkm);
 
-        $downloadQrcodeWithLogo = QrCode::format('png')->merge('assets/logo_halal_bg.png', 0.3, true)->size(1000)->errorCorrection('H')->generate('halal.its.ac.id/binaan/' . $binaan->no_umkm);
-        $downloadQrCode = QrCode::format('png')->size(1000)->errorCorrection('H')->generate('halal.its.ac.id/binaan/' . $binaan->no_umkm);
+        $downloadQrcodeWithLogo = QrCode::format('png')->merge('assets/logo_halal.png', 0.3, true)->size(1000)->errorCorrection('H')->generate('halal.its.ac.id/binaan/2020-' . $binaan->no_umkm);
+        $downloadQrCode = QrCode::format('png')->size(1000)->errorCorrection('H')->generate('halal.its.ac.id/binaan/2020-' . $binaan->no_umkm);
         //return response()->json($binaan->no_umkm);
         return view('halal.home.detail-binaan', compact('binaan', 'qrcode', 'qrcodeWithLogo', 'downloadQrcodeWithLogo', 'downloadQrCode'));
     }
