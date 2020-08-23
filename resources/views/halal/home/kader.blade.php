@@ -17,7 +17,7 @@
             </div>
             <div class="row">
                 <div class="main_title">
-                    <form action="{{ url('binaan-cari') }}" method="GET">
+                    <form action="{{ url('kader-cari') }}" method="GET">
                         <div class="row">
                             <div class="searchbar">
                                 <input class="search_input" type="text" name="q" placeholder="Search...">
@@ -32,13 +32,11 @@
                 @forelse ($umkms as $data)
                 <div class="col-md-4 col-sm-6 mb-4">
                     <div class="card border-primary">
-                        <div class="item service-item" style="height: 400px">
-                            <h5 class="service-title" style="height: 50px">{{$data->nama_umkm}}</h5>
-                            <p style="text-align: left; height: 50px"> <b>Nama Produk :</b> {{$data->nama_produk}}</p>
+                        <div class="item service-item" style="height: 250px">
+                            <h5 class="service-title" style="height: 50px">{{$data->nama_pemilik}}</h5>
                             <p style="text-align: left; height: 10px"> <b>Alamat :</b> {{$data->kota}}</p>
                             <p style="text-align: left; height: 10px"> <b>No Binaan :</b> {{$data->no_umkm}}</p>
-                            <p style="text-align: left; height: 20px"> <b>Pemilik :</b> {{$data->nama_pemilik}}</p>
-                            <a href="{{ url('/binaan/' . $data->no_umkm) }}" class="main-button">Detail</a>
+                            <a href="{{ url('/kader/' . $data->no_umkm) }}" class="main-button">Detail</a>
                         </div>
                     </div>
                     

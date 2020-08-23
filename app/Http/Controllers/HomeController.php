@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\FormPenerimaQurban;
 use App\FormPenyuplaiQurban;
 use App\User;
+use App\Umkm;
 use Auth;
 
 use Illuminate\Http\Request;
@@ -83,6 +84,21 @@ class HomeController extends Controller
             'admin3',
             'admin4',
             'admin5'
+        ));
+    }
+
+    public function adminHalal()
+    {
+        $total_umkm = Umkm::all()->count();
+        $total_kader = Umkm::Where('nama_umkm', '=', '-')->count();
+        $total_umkm_aktif = $umkms = Umkm::Where('status', '=', true)->Where('nama_umkm', '!=', '-')->count();
+
+
+
+        return view('dashboard.halal', compact(
+            'total_umkm',
+            'total_kader',
+            'total_umkm_aktif'
         ));
     }
 }

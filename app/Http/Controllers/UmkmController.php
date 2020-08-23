@@ -23,6 +23,22 @@ class UmkmController extends Controller
         return view('umkm.index', compact('umkms'));
     }
 
+    public function kader()
+    {
+        $umkms = Umkm::Where('nama_umkm', '=', '-')->orderBy('id', 'ASC')->get();
+        //return response()->json($umkms);
+        return view('umkm.kader', compact('umkms'));
+    }
+
+    public function umkm()
+    {
+        $umkms = Umkm::Where('status', '=', true)->Where('nama_umkm', '!=', '-')->orderBy('id', 'ASC')->get();
+        return view('umkm.umkm', compact('umkms'));
+    }
+
+
+
+
     public function import(Request $request)
     {
         $this->validate($request, [

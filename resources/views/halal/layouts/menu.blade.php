@@ -6,10 +6,11 @@
     <li class="scroll-to-section nav-item"><a class="nav-link" style="color:white" href="{{ route('halal') }}#frequently-question">FAQ</a></li>
     <li class="submenu nav-item"> <a class="nav-link" style="color:white"  href="javascript:;">DAFTAR BINAAN</a>
     <ul>
-        <li class="scroll-to-section nav-item"><a class="nav-link" href="{{ route('binaan') }}">Semua</a></li>
-        <li class="scroll-to-section nav-item"><a class="nav-link"  href="">Kelas A</a></li>
+        <li class="scroll-to-section nav-item"><a class="nav-link" href="{{ route('binaan') }}">Binaan UMKM</a></li>
+        <li class="scroll-to-section nav-item"><a class="nav-link" href="{{ route('kader') }}">Binaan Kader</a></li>
+        {{-- <li class="scroll-to-section nav-item"><a class="nav-link"  href="">Kelas A</a></li>
         <li class="scroll-to-section nav-item"><a class="nav-link" href="">Kelas B</a></li>
-        <li class="scroll-to-section nav-item"><a class="nav-link"  href="">Kelas C</a></li>
+        <li class="scroll-to-section nav-item"><a class="nav-link"  href="">Kelas C</a></li> --}}
     </ul>
     </li>
     <li class="scroll-to-section nav-item"><a class="nav-link" style="color:white" href="{{ route('halal') }}#contact-us">Lokasi</a></li>
