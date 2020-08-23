@@ -58,11 +58,11 @@
                                     <p class="text-danger">{{ $errors->first('status') }}</p>
                                 </div>
                                 <div class="form-group">
-                                    <label for="status">Tipe Binaan : {{$umkm->tipe_binaan}}</label>
+                                    <label for="status">Tipe Binaan :</label>
                                     <select name="tipe_binaan" class="form-control" required>
-                                        <option value="1" {{ $umkm->tipe_binaan == 'A' ? 'selected':'' }}>A</option>
-                                        <option value="0" {{ $umkm->tipe_binaan == 'B' ? 'selected':'' }}>B</option>
-                                        <option value="0" {{ $umkm->tipe_binaan == 'C' ? 'selected':'' }}>C</option>
+                                        <option value="A" {{ $umkm->tipe_binaan == 'A' ? 'selected':'' }}>A</option>
+                                        <option value="B" {{ $umkm->tipe_binaan == 'B' ? 'selected':'' }}>B</option>
+                                        <option value="C" {{ $umkm->tipe_binaan == 'C' ? 'selected':'' }}>C</option>
                                     </select>
                                     <p class="text-danger">{{ $errors->first('4') }}</p>
                                 </div>                                
