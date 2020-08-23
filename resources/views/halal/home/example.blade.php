@@ -14,8 +14,8 @@
                 <div class="row">
                     <div class="left-text col-lg-7 col-md-6 col-sm-12 col-xs-12" data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
                         <h1>Pusat Kajian Halal</h1>
-                        <p>This template is available for 100% free of charge on TemplateMo. Download, modify and use this for your business website.</p>
-                        <a href="#about" class="main-button-slider">Find Out More</a>
+                        <p>Halal lifestyle advocate</p>
+                        <a href="/binaan" class="main-button-slider">Lihat Binaan</a>
                     </div>
                     <div class="col-lg-5 col-md-6 col-sm-12 col-xs-12" data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
                         <img src="assets/assets/images/slider-icon.png" class="rounded img-fluid d-block mx-auto" alt="First Vector Graphic">
@@ -26,48 +26,7 @@
         <!-- ***** Header Text End ***** -->
     </div>
 
-    {{-- <section class="feature_product_area section_gap" style="margin-top: -100px">
-		<div class="main_box">
-			<div class="container-fluid">
-				<div class="row">
-					<div class="main_title">
-						<h2>Penerima terbaru</h2>
-						<p>Salurkan hewan qurban anda ke mereka</p>
-					</div>
-				</div>
-
-
-				<div class="row">	
-					{{-- @forelse($penerima as $row)
-					<div class="col-md-3 col-sm-6 mb-3">
-						<div class="card border-primary">
-							<img src="{{ asset('storage/products/' . $row->image) }}" alt="{{ $row->name }}" class="card-img-top" style="height: 200px">
-				
-							<div class="card-body">
-								<div class="card-title"><h4>
-									{{ $row->name }}
-								</h4></div>
-								<h6> alamat : {{ $row->alamat }}</h6>
-								{{ substr($row->description, -100) }}
-							</div>
-				
-							<div class="card-footer">
-								<button type="button" class="btn btn-primary">
-									<a href="https://api.whatsapp.com/send?phone=62{{ $row->no_wa }}&text=Assalamualaikum, %0ASaya%20mendapat%20kontak%20anda%20dari%20Halal%20ITS" style="color: white">Chat Wa</a>
-								</button>
-								<button type="button" class="btn btn-primary">
-									<a href="{{ url('/penerima/' . $row->slug) }}" style="color: white">detail</a>
-								</button>
-							</div>
-						</div>
-					</div>
-					@empty	
-
-					@endforelse --}}
-				</div>
-			</div>
-		</div>
-    </section> 
+    
     
     <section class="section" id="about">
         <div class="container">
@@ -77,12 +36,11 @@
                 </div>
                 <div class="right-text col-lg-5 col-md-12 col-sm-12 mobile-top-fix">
                     <div class="left-heading">
-                        <h5>Vivamus sodales nisi id ante molestie venenatis</h5>
+                        <h5>Tentang PKH</h5>
                     </div>
                     <div class="left-text">
-                        <p>This template is <a href="#">last updated on 20 August 2019 </a>for main menu drop-down arrow and sub menu text color. Duis auctor dolor eu scelerisque vestibulum. Vestibulum lacinia, nisl sit amet tristique condimentum. <br><br>
-                        Sed a consequat velit. Morbi lectus sapien, vestibulum et sapien sit amet, ultrices malesuada odio. Donec non quam euismod, mattis dui a, ultrices nisi.</p>
-                        <a href="#about2" class="main-button">Discover More</a>
+                        <p>Pusat Kajian Halal ITS didirikan berdasarkan kebutuhan akan informasi halal yang lengkap dan akurat bagi komunitas Muslim tentang pentingnya produk halal. Hasil penelitian dari Pusat Kajian Halal ITS diharapkan dapat dengan mudah diterima dan dimanfaatkan oleh komunitas Muslim Indonesia secara keseluruhan.</p>
+                        
                     </div>
                 </div>
             </div>
@@ -102,31 +60,46 @@
             <div class="row">
                 <div class="left-text col-lg-5 col-md-12 col-sm-12 mobile-bottom-fix">
                     <div class="left-heading">
-                        <h5>Curabitur aliquam eget tellus id porta</h5>
+                        <h5>Kegiatan PKH</h5>
                     </div>
-                    <p>Proin justo sapien, posuere suscipit tortor in, fermentum mattis elit. Aenean in feugiat purus.</p>
+                    <p>Berikut ini merupakan rekam jejak Pusat Kajian Halal Institut Teknologi Sepuluh Nopember (ITS) dalam berkontribusi mengembangkan sistem jaminan halal di Indonesia :</p>
                     <ul>
                         <li>
-                            <img src="assets/assets/images/about-icon-01.png" alt="">
-                            <div class="text">
-                                <h6>Nulla ultricies risus quis risus</h6>
-                                <p>You can use this website template for commercial or non-commercial purposes.</p>
+                            <div >
+                                <h6>1. Persiapan dan pelatihan auditor bersertifikat</h6>
                             </div>
                         </li>
                         <li>
-                            <img src="assets/assets/images/about-icon-02.png" alt="">
-                            <div class="text">
-                                <h6>Donec consequat commodo purus</h6>
-                                <p>You have no right to re-distribute this template as a downloadable ZIP file on any website.</p>
+                            <div >
+                                <h6>2. Perawatan Halal ITS</h6>
                             </div>
                         </li>
                         <li>
-                            <img src="assets/assets/images/about-icon-03.png" alt="">
-                            <div class="text">
-                                <h6>Sed placerat sollicitudin mauris</h6>
-                                <p>If you have any question or comment, please <a rel="nofollow" href="https://templatemo.com/contact">contact</a> us on TemplateMo.</p>
+                            <div >
+                                <h6>3. Peningkatan kapasitas melalui Focus Group Discussion (FGD), lokakarya, dan pelatihan</h6>
                             </div>
                         </li>
+                        <li>
+                            <div >
+                                <h6>4. Kegiatan penelitian terkait dengan produk halal</h6>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <h6>5. Persiapan publikasi nasional melalui jurnal terkait halal</h6>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <h6>6. Olimpiade Halal Nasional</h6>
+                            </div>
+                        </li>
+                        <li>
+                            <div>
+                                <h6>7. Pembentukan Lembaga Jaminan Halal (LPH)</h6>
+                            </div>
+                        </li>
+                        
                     </ul>
                 </div>
                 <div class="right-image col-lg-7 col-md-12 col-sm-12 mobile-bottom-fix-big" data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
@@ -142,63 +115,21 @@
     <section class="section" id="services">
         <div class="container">
             <div class="row">
-                <div class="owl-carousel owl-theme">
-                    <div class="item service-item">
-                        <div class="icon">
-                            <i><img src="assets/assets/images/service-icon-01.png" alt=""></i>
-                        </div>
-                        <h5 class="service-title">First Box Service</h5>
-                        <p>Aenean vulputate massa sed neque consectetur, ac fringilla quam aliquet. Sed a enim nec eros tempor cursus at id libero.</p>
-                        <a href="#" class="main-button">Read More</a>
-                    </div>
-                    <div class="item service-item">
-                        <div class="icon">
-                            <i><img src="assets/assets/images/service-icon-02.png" alt=""></i>
-                        </div>
-                        <h5 class="service-title">Second Box Title</h5>
-                        <p>Pellentesque vitae urna ut nisi viverra tristique quis at dolor. In non sodales dolor, id egestas quam. Aliquam erat volutpat. </p>
-                        <a href="#" class="main-button">Discover More</a>
-                    </div>
-                    <div class="item service-item">
-                        <div class="icon">
-                            <i><img src="assets/assets/images/service-icon-03.png" alt=""></i>
-                        </div>
-                        <h5 class="service-title">Third Title Box</h5>
-                        <p>Quisque finibus libero augue, in ultrices quam dictum id. Aliquam quis tellus sit amet urna tincidunt bibendum.</p>
-                        <a href="#" class="main-button">More Detail</a>
-                    </div>
-                    <div class="item service-item">
-                        <div class="icon">
-                            <i><img src="assets/assets/images/service-icon-02.png" alt=""></i>
-                        </div>
-                        <h5 class="service-title">Fourth Service Box</h5>
-                        <p>Fusce sollicitudin feugiat risus, tempus faucibus arcu blandit nec. Duis auctor dolor eu scelerisque vestibulum.</p>
-                        <a href="#" class="main-button">Read More</a>
-                    </div>
-                    <div class="item service-item">
-                        <div class="icon">
-                            <i><img src="assets/assets/images/service-icon-01.png" alt=""></i>
-                        </div>
-                        <h5 class="service-title">Fifth Service Title</h5>
-                        <p>Curabitur aliquam eget tellus id porta. Proin justo sapien, posuere suscipit tortor in, fermentum mattis elit.</p>
-                        <a href="#" class="main-button">Discover</a>
-                    </div>
-                    <div class="item service-item">
-                        <div class="icon">
-                            <i><img src="assets/assets/images/service-icon-03.png" alt=""></i>
-                        </div>
-                        <h5 class="service-title">Sixth Box Title</h5>
-                        <p>Ut nibh velit, aliquam vitae pellentesque nec, convallis vitae lacus. Aliquam porttitor urna ut pellentesque.</p>
-                        <a href="#" class="main-button">Detail</a>
-                    </div>
-                    <div class="item service-item">
-                        <div class="icon">
-                            <i><img src="assets/assets/images/service-icon-01.png" alt=""></i>
-                        </div>
-                        <h5 class="service-title">Seventh Title Box</h5>
-                        <p>Sed a consequat velit. Morbi lectus sapien, vestibulum et sapien sit amet, ultrices malesuada odio. Donec non quam.</p>
-                        <a href="#" class="main-button">Read More</a>
-                    </div>
+                <div class="owl-carousel owl-theme">                   
+                    @forelse ($binaan as $data)
+                    <div class="item service-item" style="height: 400px">
+                        <h5 class="service-title" style="height: 50px">{{$data->nama_umkm}}</h5>
+                        <p style="text-align: left; height: 50px"> <b>Nama Produk :</b> {{$data->nama_produk}}</p>
+                        <p style="text-align: left; height: 10px"> <b>Alamat :</b> {{$data->kecamatan}}  , {{$data->kota}}</p>
+                        <p style="text-align: left; height: 10px"> <b>No Binaan :</b> {{$data->no_umkm}}</p>
+                        <p style="text-align: left; height: 20px"> <b>Pemilik / Owner :</b> {{$data->nama_pemilik}}</p>
+                        <a href="{{ url('/binaan/' . $data->no_umkm) }}" class="main-button">Detail</a>
+                    </div>    
+                    @empty            
+                    @endforelse    
+
+
+
                 </div>
             </div>
         </div>
@@ -216,16 +147,16 @@
                         <h2>Frequently Asked Questions</h2>
                     </div>
                 </div>
-                <div class="offset-lg-3 col-lg-6">
+                {{-- <div class="offset-lg-3 col-lg-6">
                     <div class="section-heading">
                         <p>Vivamus venenatis eu mi ac mattis. Maecenas ut elementum sapien. Nunc euismod risus ac lobortis congue. Sed erat quam.</p>
                     </div>
-                </div>
+                </div> --}}
             </div>
             <!-- ***** Section Title End ***** -->
 
             <div class="row">
-                <div class="left-text col-lg-6 col-md-6 col-sm-12">
+                {{-- <div class="left-text col-lg-6 col-md-6 col-sm-12">
                     <h5>Class aptent taciti sociosqu ad litora torquent per conubia</h5>
                     <div class="accordion-text">
                         <p>Curabitur placerat diam in risus lobortis, laoreet porttitor est elementum. Nulla ultricies risus quis risus scelerisque, a aliquam tellus maximus. Cras pretium nulla ac convallis iaculis. Aenean bibendum erat vitae odio sodales, in facilisis tellus volutpat.</p>
@@ -233,12 +164,12 @@
                         <span>Email: <a href="#">email@company.com</a><br></span>
                         <a href="#contact-us" class="main-button">Contact Us</a>
                     </div>
-                </div>
-                <div class="col-lg-6 col-md-6 col-sm-12">
+                </div> --}}
+                <div class="col-lg-12 col-md-6 col-sm-12">
                     <div class="accordions is-first-expanded">
                         <article class="accordion">
                             <div class="accordion-head">
-                                <span>First Common Question</span>
+                                <span>Apakah Itu Pusat Kajian Halal ?</span>
                                 <span class="icon">
                                     <i class="icon fa fa-chevron-right"></i>
                                 </span>
@@ -253,7 +184,7 @@
                         </article>
                         <article class="accordion">
                             <div class="accordion-head">
-                                <span>Second Question Answer</span>
+                                <span>Apa Keunggulan Pusat Kajian Halal</span>
                                 <span class="icon">
                                     <i class="icon fa fa-chevron-right"></i>
                                 </span>
@@ -268,7 +199,7 @@
                         </article>
                         <article class="accordion">
                             <div class="accordion-head">
-                                <span>Third Answer for you</span>
+                                <span>Bagaimana mendaftar menjadi binaan</span>
                                 <span class="icon">
                                     <i class="icon fa fa-chevron-right"></i>
                                 </span>
@@ -283,7 +214,7 @@
                         </article>
                         <article class="accordion">
                             <div class="accordion-head">
-                                <span>Fourth Question Asked</span>
+                                <span>Saya tidak memiliki umkm, namun saya ingin mempelajari mengenai halal. apakah boleh?</span>
                                 <span class="icon">
                                     <i class="icon fa fa-chevron-right"></i>
                                 </span>
@@ -298,7 +229,7 @@
                         </article>
                         <article class="accordion">
                             <div class="accordion-head">
-                                <span>Fifth Ever Question</span>
+                                <span>Pertanyaan 5</span>
                                 <span class="icon">
                                     <i class="icon fa fa-chevron-right"></i>
                                 </span>
@@ -313,7 +244,7 @@
                         </article>
                         <article class="accordion">
                             <div class="accordion-head">
-                                <span>Sixth Sense Question</span>
+                                <span>Pertanyaan ke 6</span>
                                 <span class="icon">
                                     <i class="icon fa fa-chevron-right"></i>
                                 </span>
@@ -337,7 +268,7 @@
         <div class="container-fluid">
             <div class="row">
                 <!-- ***** Contact Map Start ***** -->
-                <div class="col-lg-6 col-md-6 col-sm-12">
+                <div class="col-lg-12 col-md-6 col-sm-12">
                     <div id="map">
                       <!-- How to change your own map point
                            1. Go to Google Maps
@@ -345,13 +276,13 @@
                            3. Click "Share" and choose "Embed map" tab
                            4. Copy only URL and paste it within the src="" field below
                     -->
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1197183.8373802372!2d-1.9415093691103689!3d6.781986417238027!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdb96f349e85efd%3A0xb8d1e0b88af1f0f5!2sKumasi+Central+Market!5e0!3m2!1sen!2sth!4v1532967884907" width="100%" height="500px" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.6451854505704!2d112.79512591477486!3d-7.281150894744579!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd7fa1267ac4921%3A0x907234430e043740!2sGedung%20Pusat%20Riset%20ITS!5e0!3m2!1sid!2sid!4v1598176067492!5m2!1sid!2sid" width="100%" height="500px" frameborder="0" style="border:0" allowfullscreen></iframe>
                     </div>
                 </div>
                 <!-- ***** Contact Map End ***** -->
 
                 <!-- ***** Contact Form Start ***** -->
-                <div class="col-lg-6 col-md-6 col-sm-12">
+                {{-- <div class="col-lg-6 col-md-6 col-sm-12">
                     <div class="contact-form">
                         <form id="contact" action="" method="post">
                           <div class="row">
@@ -378,7 +309,7 @@
                           </div>
                         </form>
                     </div>
-                </div>
+                </div> --}}
                 <!-- ***** Contact Form End ***** -->
             </div>
         </div>

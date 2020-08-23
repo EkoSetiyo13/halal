@@ -32,7 +32,7 @@
 									<img class="d-block w-100" style="height: 300px" src="{{ asset('storage/products/' . $binaan->image) }}" alt="{{ $binaan->nama_umkm }}">
 								</div>
 							</div>
-							<div class="carousel-inner text-center">
+							{{-- <div class="carousel-inner text-center">
 								<div class="carousel-item active">
 									<a href="data:image/png;base64, {!! base64_encode($downloadQrCode) !!} " download>
 										<img src="data:image/png;base64, {!! base64_encode($qrcode) !!} ">
@@ -41,7 +41,7 @@
 										<img src="data:image/png;base64, {!! base64_encode($qrcodeWithLogo) !!} ">
 									</a>
 								</div>
-							</div>
+							</div> --}}
 						</div>
 					</div>
 				</div>
@@ -53,10 +53,10 @@
 						<div class="container">
 							<ul class="nav nav-tabs" id="myTab" role="tablist">
 								<li class="nav-item">
-									<a class="nav-link active show" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Description</a>
+									<a class="nav-link active show" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Deskripsi</a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Specification</a>
+									<a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Kontak</a>
 								</li>
 							</ul>
 							<div class="tab-content" id="myTabContent">
@@ -166,7 +166,73 @@
 				
 								
 			</div>
-		</div>	
+		</div>
+		
+		{{-- untuk code qrcode --}}
+		
+		<div class="container">
+			<div class="row s_product_inner">			
+				<div class="col-lg-12">
+					<section class="product_description_area" style="margin-top: -10px; margin-bottom: 100px">
+						<div class="container">
+							<ul class="nav nav-tabs" id="myTab" role="tablist">
+								<li class="nav-item">
+									<a class="nav-link active show" id="qrcode-tab" data-toggle="tab" href="#qrcode" role="tab" aria-controls="home" aria-selected="true">QrCode</a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" id="qrcode2-tab" data-toggle="tab" href="#qrcode2" role="tab" aria-controls="profile" aria-selected="false">QrCode dengan Logo</a>
+								</li>
+							</ul>
+							<div class="tab-content" id="myTabContent">
+								<div class="tab-pane fade show active" id="qrcode" role="tabpanel" aria-labelledby="qrcode-tab" style="color: black">
+									<div class="table-responsive">
+										<table class="table">
+											<tbody>
+												<tr>
+													<td class="text-center">
+														<h5 style="color: black"> Nomer Binaan : {{$binaan->no_umkm}} </h5>
+														<a href="data:image/png;base64, {!! base64_encode($downloadQrCode) !!} " download>
+															<img src="data:image/png;base64, {!! base64_encode($qrcode) !!} ">
+														</a>
+														<p>*Pasang kode ini di web anda untuk menampilkan QRcode anda di web</p>
+														<button style="margin-bottom : 10px" type="button" onclick="Copy()" class="btn btn-primary">Copy</button>
+														<textarea readonly rows="15" id="myQrCode" name="description" placeholder="informasi mengenai deskripsi yang menarik" id="description" class="form-control"><a href="http://halal.its.ac.id/binaan/{{$binaan->no_umkm}}"><img src="data:image/png;base64, {!! base64_encode($qrcode) !!} "></a></textarea>		
+													</td>
+												</tr>
+												
+
+											</tbody>
+										</table>
+									</div>
+								</div>
+								<div class="tab-pane fade" id="qrcode2" role="tabpanel" aria-labelledby="qrcode-tab">
+									<div class="table-responsive">
+										<table class="table">
+											<tbody>
+												
+												<tr>
+													<td class="text-center">
+														<h5 style="color: black"> Nomer Binaan : {{$binaan->no_umkm}} </h5>
+														<a href="data:image/png;base64, {!! base64_encode($downloadQrcodeWithLogo) !!} " download>
+															<img src="data:image/png;base64, {!! base64_encode($qrcodeWithLogo) !!} ">
+														</a>
+														<p>*Pasang kode ini di web anda untuk menampilkan QRcode anda di web</p>
+														<button style="margin-bottom : 10px" type="button" onclick="CopyLogo()" class="btn btn-primary">Copy</button>
+														<textarea readonly rows="15" id="myQrCodeLogo" name="description" placeholder="informasi mengenai deskripsi yang menarik" id="description" class="form-control"><a href="http://halal.its.ac.id/binaan/{{$binaan->no_umkm}}"><img src="data:image/png;base64, {!! base64_encode($qrcodeWithLogo) !!} "></a></textarea>
+													</td>
+												</tr>
+
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</section>
+				</div>				
+								
+			</div>
+		</div>
 	</div>
 	
 @endsection

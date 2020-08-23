@@ -29,13 +29,13 @@ class FrontController extends Controller
 
     public function penerima()
     {
-        $penerima = FormPenerimaQurban::orderBy('created_at', 'DESC')->paginate(100);
+        $penerima = FormPenerimaQurban::orderBy('created_at', 'DESC')->paginate(2);
         return view('ecommerce.all-penerima', compact('penerima'));
     }
 
     public function penyuplai()
     {
-        $penyuplai = FormPenyuplaiQurban::orderBy('created_at', 'DESC')->paginate(100);
+        $penyuplai = FormPenyuplaiQurban::orderBy('created_at', 'DESC')->paginate(2);
         return view('ecommerce.all-penyuplai', compact('penyuplai'));
     }
 

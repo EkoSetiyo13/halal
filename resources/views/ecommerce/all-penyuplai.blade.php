@@ -55,6 +55,9 @@
                         </div>
                     @endforelse       
             </div>
+            <div class="row ">       
+                {{ $penyuplai->links() }}    
+            </div>
         </div>
     </section>
     <!--================End Category Product Area =================-->

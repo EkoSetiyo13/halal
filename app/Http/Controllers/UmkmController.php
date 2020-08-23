@@ -164,4 +164,6 @@ class UmkmController extends Controller
         return redirect(route('umkm.index'))->with(['success' => 'Produk Sudah Dihapus']);
     }
 
+   
+
 }

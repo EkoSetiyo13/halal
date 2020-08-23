@@ -88,8 +88,12 @@ Route::get('/contoh', function () {
 
 Route::get('/halal', 'Halal\HalalController@home')->name('halal');
 Route::get('/binaan', 'Halal\HalalController@binaan')->name('binaan');
-Route::get('/binaan/2020-{no_binaan}', 'Halal\HalalController@detailBinaan')->name('detail.binaan');
+Route::get('/binaan/{no_binaan}', 'Halal\HalalController@detailBinaan')->name('detail.binaan');
 Route::get('/qrcode', 'Halal\HalalController@qrCode');
+Route::get('/binaan/cari', 'Halal\HalalController@cariBinaan');
+
+Route::get('/hapus-binaan', 'Halal\HalalController@hapusSemua');
+
 
 
 

@@ -21,13 +21,15 @@
 	{{-- template halal --}}
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="Template Mo">
+    <meta name="description" content="pusat kajian halal ITS, ITS, Umkm, halal, Institut Teknologi Sepuluh Nopember, PKH, Kajian, Pusat">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700,900" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="assets/assets/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="assets/assets/css/font-awesome.css">
     <link rel="stylesheet" type="text/css" href="assets/assets/css/templatemo-art-factory.css">
 	<link rel="stylesheet" type="text/css" href="assets/assets/css/owl-carousel.css">
+
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+	
 	{{-- template halal --}}
 
 
@@ -37,6 +39,49 @@
 		}
 		.collapse-content .fa.fa-share-alt:hover {
 		color: #0d47a1 !important;
+		}
+		.searchbar{
+		margin-bottom: auto;
+		margin-top: auto;
+		height: 60px;
+		background-color: #353b48;
+		border-radius: 30px;
+		padding: 10px;
+		}
+
+		.search_input{
+		color: white;
+		border: 0;
+		outline: 0;
+		background: none;
+		width: 0;
+		caret-color:transparent;
+		line-height: 40px;
+		transition: width 0.4s linear;
+		}
+
+		.searchbar:hover > .search_input{
+		padding: 0 10px;
+		width: 450px;
+		caret-color:red;
+		transition: width 0.4s linear;
+		}
+
+		.searchbar:hover > .search_icon{
+		background: white;
+		color: #e74c3c;
+		}
+
+		.search_icon{
+		height: 40px;
+		width: 40px;
+		float: right;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		border-radius: 50%;
+		caret-color:red;
+		text-decoration:none;
 		}
 	</style>
 
@@ -165,7 +210,10 @@
     <script src="assets/assets/js/scrollreveal.min.js"></script>
     <script src="assets/assets/js/waypoints.min.js"></script>
     <script src="assets/assets/js/jquery.counterup.min.js"></script>
-    <script src="assets/assets/js/imgfix.min.js"></script> 
+	<script src="assets/assets/js/imgfix.min.js"></script> 
+	
+	{{-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> --}}
     
     <!-- Global Init -->
     <script src="assets/assets/js/custom.js"></script>
@@ -176,5 +224,25 @@
 			$( this ).parent( 'li' ).addClass( 'active' );
 		});
 	</script>
+
+	<script type="text/javascript">
+		function Copy() {
+		var copyText = document.getElementById("myQrCode");
+		copyText.select();
+		copyText.setSelectionRange(0, 99999)
+		document.execCommand("copy");
+		alert("Copied the text: " + copyText.value);
+		}
+	</script>
+
+<script type="text/javascript">
+	function CopyLogo() {
+	var copyText = document.getElementById("myQrCodeLogo");
+	copyText.select();
+	copyText.setSelectionRange(0, 99999)
+	document.execCommand("copy");
+	alert("Copied the text: " + copyText.value);
+	}
+</script>
 </body>
 </html>
