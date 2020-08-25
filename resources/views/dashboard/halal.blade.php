@@ -46,7 +46,13 @@
                                         <strong class="h4"> {{$total_kader}} </strong>
                                     </div>
                                 </div>
-                                
+                                {{-- <div class="col-md-3">
+                                    <div class="callout callout-success">
+                                        <small class="text-muted">Jumlah Penyuplai Aktif</small>
+                                        <br>
+                                        <strong class="h4">0</strong>
+                                    </div>
+                                </div> --}}
                             </div>
                         </div>
                     </div>

@@ -15,130 +15,119 @@
             <form action="{{ route('umkm.store') }}" method="post" enctype="multipart/form-data" >
                 @csrf
                 <div class="row">
-                    <div class="col-md-8">
+                    <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
                                 <h4 class="card-title">Tambah Penyuplai</h4>
                             </div>
+
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label for="name">Nama Penyuplai</label>
-                                    <input type="text" name="name" class="form-control" value="{{ old('name') }}" required>
-                                    <p class="text-danger">{{ $errors->first('name') }}</p>
+                                    <label for="1">No UMKM</label>
+                                    <input type="text" name="no_umkm" class="form-control" value="{{ old('no_umkm') }}" required>
+                                    <p class="text-danger">{{ $errors->first('1') }}</p>
                                 </div>
                                 <div class="form-group">
-                                    <label for="no_wa">No Whatsapp (contoh : 085xxxxxxxxx)</label>
-                                    <input type="text" id="int4" name="no_wa" class="form-control" value="{{ old('no_wa') }}" required>
-                                    <p class="text-danger">{{ $errors->first('no_wa') }}</p>
+                                    <label for="12">Nama UMKM</label>
+                                    <input type="text" name="nama_umkm" class="form-control" value="{{ old('nama_umkm') }}" required>
+                                    <p class="text-danger">{{ $errors->first('12') }}</p>
+                                </div>
+                                <div class="form-group">
+                                    <label for="2">Nama Pemilik</label>
+                                    <input type="text" name="nama_pemilik" class="form-control" value="{{ old('nama_pemilik') }}" required>
+                                    <p class="text-danger">{{ $errors->first('2') }}</p>
+                                </div>
+                                <div class="form-group">
+                                    <label for="3">Nama Produk</label>
+                                    <input type="text" name="nama_produk" class="form-control" value="{{ old('nama_produk') }}" required>
+                                    <p class="text-danger">{{ $errors->first('3') }}</p>
                                 </div>
                                 <div class="form-group">
                                     <label for="status">Status</label>
                                     <select name="status" class="form-control" required>
-                                        <option value="1" {{ old('status') == '1' ? 'selected':'' }}>Publish</option>
-                                        <option value="0" {{ old('status') == '0' ? 'selected':'' }}>Draft</option>
+                                        <option value="1" {{ old('status') == '1' ? 'selected':'' }}>Aktif</option>
+                                        <option value="0" {{ old('status') == '0' ? 'selected':'' }}>Tidak Aktif</option>
                                     </select>
                                     <p class="text-danger">{{ $errors->first('status') }}</p>
                                 </div>
+                                <div class="form-group">
+                                    <label for="status">Tipe Binaan :</label>
+                                    <select name="tipe_binaan" class="form-control" required>
+                                        <option value="A" {{ old('tipe_binaan') == 'A' ? 'selected':'' }}>A</option>
+                                        <option value="B" {{ old('tipe_binaan') == 'B' ? 'selected':'' }}>B</option>
+                                        <option value="C" {{ old('tipe_binaan') == 'C' ? 'selected':'' }}>C</option>
+                                    </select>
+                                    <p class="text-danger">{{ $errors->first('4') }}</p>
+                                </div>                                
+                            </div>
+
+                            <div class="card-header">
+                                <h4 class="card-title text-center">Alamat UMKM</h4>
+                            </div>
+                            <div class="card-body">
                                 <div class="form-group">
                                     <label for="alamat">Alamat</label>
                                     <input type="text" name="alamat" class="form-control" value="{{ old('alamat') }}" required>
                                     <p class="text-danger">{{ $errors->first('alamat') }}</p>
                                 </div>
                                 <div class="form-group">
-                                    <input type="hidden" name="user_id" class="form-control" value="{{ Auth::user()->id }}" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="description">Deskripsi</label>
-                                    <textarea name="description" id="description" placeholder="informasi mengenai deskripsi yang menarik" class="form-control">{{ old('description') }}</textarea>
-                                    <p class="text-danger">{{ $errors->first('description') }}</p>
-                                </div>
-                                <div class="form-row">
-                                    <div class="col-md-12 mb-3">
-                                      <label class="form-control-label" for="validationCustom02">
-                                      Cara pengiriman yang disediakan 
-                                      </label>
-                
-                                      <div class="row">
-                                        <div class="col-md-6">
-                                          <div class="custom-control custom-checkbox mb-3">
-                                            <input class="custom-control-input" name="pengiriman[]" value="bebas ongkir dalam kota radius 5KM" id="customCheck1" type="checkbox">
-                                            <label class="custom-control-label" for="customCheck1">bebas ongkir dalam kota radius 5KM</label>
-                                          </div>
-                                          <div class="custom-control custom-checkbox mb-3">
-                                            <input class="custom-control-input" name="pengiriman[]" value="bebas ongkir dalam kota" id="customCheck2" type="checkbox">
-                                            <label class="custom-control-label" for="customCheck2">bebas ongkir dalam kota</label>
-                                          </div>
-                                          <div class="custom-control custom-checkbox mb-3">
-                                            <input class="custom-control-input" name="pengiriman[]" value="bayar ongkir dalam kota" id="customCheck3" type="checkbox">
-                                            <label class="custom-control-label" for="customCheck3">bayar ongkir dalam kota </label>
-                                          </div>
-                                          <div class="custom-control custom-checkbox mb-3">
-                                            <input class="custom-control-input" name="pengiriman[]" value="siap kirim luar kota dengan ongkos kirim" id="customCheck4" type="checkbox">
-                                            <label class="custom-control-label" for="customCheck4">siap kirim luar kota dengan ongkos kirim</label>
-                                          </div>
-                                          <div class="custom-control custom-checkbox mb-3">
-                                            <input class="custom-control-input" name="pengiriman[]" value="bisa diambil sendiri" id="customCheck5" type="checkbox">
-                                            <label class="custom-control-label" for="customCheck5">bisa diambil sendiri</label>
-                                          </div>
-           
-                                      </div>
-            
-                                     </div>
-                                    </div>
-                                  </div>
-                
+                                    <label for="desa">Desa 
+                                        <input type="text" name="desa" class="form-control" value="{{ old('desa') }}" required>
+                                    </label>
+                                    
+                                    <label for="kecamatan">Kecamatan
+                                        <input type="text" name="kecamatan" class="form-control" value="{{ old('kecamatan') }}" required>
+                                    </label>
+
+                                    <label for="kota">Kab/Kota
+                                        <input type="text" name="kota" class="form-control" value="{{ old('kota') }}" required>
+                                    </label>
+                                    
+                                </div>                              
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card">
+
+                            <div class="card-header">
+                                <h4 class="card-title text-center">Kontak dan Media Sosial UMKM</h4>
+                            </div>
                             <div class="card-body">
                                 
-                                <div class="form-group">
-                                    <label for="jumlah_sapi">Jumlah Hewan Sapi</label>
-                                    <input type="text" id="int" name="jumlah_sapi" class="form-control" value="{{ old('jumlah_sapi') }}" required>
-                                    <p class="text-danger">{{ $errors->first('jumlah_sapi') }}</p>
-                                </div>
-                                <div class="form-group">
-                                    <label for="jumlah_kambing">Jumlah Hewan Kambing</label>
-                                    <input type="text" id="int1" name="jumlah_kambing" class="form-control" value="{{ old('jumlah_kambing') }}" required>
-                                    <p class="text-danger">{{ $errors->first('jumlah_kambing') }}</p>
-                                </div>
-                                <div class="form-group">
-                                    <label for="jumlah_kerbau">Jumlah Hewan Kerbau</label>
-                                    <input type="text" id="int2" name="jumlah_kerbau" class="form-control" value="{{ old('jumlah_kerbau') }}" required>
-                                    <p class="text-danger">{{ $errors->first('jumlah_kerbau') }}</p>
-                                </div>
-                                <div class="form-group">
-                                    <label for="jumlah_lain">Jumlah Hewan Lainnya</label>
-                                    <input type="text" id="int3" name="jumlah_lain" class="form-control" value="{{ old('jumlah_lain') }}" required>
-                                    <p class="text-danger">{{ $errors->first('jumlah_lain') }}</p>
-                                </div>
+                                <div class="form-row">
+                                    <div class="col-md-3 mb-3">
+                                      <label class="form-control-label" >Nomer Whatsapp</label>
+                                      <input type="text" name="no_wa" class="form-control"  value="{{ old('no_wa') }}" required>
+                                      
+                                    </div>
+                                    <div class="col-md-3 mb-3">
+                                      <label class="form-control-label" >Email</label>
+                                      <input type="text" name="email" class="form-control"  value="{{ old('email') }}" required>
+                                      
+                                    </div>
+                                    <div class="col-md-3 mb-3">
+                                      <label class="form-control-label" >Instagram</label>
+                                      <input type="text" name="instagram" class="form-control"  value="{{ old('instagram') }}" required>
+                                      
+                                    </div>
+                                    <div class="col-md-3 mb-3">
+                                        <label class="form-control-label" >Facebook</label>
+                                        <input type="text" name="facebook" class="form-control"  value="{{ old('facebook') }}" required>
+                                        
+                                    </div>
+                                </div>                              
+                            </div>
+
+                            <div class="card-body">                               
                                 <div class="form-group">
                                     <label for="image">Foto</label>
-                                    <input type="file" name="image" class="form-control" value="{{ old('image') }}" required>
+                                    <input type="file" name="image" class="form-control" value="{{ old('image') }}">
                                     <p class="text-danger">{{ $errors->first('image') }}</p>
                                 </div>
+                            </div>
+                            <div class="card-body">                               
                                 <div class="form-group">
-                                    <label>Foto (Optional)</label>
-                                    <input type="file" name="image2" class="form-control" value="{{ old('image2') }}" required>
-                                </div>
-                                <div class="form-group">
-                                    <label>Foto (Optional)</label>
-                                    <input type="file" name="image3" class="form-control" value="{{ old('image3') }}" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="is_pelapor">Apakah Anda Instansi yang memposting ini?</label>
-                                    <select name="is_pelapor" class="form-control" required>
-                                        <option value="1" {{ old('is_pelapor') == '1' ? 'selected':'' }}>Ya</option>
-                                        <option value="0" {{ old('is_pelapor') == '0' ? 'selected':'' }}>Tidak</option>
-                                    </select>
-                                    <p class="text-danger">{{ $errors->first('is_pelapor') }}</p>
-                                </div>
-                                <div class="form-group">
-                                    <button class="btn btn-primary btn-sm">Tambah</button>
+                                    <button class="btn btn-primary btn-xl">Simpan</button>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>

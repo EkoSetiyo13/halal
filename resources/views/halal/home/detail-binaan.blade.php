@@ -27,11 +27,27 @@
 				<div class="col-lg-4">
 					<div class="s_product_img">
 						<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-							<div class="carousel-inner">
+							@if($binaan->image == null)
+							
+								<div class="carousel-inner">
+									<div class="carousel-item active">
+										Tidak Ada Gambar Produk
+									</div>
+								</div>
+							
+							@else
+								<div class="carousel-inner">
+									<div class="carousel-item active">
+										<img class="d-block w-100" style="height: 300px" src="{{ asset('storage/products/' . $binaan->image) }}" alt="{{ $binaan->nama_umkm }}">
+									</div>
+								</div>
+							
+							@endif	
+							{{-- <div class="carousel-inner">
 								<div class="carousel-item active">
 									<img class="d-block w-100" style="height: 300px" src="{{ asset('storage/products/' . $binaan->image) }}" alt="{{ $binaan->nama_umkm }}">
 								</div>
-							</div>
+							</div> --}}
 							{{-- <div class="carousel-inner text-center">
 								<div class="carousel-item active">
 									<a href="data:image/png;base64, {!! base64_encode($downloadQrCode) !!} " download>
@@ -195,6 +211,7 @@
 															<img src="data:image/png;base64, {!! base64_encode($qrcode) !!} ">
 														</a>
 														<p>*Pasang kode ini di web anda untuk menampilkan QRcode anda di web</p>
+														<p> <b>*Berlaku hingga Agustus 2020</b> </p>
 														<button style="margin-bottom : 10px" type="button" onclick="Copy()" class="btn btn-primary">Copy</button>
 														<textarea readonly rows="15" id="myQrCode" name="description" placeholder="informasi mengenai deskripsi yang menarik" id="description" class="form-control"><a href="http://halal.its.ac.id/binaan/{{$binaan->no_umkm}}"><img src="data:image/png;base64, {!! base64_encode($qrcode) !!} "></a></textarea>		
 													</td>
@@ -217,6 +234,7 @@
 															<img src="data:image/png;base64, {!! base64_encode($qrcodeWithLogo) !!} ">
 														</a>
 														<p>*Pasang kode ini di web anda untuk menampilkan QRcode anda di web</p>
+														<p> <b>*Berlaku hingga Agustus 2020</b> </p>
 														<button style="margin-bottom : 10px" type="button" onclick="CopyLogo()" class="btn btn-primary">Copy</button>
 														<textarea readonly rows="15" id="myQrCodeLogo" name="description" placeholder="informasi mengenai deskripsi yang menarik" id="description" class="form-control"><a href="http://halal.its.ac.id/binaan/{{$binaan->no_umkm}}"><img src="data:image/png;base64, {!! base64_encode($qrcodeWithLogo) !!} "></a></textarea>
 													</td>

@@ -72,24 +72,6 @@ class UmkmController extends Controller
         $this->middleware('auth');
     }
 
-    // public function index()
-    // {
-    //     if (Auth::user()->id == 1) {
-    //         $penyuplai = FormPenyuplaiQurban::orderBy('created_at', 'DESC');
-    //         if (request()->q != '') {
-    //             $penyuplai = $penyuplai->where('name', 'LIKE', '%' . request()->q . '%');
-    //         }
-    //     } else {
-    //         $penyuplai = FormPenyuplaiQurban::where('user_id', '=', Auth::user()->id)->orderBy('created_at', 'DESC');
-    //         if (request()->q != '') {
-    //             $penyuplai = $penyuplai->where('name', 'LIKE', '%' . request()->q . '%');
-    //         }
-    //     }
-        
-    //     $penyuplai = $penyuplai->paginate(10);
-    //     return view('umkm.index', compact('penyuplai'));
-    // }
-
     public function create()
     {
         
@@ -97,39 +79,22 @@ class UmkmController extends Controller
     }
 
     public function store(Request $request)
-    {
-        
-            $file = $request->file('image');
-            $filename = time() . Str::slug($request->name . 'A') . '.' . $file->getClientOriginalExtension();
-            $file->storeAs('public/products', $filename);
-
-            $file = $request->file('image2');
-            $filename2 = time() . Str::slug($request->name . 'B') . '.' . $file->getClientOriginalExtension();
-            $file->storeAs('public/products', $filename2);
-
-            $file = $request->file('image3');
-            $filename3 = time() . Str::slug($request->name .'C') . '.' . $file->getClientOriginalExtension();
-            $file->storeAs('public/products', $filename3);
-            
-
-            $penyuplai = FormPenyuplaiQurban::create([
-                'name' => $request->name,
-                'slug' => $request->name,
-                'description' => $request->description,
-                'image' => $filename,
-                'image2' => $filename2,
-                'image3' => $filename3,
-                'jumlah_sapi' => $request->jumlah_sapi,
-                'jumlah_kambing' => $request->jumlah_kambing,
-                'jumlah_kerbau' => $request->jumlah_lain,
-                'jumlah_lain' => $request->jumlah_lain,
-                'user_id' => $request->user_id,
-                'status' => $request->status,
-                'alamat' => $request->alamat,
-                'no_wa' => $request->no_wa,
-                'map_alamat' => $request->map_alamat,
-                'pengiriman' => implode(",", $request->pengiriman),
-                'is_pelapor' => $request->is_pelapor,
+    {       
+            $penyuplai = Umkm::create([
+                'no_umkm' => $request->no_umkm, 
+                'nama_pemilik' => $request->nama_pemilik,
+                'nama_umkm' => $request->nama_umkm, 
+                'nama_produk' => $request->nama_produk, 
+                'tipe_binaan' => $request->tipe_binaan,
+                'alamat' => $request->alamat, 
+                'desa' => $request->desa, 
+                'kecamatan' => $request->kecamatan,
+                'kota' => $request->kota, 
+                'no_wa' => $request->no_wa,  
+                'email' => $request->email,
+                'instagram' => $request->instagram, 
+                'facebook' => $request->facebook,
+                'status' => $request->status
             ]);
             return redirect(route('umkm.index'))->with(['success' => 'Produk Baru Ditambahkan']);
     }

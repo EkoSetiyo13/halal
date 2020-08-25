@@ -176,13 +176,13 @@
                             </div>
                             <div class="accordion-body">
                                 <div class="content">
-                                    <p>Duis vulputate porttitor urna sit amet pretium. Phasellus sed pulvinar eros, condimentum consequat ex. Suspendisse potenti.
+                                    <p>Pusat Studi Halal ialah suatu pusat penelitian yang berfokus pada penelitian produk halal. 
                                     <br><br>
-                                    Pellentesque maximus lorem sed elit imperdiet mattis. Duis posuere mauris ut eros rutrum sodales. Aliquam erat volutpat.</p>
+                                    Selain seminar, kegiatan Pusat Studi Halal meliputi kontribusi untuk membantu umkm dalam memahami produk halal sebagai bentuk pengabdian masyarakata yang dilakukan di fakultas dan departemen lain di ITS.</p>
                                 </div>
                             </div>
                         </article>
-                        <article class="accordion">
+                        {{-- <article class="accordion">
                             <div class="accordion-head">
                                 <span>Apa Keunggulan Pusat Kajian Halal</span>
                                 <span class="icon">
@@ -254,7 +254,7 @@
                                     <p>Suspendisse potenti. Ut dapibus leo ut massa vulputate semper. Pellentesque maximus lorem sed elit imperdiet mattis. Duis posuere mauris ut eros rutrum sodales. Aliquam erat volutpat.</p>
                                 </div>
                             </div>
-                        </article>
+                        </article> --}}
                     </div>
                 </div>
             </div>

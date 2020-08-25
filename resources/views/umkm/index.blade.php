@@ -21,9 +21,9 @@
                         <div class="card-header">
                             <h4 class="card-title">
                                 Data UMKM
-                                {{-- <div class="float-right">
+                                <div class="float-right">
                                     <a href="{{ route('umkm.create') }}" class="btn btn-primary btn-sm">Tambah</a>
-                                </div> --}}
+                                </div>
                             </h4>
                         </div>
                         <div class="card-header">
@@ -34,14 +34,15 @@
                             <a href="{{ route('users.export') }}" class="btn btn-primary btn-md">EXPORT</a>
                         </div>
                         </div>
-                        @if (session('success'))
-                                <div class="alert alert-success">{{ session('success') }}</div>
-                            @endif
-
-                        @if (session('error'))
-                                <div class="alert alert-danger">{{ session('error') }}</div>
-                        @endif
+                       
                         <div class="table-responsive py-4">
+                            @if (session('success'))
+                            <div class="alert alert-success">{{ session('success') }}</div>
+                                @endif
+
+                            @if (session('error'))
+                                    <div class="alert alert-danger">{{ session('error') }}</div>
+                            @endif
                           <table class="table table-flush" id="datatable-basic">
                             <thead class="thead-light">
                               <tr>

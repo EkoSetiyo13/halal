@@ -29,7 +29,7 @@ class LoginController extends Controller
     public function redirectTo()
     {
         if (Auth::user()->is_admin == 1) {
-            return '/admin/home';
+            return '/admin/halal';
         } else if (Auth::user()->nama_role == 'penyuplai') {
             return '/member/form-penyuplai';
         } else {
