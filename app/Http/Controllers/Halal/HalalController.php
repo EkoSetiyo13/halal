@@ -89,7 +89,7 @@ class HalalController extends Controller
     public function detailKader($no_binaan)
     {
         $data = $no_binaan;
-        $binaan = Umkm::where('no_umkm', $no_binaan)->first();
+        $binaan = Umkm::Where('nama_umkm', '=', '-')->where('no_umkm', $no_binaan)->first();
  
         //binaan
         $qrcodeWithLogoKader = QrCode::format('png')->merge('assets/logo_halal.png', 0.3, true)->size(300)->errorCorrection('H')->generate('http://halal.its.ac.id/kader/' . $binaan->no_umkm);
