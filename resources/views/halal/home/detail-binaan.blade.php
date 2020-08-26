@@ -31,7 +31,7 @@
 							
 								<div class="carousel-inner">
 									<div class="carousel-item active">
-										Tidak Ada Gambar Produk
+										<p class="text-center" style="padding-bottom : 20px"> Tidak Ada Gambar Produk </p>
 									</div>
 								</div>
 							
