@@ -35,7 +35,7 @@
                         <div class="item service-item" style="height: 250px">
                             <h5 class="service-title" style="height: 50px">{{$data->nama_pemilik}}</h5>
                             <p style="text-align: left; height: 10px"> <b>Alamat :</b> {{$data->kota}}</p>
-                            <p style="text-align: left; height: 10px"> <b>No Binaan :</b> {{$data->no_umkm}}</p>
+                            <p style="text-align: left; height: 10px"> <b>No Kader :</b> {{$data->no_umkm}}</p>
                             <a href="{{ url('/kader/' . $data->no_umkm) }}" class="main-button">Detail</a>
                         </div>
                     </div>

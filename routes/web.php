@@ -27,7 +27,7 @@ Route::group(['prefix' => 'kurban'], function() {
 Route::get('/', 'Halal\HalalController@home')->name('halal');
 Route::get('/kader', 'Halal\HalalController@kader')->name('kader');
 Route::get('/kader-cari', 'Halal\HalalController@cariKader')->name('cari.kader');
-Route::get('/kader/{no_binaan}', 'Halal\HalalController@detailBinaan')->name('detail.binaan');
+Route::get('/kader/{no_binaan}', 'Halal\HalalController@detailKader')->name('detail.kader');
 
 Route::get('/binaan', 'Halal\HalalController@binaan')->name('binaan');
 Route::get('/binaan-cari', 'Halal\HalalController@cariBinaan')->name('cari.binaan');
