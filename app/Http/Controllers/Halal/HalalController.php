@@ -18,7 +18,7 @@ class HalalController extends Controller
 
     public function binaan()
     {
-        $umkms = Umkm::Where('status', '=', true)->Where('nama_umkm', '!=', '-')->orderBy('id', 'ASC')->paginate(9);
+        $umkms = Umkm::Where('status', '=', true)->Where('nama_umkm', '!=', '-')->orderBy('no_umkm', 'ASC')->paginate(9);
         $data = 'makanan';
         //return response()->json($umkms);
         return view('halal.home.binaan', compact('umkms'));
@@ -26,7 +26,7 @@ class HalalController extends Controller
 
     public function kader()
     {
-        $umkms = Umkm::Where('nama_umkm', '=', '-')->orderBy('id', 'ASC')->paginate(9);
+        $umkms = Umkm::Where('nama_umkm', '=', '-')->orderBy('no_umkm', 'ASC')->paginate(9);
         $data = 'makanan';
         //return response()->json($umkms);
         return view('halal.home.kader', compact('umkms'));
