@@ -234,7 +234,7 @@
 															<img src="data:image/png;base64, {!! base64_encode($qrcodeWithLogo) !!} ">
 														</a>
 														<p>*Pasang kode ini di web anda untuk menampilkan QRcode anda di web</p>
-														<p> <b>*Berlaku hingga Agustus 2020</b> </p>
+														<p> <b>*Berlaku hingga Agustus 2022</b> </p>
 														<button style="margin-bottom : 10px" type="button" onclick="CopyLogo()" class="btn btn-primary">Copy</button>
 														<textarea readonly rows="15" id="myQrCodeLogo" name="description" placeholder="informasi mengenai deskripsi yang menarik" id="description" class="form-control"><a href="http://halal.its.ac.id/binaan/{{$binaan->no_umkm}}"><img src="data:image/png;base64, {!! base64_encode($qrcodeWithLogo) !!} "></a></textarea>
 													</td>
