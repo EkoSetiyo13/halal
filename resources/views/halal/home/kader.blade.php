@@ -20,7 +20,7 @@
                     <form action="{{ url('kader-cari') }}" method="GET">
                         <div class="row">
                             <div class="searchbar">
-                                <input class="search_input" type="text" name="q" placeholder="Search...">
+                                <input class="search_input" type="text" name="q" placeholder="Cari Nama Anda....">
                                 <button type="submit" class="search_icon"><i class="fa fa-search"></i></button>    
                             </div>
                         </div>

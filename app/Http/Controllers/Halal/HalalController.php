@@ -36,11 +36,17 @@ class HalalController extends Controller
     public function cariBinaan(Request $request)
     {
         $query = $request->get('q');
-        $umkms = Umkm::where('nama_pemilik', 'LIKE', '%' . $query . '%')
+        $umkms = Umkm::Where('status', '=', true)
+                            ->where('nama_pemilik', 'LIKE', '%' . $query . '%')
                             ->orWhere('nama_umkm', 'LIKE', '%'.$query.'%' )
+                            ->Where('status', '=', true)
                             ->orWhere('no_umkm', 'LIKE', '%'.$query.'%' )
+                            ->Where('status', '=', true)
                             ->orWhere('nama_produk', 'LIKE', '%'.$query.'%' )
+                            ->Where('status', '=', true)
                             ->paginate(5);
+
+        
         
         
         //return response()->json($umkms);
@@ -50,11 +56,10 @@ class HalalController extends Controller
     public function cariKader(Request $request)
     {
         $query = $request->get('q');
-        $umkms = Umkm::Where('nama_umkm', '=', '-')
+        $umkms = Umkm::Where('status', '=', true)
+                            //->Where('status', '=', true)
+                            ->Where('nama_umkm', '=', '-')
                             ->where('nama_pemilik', 'LIKE', '%' . $query . '%')
-                            ->orWhere('nama_umkm', 'LIKE', '%'.$query.'%' )
-                            ->orWhere('no_umkm', 'LIKE', '%'.$query.'%' )
-                            ->orWhere('nama_produk', 'LIKE', '%'.$query.'%' )
                             ->paginate(5);
         
         
@@ -65,7 +70,12 @@ class HalalController extends Controller
     public function detailBinaan($no_binaan)
     {
         $data = $no_binaan;
-        $binaan = Umkm::where('no_umkm', $no_binaan)->first();
+        $binaan = Umkm::where('status', '=', true)->where('no_umkm', $no_binaan)->first();
+
+        if ($binaan == null)
+        {  
+            return view('error');
+        }
 
         //binaan
         $qrcodeWithLogo = QrCode::format('png')->merge('assets/logo_halal.png', 0.3, true)->size(300)->errorCorrection('H')->generate('http://halal.its.ac.id/binaan/' . $binaan->no_umkm);
@@ -74,7 +84,7 @@ class HalalController extends Controller
         $downloadQrcodeWithLogo = QrCode::format('png')->merge('assets/logo_halal.png', 0.3, true)->size(1000)->errorCorrection('H')->generate('http://halal.its.ac.id/binaan/' . $binaan->no_umkm);
         $downloadQrCode = QrCode::format('png')->size(1000)->errorCorrection('H')->generate('http://halal.its.ac.id/binaan/' . $binaan->no_umkm);
  
-        //binaan
+        //kader
         $qrcodeWithLogoKader = QrCode::format('png')->merge('assets/logo_halal.png', 0.3, true)->size(300)->errorCorrection('H')->generate('http://halal.its.ac.id/kader/' . $binaan->no_umkm);
         $qrcodeKader = QrCode::format('png')->size(300)->errorCorrection('H')->generate('http://halal.its.ac.id/kader/' . $binaan->no_umkm);
     
