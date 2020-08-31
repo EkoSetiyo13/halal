@@ -12,7 +12,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="main_title">
-                    <h2>Tampilan Semua Binaan</h2>
+                    <h2>Tampilan Semua Kader</h2>
                 </div>
             </div>
             <div class="row">

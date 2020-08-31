@@ -1,7 +1,7 @@
 @extends('halal.layouts.halal')
 
 @section('title')
-    <title>Binaan Halal ITS</title>
+    <title>Kader Halal ITS</title>
 @endsection
 
 @section('content')
