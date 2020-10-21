@@ -104,14 +104,13 @@
 						<span class="icon-bar"></span>
 					</button>
 					<!-- Collect the nav links, forms, and other content for toggling -->
-					<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+					<div class="collapse navbar-collapse" id="navbarSupportedContent">
 						<div class="row w-100">
 							<div class="col-lg-12 pr-0">
 								@include('halal.layouts.menu')
 							</div>
 						</div>
 					</div>
-					
 				</div>
 			</nav>
 		</div>
@@ -196,10 +195,10 @@
 	<script src="{{ asset('ecommerce/vendors/counter-up/jquery.counterup.js') }}"></script>
 	<script src="{{ asset('ecommerce/js/mail-script.js') }}"></script>
 	<script src="{{ asset('ecommerce/js/theme.js') }}"></script>
-	<script src="{{ asset('ecommerce/js/jquery.slim.min.js') }}"></script>
-	<script src="{{ asset('ecommerce/js/bootstrap.bundle.min.js') }}"></script>
+	{{-- <script src="{{ asset('ecommerce/js/jquery.slim.min.js') }}"></script>
+	<script src="{{ asset('ecommerce/js/bootstrap.bundle.min.js') }}"></script> --}}
 
-	<script src="assets/assets/js/jquery-2.1.0.min.js"></script>
+	{{-- <script src="assets/assets/js/jquery-2.1.0.min.js"></script> --}}
 
     <!-- Bootstrap -->
     <script src="assets/assets/js/popper.js"></script>
@@ -244,5 +243,7 @@
 	alert("Copied the text: " + copyText.value);
 	}
 </script>
+
+	
 </body>
 </html>

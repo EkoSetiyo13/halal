@@ -1,5 +1,5 @@
-<ul class="nav navbar-nav center_nav pull-right">
-    
+<ul class="nav navbar-nav mr-auto center_nav pull-right">
+
     <li class="scroll-to-section nav-item"><a class="nav-link" style="color:white" href="{{ route('halal') }}#welcome" class="active">Beranda</a></li>
     <li class="scroll-to-section nav-item"><a class="nav-link" style="color:white" href="{{ route('halal') }}#about">Tentang Kami</a></li>
     <li class="scroll-to-section nav-item"><a class="nav-link" style="color:white" href="{{ route('halal') }}#services">UMKM</a></li>
