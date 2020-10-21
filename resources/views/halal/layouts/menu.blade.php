@@ -13,6 +13,15 @@
         <li class="scroll-to-section nav-item"><a class="nav-link"  href="">Kelas C</a></li> --}}
     </ul>
     </li>
+    <li class="submenu nav-item"> <a class="nav-link" style="color:white"  href="javascript:;">Dosen & Mahasiswa</a>
+        <ul>
+            <li class="scroll-to-section nav-item"><a class="nav-link" href="{{ route('data.dosen') }}">Dosen</a></li>
+            <li class="scroll-to-section nav-item"><a class="nav-link" href="{{ route('data.mahasiswa') }}">Mahasiswa</a></li>
+            {{-- <li class="scroll-to-section nav-item"><a class="nav-link"  href="">Kelas A</a></li>
+            <li class="scroll-to-section nav-item"><a class="nav-link" href="">Kelas B</a></li>
+            <li class="scroll-to-section nav-item"><a class="nav-link"  href="">Kelas C</a></li> --}}
+        </ul>
+        </li>
     <li class="scroll-to-section nav-item"><a class="nav-link" style="color:white" href="{{ route('halal') }}#contact-us">Lokasi</a></li>
     @if (Route::has('login'))
     @auth

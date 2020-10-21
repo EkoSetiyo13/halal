@@ -24,6 +24,25 @@ class HalalController extends Controller
         return view('halal.home.binaan', compact('umkms'));
     }
 
+    public function dataDosen()
+    {
+        $umkms = Umkm::Where('status', '=', true)->Where('nama_umkm', '!=', '-')->orderBy('no_umkm', 'ASC')->paginate(9);
+        $data = 'makanan';
+        $nomerKetua = '1';
+        $nomerWakilKetua = '2';
+        $nomerDosen = array( '3','4','5','6','7','8','9','10','11','12','13','14','15','16','17','18','19','20');
+        $nomerMahasiswa = array('21','22','23','24');
+        //return response()->json($nomerDosen);
+        return view('halal.home.data-dosen', compact('nomerKetua','nomerWakilKetua','nomerDosen', 'nomerMahasiswa'));
+    }
+
+    public function dataMahasiswa()
+    {
+        $nomerMahasiswa = array('21','22','23','24');
+        //return response()->json($nomerDosen);
+        return view('halal.home.data-mahasiswa', compact('nomerMahasiswa'));
+    }
+
     public function kader()
     {
         $umkms = Umkm::Where('nama_umkm', '=', '-')->orderBy('no_umkm', 'ASC')->paginate(9);

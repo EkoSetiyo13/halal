@@ -33,6 +33,9 @@ Route::get('/binaan', 'Halal\HalalController@binaan')->name('binaan');
 Route::get('/binaan-cari', 'Halal\HalalController@cariBinaan')->name('cari.binaan');
 Route::get('/binaan/{no_binaan}', 'Halal\HalalController@detailBinaan')->name('detail.binaan');
 
+Route::get('/data-dosen', 'Halal\HalalController@dataDosen')->name('data.dosen');
+Route::get('/data-mahasiswa', 'Halal\HalalController@dataMahasiswa')->name('data.mahasiswa');
+
 // ========================================= Landing Page Halal Akhir ============================================ //
 
 
