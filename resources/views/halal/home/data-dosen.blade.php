@@ -16,6 +16,8 @@
                 </div>
             </div>
 
+            {{-- <img src="{{ asset('/assets/dosens/1.png') }}"> --}}
+
 
             <div class="row ">
                 <div class="col-md-2 col-sm-6 mb-2"></div>
