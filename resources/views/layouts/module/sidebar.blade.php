@@ -1,18 +1,6 @@
 
         <ul class="navbar-nav">
             @if (Auth::user()->is_admin == true)
-            {{-- <li class="nav-item">
-                <a class="nav-link" href="/admin/home">
-                    <i class="ni ni-chart-pie-35 text-info"></i>
-                        <span class="nav-link-text">Dashboard</span>
-                </a>
-            </li> --}}
-            {{-- <li class="nav-item">
-                <a class="nav-link" href="/admin/post">
-                    <i class="ni ni-chart-pie-35 text-info"></i>
-                        <span class="nav-link-text">Manajemen Posting</span>
-                </a>
-            </li> --}}
             <li class="nav-item">
                 <a class="nav-link" href="#dashboard" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-dashboard">
                   <i class="ni ni-chart-pie-35 text-primary"></i>
@@ -46,13 +34,13 @@
                 <div class="collapse" id="navbar-web">
                 <ul class="nav">                     
                       <li class="nav-item">
-                          <a class="nav-link" href="/">
+                          <a class="nav-link" href="/" target="_blank">
                               <i class="ni ni-book-bookmark text-info"></i>
                                   <span class="nav-link-text">Website Halal</span>
                           </a>
                       </li> 
                       <li class="nav-item">
-                        <a class="nav-link" href="/kurban">
+                        <a class="nav-link" href="/kurban" target="_blank">
                             <i class="ni ni-cart text-info"></i>
                                 <span class="nav-link-text">Website Kurban</span>
                         </a>

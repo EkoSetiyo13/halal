@@ -80,6 +80,13 @@ class UmkmController extends Controller
 
     public function store(Request $request)
     {       
+
+            if ($request->hasFile('image')) {
+                $file = $request->file('image');
+                $filename = time() . Str::slug($request->nama_pemilik) . '.' . $file->getClientOriginalExtension();
+                $file->storeAs('public/products', $filename);
+            }
+
             $penyuplai = Umkm::create([
                 'no_umkm' => $request->no_umkm, 
                 'nama_pemilik' => $request->nama_pemilik,
@@ -94,7 +101,8 @@ class UmkmController extends Controller
                 'email' => $request->email,
                 'instagram' => $request->instagram, 
                 'facebook' => $request->facebook,
-                'status' => $request->status
+                'status' => $request->status,
+                'image' => $filename,
             ]);
             return redirect(route('umkm.index'))->with(['success' => 'Produk Baru Ditambahkan']);
     }

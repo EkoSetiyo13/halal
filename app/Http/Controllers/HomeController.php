@@ -72,7 +72,7 @@ class HomeController extends Controller
         $penerimaAdmin5 = FormPenerimaQurban::where('user_id', '=', '5')->count();
         $admin5 = $penerimaAdmin5 + $penyuplaiAdmin5;
 
-        return view('home', compact(
+        return view('dashboard.kurban', compact(
             'userPenyuplai',
             'userPenerima',
             'postinganPenerima',

@@ -7,8 +7,8 @@
 @section('content')
 <main class="main">
     <ol class="breadcrumb">
-        <li class="breadcrumb-item">Home</li>
-        <li class="breadcrumb-item active">Penyuplai</li>
+        {{-- <li class="breadcrumb-item">Home</li>
+        <li class="breadcrumb-item active">Penyuplai</li> --}}
     </ol>
     <div class="container-fluid">
         <div class="animated fadeIn">
@@ -18,7 +18,7 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title">Tambah Penyuplai</h4>
+                                <h4 class="card-title">Tambah Binaan</h4>
                             </div>
 
                             <div class="card-body">

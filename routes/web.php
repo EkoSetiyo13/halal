@@ -4,7 +4,7 @@ Auth::routes();
 
 // ========================================= Landing Page Kurban Mulai ============================================ //
 
-Route::group(['prefix' => 'kurban'], function() {
+Route::group(['prefix' => 'kurban'], function () {
     Route::get('/', 'Ecommerce\FrontController@index')->name('front.index');
     Route::get('/product', 'Ecommerce\FrontController@product')->name('front.product');
     Route::get('/penerima', 'Ecommerce\FrontController@penerima')->name('front.penerima');
@@ -42,9 +42,9 @@ Route::get('/data-mahasiswa', 'Halal\HalalController@dataMahasiswa')->name('data
 
 // ========================================= Dashboard Mulai ============================================ //
 
-Route::group(['prefix' => 'admin', 'middleware' => 'is_admin'], function() {
-    Route::get('/home', 'HomeController@adminHome')->name('admin.home'); 
-    Route::get('/halal', 'HomeController@adminHalal')->name('admin.halal'); 
+Route::group(['prefix' => 'admin', 'middleware' => 'is_admin'], function () {
+    Route::get('/home', 'HomeController@adminHome')->name('admin.home');
+    Route::get('/halal', 'HomeController@adminHalal')->name('admin.halal');
     Route::resource('category', 'CategoryController')->except(['create', 'show']);
     Route::resource('user', 'UserController')->except(['create', 'show']);
     Route::get('/user/{id}', 'UserController@profile')->name('user.profile');
@@ -57,15 +57,15 @@ Route::group(['prefix' => 'admin', 'middleware' => 'is_admin'], function() {
 });
 
 
-Route::group(['prefix' => 'member', 'middleware' => 'is_penyuplai'], function() {
+Route::group(['prefix' => 'member', 'middleware' => 'is_penyuplai'], function () {
     Route::resource('form-penyuplai', 'FormPenyuplaiQurbanController')->except(['show']);
 });
 
-Route::group(['prefix' => 'member', 'middleware' => 'is_penerima'], function() {
+Route::group(['prefix' => 'member', 'middleware' => 'is_penerima'], function () {
     Route::resource('form-penerima', 'FormPenerimaQurbanController')->except(['show']);
 });
 
-Route::group(['prefix' => 'member'], function() {
+Route::group(['prefix' => 'member'], function () {
     Route::resource('product', 'ProductController')->except(['show']);
 });
 
@@ -82,6 +82,12 @@ Route::get('/contoh', function () {
     return view('halal/home/home');
 });
 
-Route::fallback(function() {
+Route::fallback(function () {
     return view('error');
+});
+
+
+//================================== V2 Kurban =====================================//
+Route::group(['prefix' => 'tes', 'namespace' => 'V2'], function () {
+    Route::get('/', 'TestController@indexTailwind')->name('front.index');
 });
