@@ -89,5 +89,15 @@ Route::fallback(function () {
 
 //================================== V2 Kurban =====================================//
 Route::group(['prefix' => 'tes', 'namespace' => 'V2'], function () {
-    Route::get('/', 'TestController@indexTailwind')->name('front.index');
+    Route::get('/', 'TestController@indexTailwind');
+
+    Route::group(['namespace' => 'Auth'], function () {
+        Route::get('/login', 'LoginController@index');
+        Route::get('/register', 'RegisterController@index');
+    });
+
+    Route::group(['namespace' => 'Landing'], function () {
+        Route::get('/kurban', 'LandingPageController@index');
+       
+    });
 });
