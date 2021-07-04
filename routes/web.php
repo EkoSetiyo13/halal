@@ -101,3 +101,10 @@ Route::group(['prefix' => 'tes', 'namespace' => 'V2'], function () {
        
     });
 });
+
+Route::group(['prefix' => 'dashboard', 'namespace' => 'V2\Dashboard'], function () {
+    Route::get('/', 'MainController@index');
+    Route::group(['prefix' => 'kurban', 'namespace' => 'ManagementKurban'], function () {
+        Route::get('/tambah', 'PenyuplaiKurbanController@index');
+    });
+});
