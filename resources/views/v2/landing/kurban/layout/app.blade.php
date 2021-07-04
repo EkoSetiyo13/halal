@@ -30,23 +30,35 @@
 
 <body class="leading-normal tracking-normal text-white primary" style="font-family: 'Source Sans Pro', sans-serif;">
     <!--Nav-->
-    @include('v2.landing.kurban.layout.module.header')
+    @include('v2.landing.kurban.layout.header')
     <!--Hero-->
     <div class="pt-40 pb-40">
         <div class="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
             <!--Left Col-->
-            <div class="flex flex-col w-full md:w-3/5 justify-center items-start text-center md:text-left">
-                <p class="uppercase tracking-loose w-full">Bersama kami...</p>
+            <div class="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left">
+                <p class="uppercase tracking-loose w-full">Salurkan Kurbanmu disini</p>
                 <h1 class="my-4 text-5xl font-bold leading-tight">
                     Pusat Kajian Halal
                 </h1>
                 <p class="leading-normal text-2xl mb-8">
-                    Lembaga rujukan dalam kajian halal berbasis ilmu pengetahuan dan teknologi untuk masyarakat Indonesi
-                    dan dunia.
+                    Setiap satu helai rambut kurban adalah satu kebaikan. Maka tebarlah kebaikan di hari Idul Adha yang
+                    mulia ini. <b> (HR Ahmad dan Ibnu Majah) </b>
                 </p>
             </div>
             <!--Right Col-->
+            <div class="w-full md:w-1/5">
 
+            </div>
+            <div class="w-full md:w-2/5">
+                <div class="grid grid-cols-2">
+                    <div><img style=" -webkit-filter: brightness(0) invert(1); filter: brightness(0) invert(1); display: block; margin-left: auto; margin-right: auto;" class="w-full "
+                            src="{{ asset('/v2/other/image/siluet-sapi.png') }}" /></div>
+                    <!-- ... -->
+                    <div><img
+                            style="display: block; margin-left: auto; margin-right: auto; -webkit-filter: brightness(0) invert(1); filter: brightness(0) invert(1);" class="w-full"
+                            src="{{ asset('/v2/other/image/goat.png') }}" /></div>
+                </div>
+            </div>
         </div>
     </div>
     <div class="relative -mt-12 lg:-mt-24">
@@ -380,19 +392,19 @@
         <div class="container px-5 py-24 mx-auto">
             <div class="flex flex-wrap -m-4 text-center">
                 <div class="p-4 sm:w-1/4 w-1/2">
-                    <h2 class="title-font font-medium sm:text-4xl text-3xl text-white-900">2.7K</h2>
+                    <h2 class="title-font font-medium sm:text-4xl text-3xl text-white-900">0</h2>
                     <p class="leading-relaxed">Penyedia Kurban</p>
                 </div>
                 <div class="p-4 sm:w-1/4 w-1/2">
-                    <h2 class="title-font font-medium sm:text-4xl text-3xl text-white-900">1.8K</h2>
+                    <h2 class="title-font font-medium sm:text-4xl text-3xl text-white-900">0</h2>
                     <p class="leading-relaxed">Orang Berkurban</p>
                 </div>
                 <div class="p-4 sm:w-1/4 w-1/2">
-                    <h2 class="title-font font-medium sm:text-4xl text-3xl text-white-900">35</h2>
+                    <h2 class="title-font font-medium sm:text-4xl text-3xl text-white-900">0</h2>
                     <p class="leading-relaxed">Lembaga Penerima Kurban</p>
                 </div>
                 <div class="p-4 sm:w-1/4 w-1/2">
-                    <h2 class="title-font font-medium sm:text-4xl text-3xl text-white-900">4</h2>
+                    <h2 class="title-font font-medium sm:text-4xl text-3xl text-white-900">0</h2>
                     <p class="leading-relaxed">Total Penyaluran</p>
                 </div>
             </div>
@@ -697,7 +709,7 @@
 
 
     <!--Footer-->
-    @include('v2.landing.kurban.layout.module.footer')
+    @include('v2.landing.kurban.layout.footer')
     <!-- jQuery if you need it
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   -->
