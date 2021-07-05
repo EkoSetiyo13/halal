@@ -4,11 +4,20 @@ namespace App\Http\Controllers\V2\Landing;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Product;
+use App\Category;
+use App\FormPenerimaQurban;
+use App\FormPenyuplaiQurban;
+use App\Post;
 
 class LandingPageController extends Controller
 {
     public function index()
     {
-        return view('v2.landing.kurban.layout.app');
+        $products = Product::orderBy('created_at', 'DESC')->paginate(10);
+        $penerima = FormPenerimaQurban::where('status', '=', 1)->orderBy('created_at', 'DESC')->paginate(3);
+        $penyuplai = FormPenyuplaiQurban::where('status', '=', 1)->orderBy('created_at', 'DESC')->paginate(33);
+        $post1  = Post::find(1);
+        return view('v2.landing.kurban.layout.app', compact('products', 'penerima', 'penyuplai', 'post1'));
     }
 }

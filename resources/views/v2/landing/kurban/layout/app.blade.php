@@ -51,12 +51,13 @@
             </div>
             <div class="w-full md:w-2/5">
                 <div class="grid grid-cols-2">
-                    <div><img style=" -webkit-filter: brightness(0) invert(1); filter: brightness(0) invert(1); display: block; margin-left: auto; margin-right: auto;" class="w-full "
-                            src="{{ asset('/v2/other/image/siluet-sapi.png') }}" /></div>
+                    <div><img
+                            style=" -webkit-filter: brightness(0) invert(1); filter: brightness(0) invert(1); display: block; margin-left: auto; margin-right: auto;"
+                            class="w-full " src="{{ asset('/v2/other/image/siluet-sapi.png') }}" /></div>
                     <!-- ... -->
                     <div><img
-                            style="display: block; margin-left: auto; margin-right: auto; -webkit-filter: brightness(0) invert(1); filter: brightness(0) invert(1);" class="w-full"
-                            src="{{ asset('/v2/other/image/goat.png') }}" /></div>
+                            style="display: block; margin-left: auto; margin-right: auto; -webkit-filter: brightness(0) invert(1); filter: brightness(0) invert(1);"
+                            class="w-full" src="{{ asset('/v2/other/image/goat.png') }}" /></div>
                 </div>
             </div>
         </div>
@@ -422,96 +423,40 @@
             <div class="w-full mb-4">
                 <div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
                     <!--Card 1-->
-                    <a href="#" class="flex flex-wrap no-underline hover:no-underline">
-                        <div class="rounded overflow-hidden shadow-lg">
-                            <img class="w-full" src="{{ asset('/ecommerce/img/image-header-satu.jpeg') }}"
-                                alt="Mountain">
-                            <div class="px-6 py-4">
-                                <div class="font-bold text-xl mb-2 text-black">[Nama Pemiliki] Bu Lilik </div>
-                                <p class="text-gray-700 text-base">
-                                    <b>Alamat</b>
-                                    <br>
-                                    Blok T/32 Peternakan Rungkut
-                                    <br>
-                                    <br>
-                                    <b>Keterangan</b>
-                                    <br>
-                                    Pemotongan Kambing Rp300rb, Sapi 1,5juta. CP : Bapak Didik (085853710627, Ibu Lilik
-                                    (082140672927)
+                    @forelse($penyuplai as $row)
+                        <a href="#" class="flex flex-wrap no-underline hover:no-underline">
+                            <div class="rounded overflow-hidden shadow-lg">
+                                <img class="w-full" src="{{ asset('storage/products/' . $row->image) }}"
+                                    alt="Mountain">
+                                <div class="px-6 py-4">
+                                    <div class="font-bold text-xl mb-2 text-black"> {{ $row->name }}</div>
+                                    <p class="text-gray-700 text-base">
+                                        <b>Alamat</b>
+                                        <br>
+                                        {{ $row->alamat }}
+                                        <br>
+                                        <br>
+                                        <b>Keterangan</b>
+                                        <br>
+                                        {{ substr($row->description, -100) }}
 
-                                </p>
+                                    </p>
+                                </div>
+                                <div class="px-6 pt-4 pb-2">
+                                    <span
+                                        class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#surabaya</span>
+                                    <span
+                                        class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#kambing</span>
+                                    <span
+                                        class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#sapi</span>
+                                </div>
                             </div>
-                            <div class="px-6 pt-4 pb-2">
-                                <span
-                                    class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#surabaya</span>
-                                <span
-                                    class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#kambing</span>
-                                <span
-                                    class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#sapi</span>
-                            </div>
-                        </div>
-                    </a>
-                    <!--Card 2-->
-                    <a href="#" class="flex flex-wrap no-underline hover:no-underline">
-                        <div class="rounded overflow-hidden shadow-lg">
-                            <img class="w-full" src="{{ asset('/ecommerce/img/image-header-satu.jpeg') }}"
-                                alt="Mountain">
-                            <div class="px-6 py-4">
-                                <div class="font-bold text-xl mb-2 text-black">[Nama Pemiliki] Bu Lilik </div>
-                                <p class="text-gray-700 text-base">
-                                    <b>Alamat</b>
-                                    <br>
-                                    Blok T/32 Peternakan Rungkut
-                                    <br>
-                                    <br>
-                                    <b>Keterangan</b>
-                                    <br>
-                                    Pemotongan Kambing Rp300rb, Sapi 1,5juta. CP : Bapak Didik (085853710627, Ibu Lilik
-                                    (082140672927)
 
-                                </p>
-                            </div>
-                            <div class="px-6 pt-4 pb-2">
-                                <span
-                                    class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#surabaya</span>
-                                <span
-                                    class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#kambing</span>
-                                <span
-                                    class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#sapi</span>
-                            </div>
-                        </div>
-                    </a>
 
-                    <!--Card 3-->
-                    <a href="#" class="flex flex-wrap no-underline hover:no-underline">
-                        <div class="rounded overflow-hidden shadow-lg">
-                            <img class="w-full" src="{{ asset('/ecommerce/img/image-header-satu.jpeg') }}"
-                                alt="Mountain">
-                            <div class="px-6 py-4">
-                                <div class="font-bold text-xl mb-2 text-black">[Nama Pemiliki] Bu Lilik </div>
-                                <p class="text-gray-700 text-base">
-                                    <b>Alamat</b>
-                                    <br>
-                                    Blok T/32 Peternakan Rungkut
-                                    <br>
-                                    <br>
-                                    <b>Keterangan</b>
-                                    <br>
-                                    Pemotongan Kambing Rp300rb, Sapi 1,5juta. CP : Bapak Didik (085853710627, Ibu Lilik
-                                    (082140672927)
+                        </a>
+                    @empty
+                    @endforelse
 
-                                </p>
-                            </div>
-                            <div class="px-6 pt-4 pb-2">
-                                <span
-                                    class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#surabaya</span>
-                                <span
-                                    class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#kambing</span>
-                                <span
-                                    class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#sapi</span>
-                            </div>
-                        </div>
-                    </a>
                 </div>
             </div>
             <h1 class="w-full text-x1 font-bold leading-tight text-center text-gray-800">
@@ -535,97 +480,37 @@
             </div>
             <div class="w-full mb-4">
                 <div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
-                    <!--Card 1-->
-                    <a href="#" class="flex flex-wrap no-underline hover:no-underline">
-                        <div class="rounded overflow-hidden shadow-lg">
-                            <img class="w-full" src="{{ asset('/ecommerce/img/image-header-satu.jpeg') }}"
-                                alt="Mountain">
-                            <div class="px-6 py-4">
-                                <div class="font-bold text-xl mb-2 text-black">[Nama Pemiliki] Bu Lilik </div>
-                                <p class="text-gray-700 text-base">
-                                    <b>Alamat</b>
-                                    <br>
-                                    Blok T/32 Peternakan Rungkut
-                                    <br>
-                                    <br>
-                                    <b>Keterangan</b>
-                                    <br>
-                                    Pemotongan Kambing Rp300rb, Sapi 1,5juta. CP : Bapak Didik (085853710627, Ibu Lilik
-                                    (082140672927)
+                    @forelse($penerima as $row)
+                        <a href="#" class="flex flex-wrap no-underline hover:no-underline">
+                            <div class="rounded overflow-hidden shadow-lg">
+                                <img class="w-full" src="{{ asset('storage/products/' . $row->image) }}"
+                                    alt="Mountain">
+                                <div class="px-6 py-4">
+                                    <div class="font-bold text-xl mb-2 text-black"> {{ $row->name }}</div>
+                                    <p class="text-gray-700 text-base">
+                                        <b>Alamat</b>
+                                        <br>
+                                        {{ $row->alamat }}
+                                        <br>
+                                        <br>
+                                        <b>Keterangan</b>
+                                        <br>
+                                        {{ substr($row->description, -100) }}
 
-                                </p>
+                                    </p>
+                                </div>
+                                <div class="px-6 pt-4 pb-2">
+                                    <span
+                                        class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#surabaya</span>
+                                    <span
+                                        class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#kambing</span>
+                                    <span
+                                        class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#sapi</span>
+                                </div>
                             </div>
-                            <div class="px-6 pt-4 pb-2">
-                                <span
-                                    class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#surabaya</span>
-                                <span
-                                    class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#kambing</span>
-                                <span
-                                    class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#sapi</span>
-                            </div>
-                        </div>
-                    </a>
-                    <!--Card 2-->
-                    <a href="#" class="flex flex-wrap no-underline hover:no-underline">
-                        <div class="rounded overflow-hidden shadow-lg">
-                            <img class="w-full" src="{{ asset('/ecommerce/img/image-header-satu.jpeg') }}"
-                                alt="Mountain">
-                            <div class="px-6 py-4">
-                                <div class="font-bold text-xl mb-2 text-black">[Nama Pemiliki] Bu Lilik </div>
-                                <p class="text-gray-700 text-base">
-                                    <b>Alamat</b>
-                                    <br>
-                                    Blok T/32 Peternakan Rungkut
-                                    <br>
-                                    <br>
-                                    <b>Keterangan</b>
-                                    <br>
-                                    Pemotongan Kambing Rp300rb, Sapi 1,5juta. CP : Bapak Didik (085853710627, Ibu Lilik
-                                    (082140672927)
-
-                                </p>
-                            </div>
-                            <div class="px-6 pt-4 pb-2">
-                                <span
-                                    class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#surabaya</span>
-                                <span
-                                    class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#kambing</span>
-                                <span
-                                    class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#sapi</span>
-                            </div>
-                        </div>
-                    </a>
-
-                    <!--Card 3-->
-                    <a href="#" class="flex flex-wrap no-underline hover:no-underline">
-                        <div class="rounded overflow-hidden shadow-lg">
-                            <img class="w-full" src="{{ asset('/ecommerce/img/image-header-satu.jpeg') }}"
-                                alt="Mountain">
-                            <div class="px-6 py-4">
-                                <div class="font-bold text-xl mb-2 text-black">[Nama Pemiliki] Bu Lilik </div>
-                                <p class="text-gray-700 text-base">
-                                    <b>Alamat</b>
-                                    <br>
-                                    Blok T/32 Peternakan Rungkut
-                                    <br>
-                                    <br>
-                                    <b>Keterangan</b>
-                                    <br>
-                                    Pemotongan Kambing Rp300rb, Sapi 1,5juta. CP : Bapak Didik (085853710627, Ibu Lilik
-                                    (082140672927)
-
-                                </p>
-                            </div>
-                            <div class="px-6 pt-4 pb-2">
-                                <span
-                                    class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#surabaya</span>
-                                <span
-                                    class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#kambing</span>
-                                <span
-                                    class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#sapi</span>
-                            </div>
-                        </div>
-                    </a>
+                        </a>
+                    @empty
+                    @endforelse
                 </div>
             </div>
             <h1 class="w-full text-x1 font-bold leading-tight text-center text-gray-800">
