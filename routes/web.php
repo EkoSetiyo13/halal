@@ -87,10 +87,13 @@ Route::fallback(function () {
 
 
 //================================== V2 Kurban =====================================//
-Route::group(['prefix' => 'kurban', 'namespace' => 'V2'], function () {
+Route::group(['prefix' => '', 'namespace' => 'V2'], function () {
 
     Route::group(['namespace' => 'Landing'], function () {
-        Route::get('/', 'LandingPageController@index');
+        Route::get('/kurban', 'LandingPageController@index');
+    });
+    Route::group(['namespace' => 'Landing'], function () {
+        Route::get('/qurban', 'LandingPageController@index');
     });
 });
 
