@@ -48,6 +48,8 @@ class FormPenyuplaiQurbanController extends Controller
             $filename = time() . Str::slug($request->name . 'A') . '.' . $file->getClientOriginalExtension();
             // $file->storeAs('public/products', $filename);
             $file->move(public_path('penyedia'), $filename);
+        } else {
+            $filename = "";
         }
 
 
@@ -56,6 +58,8 @@ class FormPenyuplaiQurbanController extends Controller
             $filename2 = time() . Str::slug($request->name . 'B') . '.' . $file2->getClientOriginalExtension();
             // $file->storeAs('public/products', $filename2);
             $file2->move(public_path('penyedia'), $filename2);
+        } else {
+            $filename2 = "";
         }
 
         $file3 = $request->file('image3');
@@ -63,6 +67,8 @@ class FormPenyuplaiQurbanController extends Controller
             $filename3 = time() . Str::slug($request->name . 'C') . '.' . $file3->getClientOriginalExtension();
             // $file->storeAs('public/products', $filename3);
             $file3->move(public_path('penyedia'), $filename3);
+        } else {
+            $filename3 = "";
         }
 
 
@@ -107,6 +113,8 @@ class FormPenyuplaiQurbanController extends Controller
             $filename = time() . Str::slug($request->name .  'A') . '.' . $file->getClientOriginalExtension();
             $file->move(public_path('penyedia'), $filename);
             File::delete(public_path('penyedia'), $filename);
+        } else {
+            $filename = "";
         }
 
         if ($request->hasFile('image2')) {
@@ -114,6 +122,8 @@ class FormPenyuplaiQurbanController extends Controller
             $filename2 = time() . Str::slug($request->name . 'B') . '.' . $file2->getClientOriginalExtension();
             $file2->move(public_path('penyedia'), $filename2);
             File::delete(public_path('penyedia'), $filename2);
+        } else {
+            $filename2 = "";
         }
 
         if ($request->hasFile('image3')) {
@@ -121,6 +131,8 @@ class FormPenyuplaiQurbanController extends Controller
             $filename3 = time() . Str::slug($request->name . 'C') . '.' . $file3->getClientOriginalExtension();
             $file3->move(public_path('penyedia'), $filename3);
             File::delete(public_path('penyedia'), $filename3);
+        } else {
+            $filename3 = "";
         }
 
         $penyuplai->update([

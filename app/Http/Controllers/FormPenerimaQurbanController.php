@@ -130,6 +130,8 @@ class FormPenerimaQurbanController extends Controller
             // $file->storeAs('public/products', $filename);
             $file->move(public_path('penerima'), $filename);
             File::delete(public_path('penerima'), $filename);
+        } else {
+            $filename = "";
         }
 
         $penerima->update([
