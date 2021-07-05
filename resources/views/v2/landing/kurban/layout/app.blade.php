@@ -114,10 +114,14 @@
                             class="mx-auto lg:mx-0 hover:underline primary text-white font-bold rounded-full my-4 py-2 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
                             Daftar ke website
                         </button>
-                        <button
-                            class="mx-auto lg:mx-0 hover:underline primary text-white font-bold rounded-full my-4 py-2 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-                            Daftar melalui admin
-                        </button>
+                        <a
+                            href="https://api.whatsapp.com/send?phone=6285232596210&text=Assalamualaikum, %0ASaya%20ingin%20mendaftar%20sebagai%20penyuplai%20di%20Halal%20ITS">
+                            <button
+                                class="mx-auto lg:mx-0 hover:underline primary text-white font-bold rounded-full my-4 py-2 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                                Daftar melalui admin
+                            </button>
+                        </a>
+
 
 
                     </p>
@@ -361,10 +365,13 @@
                                 class="mx-auto lg:mx-0 hover:underline primary text-white font-bold rounded-full my-4 py-2 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
                                 Daftar ke website
                             </button>
-                            <button
-                                class="mx-auto lg:mx-0 hover:underline primary text-white font-bold rounded-full my-4 py-2 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-                                Daftar melalui admin
-                            </button>
+                            <a
+                                href="https://api.whatsapp.com/send?phone=6285232596210&text=Assalamualaikum, %0ASaya%20ingin%20mendaftar%20sebagai%20penyuplai%20di%20Halal%20ITS">
+                                <button
+                                    class="mx-auto lg:mx-0 hover:underline primary text-white font-bold rounded-full my-4 py-2 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                                    Daftar melalui admin
+                                </button>
+                            </a>
                         </p>
                     </div>
                 </div>
@@ -393,7 +400,7 @@
         <div class="container px-5 py-24 mx-auto">
             <div class="flex flex-wrap -m-4 text-center">
                 <div class="p-4 sm:w-1/4 w-1/2">
-                    <h2 class="title-font font-medium sm:text-4xl text-3xl text-white-900">{{$total_penyuplai}}</h2>
+                    <h2 class="title-font font-medium sm:text-4xl text-3xl text-white-900">{{ $total_penyuplai }}</h2>
                     <p class="leading-relaxed">Penyedia Kurban</p>
                 </div>
                 <div class="p-4 sm:w-1/4 w-1/2">
@@ -401,7 +408,7 @@
                     <p class="leading-relaxed">Orang Berkurban</p>
                 </div>
                 <div class="p-4 sm:w-1/4 w-1/2">
-                    <h2 class="title-font font-medium sm:text-4xl text-3xl text-white-900">{{$total_penerima}}</h2>
+                    <h2 class="title-font font-medium sm:text-4xl text-3xl text-white-900">{{ $total_penerima }}</h2>
                     <p class="leading-relaxed">Lembaga Penerima Kurban</p>
                 </div>
                 <div class="p-4 sm:w-1/4 w-1/2">
@@ -462,7 +469,7 @@
             <h1 class="w-full text-x1 font-bold leading-tight text-center text-gray-800">
                 <button
                     class="mx-auto lg:mx-0 hover:underline primary text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-                    Penyuplai Lainnya Lainnya
+                    Penyuplai Kurban Lainnya
                 </button>
             </h1>
         </div>
