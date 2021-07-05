@@ -115,7 +115,7 @@
                             Daftar ke website
                         </button>
                         <a
-                            href="https://api.whatsapp.com/send?phone=6285232596210&text=Assalamualaikum, %0ASaya%20ingin%20mendaftar%20sebagai%20penyuplai%20di%20Halal%20ITS">
+                            href="https://intip.in/daftarpenyuplai">
                             <button
                                 class="mx-auto lg:mx-0 hover:underline primary text-white font-bold rounded-full my-4 py-2 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
                                 Daftar melalui admin
@@ -366,7 +366,7 @@
                                 Daftar ke website
                             </button>
                             <a
-                                href="https://api.whatsapp.com/send?phone=6285232596210&text=Assalamualaikum, %0ASaya%20ingin%20mendaftar%20sebagai%20penyuplai%20di%20Halal%20ITS">
+                                href="https://intip.in/daftarpenerima"> 
                                 <button
                                     class="mx-auto lg:mx-0 hover:underline primary text-white font-bold rounded-full my-4 py-2 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
                                     Daftar melalui admin
