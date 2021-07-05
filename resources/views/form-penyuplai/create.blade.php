@@ -121,11 +121,11 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Foto (Optional)</label>
-                                    <input type="file" name="image2" class="form-control" value="{{ old('image2') }}" required>
+                                    <input type="file" name="image2" class="form-control" value="{{ old('image2') }}">
                                 </div>
                                 <div class="form-group">
                                     <label>Foto (Optional)</label>
-                                    <input type="file" name="image3" class="form-control" value="{{ old('image3') }}" required>
+                                    <input type="file" name="image3" class="form-control" value="{{ old('image3') }}" >
                                 </div>
                                 <div class="form-group">
                                     <label for="is_pelapor">Apakah Anda Instansi yang memposting ini?</label>

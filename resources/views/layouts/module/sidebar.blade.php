@@ -62,7 +62,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('form-penyuplai.index') }}">
                             <i class="ni ni-delivery-fast text-info"></i>
-                                <span class="nav-link-text">Form Penyulai</span>
+                                <span class="nav-link-text">Form Penyuplai</span>
                         </a>
                     </li>
 

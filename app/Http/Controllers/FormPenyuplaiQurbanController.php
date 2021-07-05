@@ -29,53 +29,64 @@ class FormPenyuplaiQurbanController extends Controller
                 $penyuplai = $penyuplai->where('name', 'LIKE', '%' . request()->q . '%');
             }
         }
-        
+
         $penyuplai = $penyuplai->paginate(10);
         return view('form-penyuplai.index', compact('penyuplai'));
     }
 
     public function create()
     {
-        
+
         return view('form-penyuplai.create');
     }
 
     public function store(Request $request)
     {
-        
-            $file = $request->file('image');
+
+        $file = $request->file('image');
+        if ($file) {
             $filename = time() . Str::slug($request->name . 'A') . '.' . $file->getClientOriginalExtension();
-            $file->storeAs('public/products', $filename);
+            // $file->storeAs('public/products', $filename);
+            $file->move(public_path('penyedia'), $filename);
+        }
 
-            $file = $request->file('image2');
-            $filename2 = time() . Str::slug($request->name . 'B') . '.' . $file->getClientOriginalExtension();
-            $file->storeAs('public/products', $filename2);
 
-            $file = $request->file('image3');
-            $filename3 = time() . Str::slug($request->name .'C') . '.' . $file->getClientOriginalExtension();
-            $file->storeAs('public/products', $filename3);
-            
+        $file2 = $request->file('image2');
+        if ($file2) {
+            $filename2 = time() . Str::slug($request->name . 'B') . '.' . $file2->getClientOriginalExtension();
+            // $file->storeAs('public/products', $filename2);
+            $file2->move(public_path('penyedia'), $filename2);
+        }
 
-            $penyuplai = FormPenyuplaiQurban::create([
-                'name' => $request->name,
-                'slug' => $request->name,
-                'description' => $request->description,
-                'image' => $filename,
-                'image2' => $filename2,
-                'image3' => $filename3,
-                'jumlah_sapi' => $request->jumlah_sapi,
-                'jumlah_kambing' => $request->jumlah_kambing,
-                'jumlah_kerbau' => $request->jumlah_lain,
-                'jumlah_lain' => $request->jumlah_lain,
-                'user_id' => $request->user_id,
-                'status' => $request->status,
-                'alamat' => $request->alamat,
-                'no_wa' => $request->no_wa,
-                'map_alamat' => $request->map_alamat,
-                'pengiriman' => implode(",", $request->pengiriman),
-                'is_pelapor' => $request->is_pelapor,
-            ]);
-            return redirect(route('form-penyuplai.index'))->with(['success' => 'Produk Baru Ditambahkan']);
+        $file3 = $request->file('image3');
+        if ($file3) {
+            $filename3 = time() . Str::slug($request->name . 'C') . '.' . $file3->getClientOriginalExtension();
+            // $file->storeAs('public/products', $filename3);
+            $file3->move(public_path('penyedia'), $filename3);
+        }
+
+
+
+        $penyuplai = FormPenyuplaiQurban::create([
+            'name' => $request->name,
+            'slug' => $request->name,
+            'description' => $request->description,
+            'image' => $filename,
+            'image2' => $filename2,
+            'image3' => $filename3,
+            'jumlah_sapi' => $request->jumlah_sapi,
+            'jumlah_kambing' => $request->jumlah_kambing,
+            'jumlah_kerbau' => $request->jumlah_lain,
+            'jumlah_lain' => $request->jumlah_lain,
+            'user_id' => $request->user_id,
+            'status' => $request->status,
+            'alamat' => $request->alamat,
+            'no_wa' => $request->no_wa,
+            'map_alamat' => $request->map_alamat,
+            'pengiriman' => implode(",", $request->pengiriman),
+            'is_pelapor' => $request->is_pelapor,
+        ]);
+        return redirect(route('form-penyuplai.index'))->with(['success' => 'Produk Baru Ditambahkan']);
     }
 
     public function edit($id)
@@ -94,22 +105,22 @@ class FormPenyuplaiQurbanController extends Controller
         if ($request->hasFile('image')) {
             $file = $request->file('image');
             $filename = time() . Str::slug($request->name .  'A') . '.' . $file->getClientOriginalExtension();
-            $file->storeAs('public/products', $filename);
-            File::delete(storage_path('app/public/products/' . $penyuplai->image));
+            $file->move(public_path('penyedia'), $filename);
+            File::delete(public_path('penyedia'), $filename);
         }
-        
+
         if ($request->hasFile('image2')) {
-            $file = $request->file('image2');
-            $filename2 = time() . Str::slug($request->name . 'B') . '.' . $file->getClientOriginalExtension();
-            $file->storeAs('public/products', $filename2);
-            File::delete(storage_path('app/public/products/' . $penyuplai->image2));
+            $file2 = $request->file('image2');
+            $filename2 = time() . Str::slug($request->name . 'B') . '.' . $file2->getClientOriginalExtension();
+            $file2->move(public_path('penyedia'), $filename2);
+            File::delete(public_path('penyedia'), $filename2);
         }
 
         if ($request->hasFile('image3')) {
-            $file = $request->file('image3');
-            $filename3 = time() . Str::slug($request->name .'C') . '.' . $file->getClientOriginalExtension();
-            $file->storeAs('public/products', $filename3);
-            File::delete(storage_path('app/public/products/' . $penyuplai->image3));
+            $file3 = $request->file('image3');
+            $filename3 = time() . Str::slug($request->name . 'C') . '.' . $file3->getClientOriginalExtension();
+            $file3->move(public_path('penyedia'), $filename3);
+            File::delete(public_path('penyedia'), $filename3);
         }
 
         $penyuplai->update([

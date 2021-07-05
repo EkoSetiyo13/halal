@@ -124,7 +124,7 @@
                                 <div class="form-group">
                                     <label for="image">Foto Produk</label>
                                     <br>
-                                    <img src="{{ asset('storage/products/' . $penyuplai->image) }}" width="100px" height="100px" alt="{{ $penyuplai->name }}">
+                                    <img src="{{ asset('penyedia/' . $penyuplai->image) }}" width="100px" height="100px" alt="{{ $penyuplai->name }}">
                                     <hr>
                                     <input type="file" name="image" class="form-control">
                                     <p><strong>Biarkan kosong jika tidak ingin mengganti gambar</strong></p>
@@ -133,7 +133,7 @@
                                 <div class="form-group">
                                     <label>Foto Produk</label>
                                     <br>
-                                    <img src="{{ asset('storage/products/' . $penyuplai->image2) }}" width="100px" height="100px" alt="{{ $penyuplai->name }}">
+                                    <img src="{{ asset('penyedia/' . $penyuplai->image2) }}" width="100px" height="100px" alt="{{ $penyuplai->name }}">
                                     <hr>
                                     <input type="file" name="image2" class="form-control">
                                     <p><strong>Biarkan kosong jika tidak ingin mengganti gambar</strong></p>
@@ -141,7 +141,7 @@
                                 <div class="form-group">
                                     <label>Foto Produk</label>
                                     <br>
-                                    <img src="{{ asset('storage/products/' . $penyuplai->image3) }}" width="100px" height="100px" alt="{{ $penyuplai->name }}">
+                                    <img src="{{ asset('penyedia/' . $penyuplai->image3) }}" width="100px" height="100px" alt="{{ $penyuplai->name }}">
                                     <hr>
                                     <input type="file" name="image3" class="form-control">
                                     <p><strong>Biarkan kosong jika tidak ingin mengganti gambar</strong></p>

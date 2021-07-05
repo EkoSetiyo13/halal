@@ -32,7 +32,7 @@
     <!--Nav-->
     @include('v2.landing.kurban.layout.header')
     <!--Hero-->
-    <div class="pt-40 pb-40">
+    <div class="pt-40 pb-40" id="beranda">
         <div class="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
             <!--Left Col-->
             <div class="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left">
@@ -85,7 +85,7 @@
             </g>
         </svg>
     </div>
-    <section class="bg-white border-b py-8">
+    <section class="bg-white border-b py-8" id="cara-pendaftaran">
         <div class="container max-w-5xl mx-auto m-8">
             <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
                 Cara Pendaftaran
@@ -393,7 +393,7 @@
         <div class="container px-5 py-24 mx-auto">
             <div class="flex flex-wrap -m-4 text-center">
                 <div class="p-4 sm:w-1/4 w-1/2">
-                    <h2 class="title-font font-medium sm:text-4xl text-3xl text-white-900">0</h2>
+                    <h2 class="title-font font-medium sm:text-4xl text-3xl text-white-900">{{$total_penyuplai}}</h2>
                     <p class="leading-relaxed">Penyedia Kurban</p>
                 </div>
                 <div class="p-4 sm:w-1/4 w-1/2">
@@ -401,7 +401,7 @@
                     <p class="leading-relaxed">Orang Berkurban</p>
                 </div>
                 <div class="p-4 sm:w-1/4 w-1/2">
-                    <h2 class="title-font font-medium sm:text-4xl text-3xl text-white-900">0</h2>
+                    <h2 class="title-font font-medium sm:text-4xl text-3xl text-white-900">{{$total_penerima}}</h2>
                     <p class="leading-relaxed">Lembaga Penerima Kurban</p>
                 </div>
                 <div class="p-4 sm:w-1/4 w-1/2">
@@ -412,7 +412,7 @@
         </div>
     </section>
 
-    <section class="bg-white border-b py-8">
+    <section class="bg-white border-b py-8" id="penyuplai-kurban">
         <div class="container mx-auto flex flex-wrap pt-4 pb-12">
             <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
                 Penyuplai Kurban
@@ -426,7 +426,7 @@
                     @forelse($penyuplai as $row)
                         <a href="#" class="flex flex-wrap no-underline hover:no-underline">
                             <div class="rounded overflow-hidden shadow-lg">
-                                <img class="w-full" src="{{ asset('storage/products/' . $row->image) }}"
+                                <img style="height: 200px; width: 300px" src="{{ asset('penyuplai/' . $row->image) }}"
                                     alt="Mountain">
                                 <div class="px-6 py-4">
                                     <div class="font-bold text-xl mb-2 text-black"> {{ $row->name }}</div>
@@ -470,7 +470,7 @@
     </section>
 
 
-    <section class="bg-white border-b py-8">
+    <section class="bg-white border-b py-8" id="penerima-kurban">
         <div class="container mx-auto flex flex-wrap pt-4 pb-12">
             <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
                 Lembaga Penerima Kurban
@@ -483,7 +483,7 @@
                     @forelse($penerima as $row)
                         <a href="#" class="flex flex-wrap no-underline hover:no-underline">
                             <div class="rounded overflow-hidden shadow-lg">
-                                <img class="w-full" src="{{ asset('storage/products/' . $row->image) }}"
+                                <img style="height: 200px; width: 300px" src="{{ asset('penerima/' . $row->image) }}"
                                     alt="Mountain">
                                 <div class="px-6 py-4">
                                     <div class="font-bold text-xl mb-2 text-black"> {{ $row->name }}</div>
@@ -523,7 +523,7 @@
 
     </section>
 
-    <section class="bg-white border-b py-8">
+    <section class="bg-white border-b py-8" id="galeri">
         <div class="container mx-auto flex flex-wrap pt-4 pb-12">
             <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
                 Galery
@@ -532,7 +532,7 @@
                 <div class="h-1 mx-auto primary w-64 opacity-25 my-0 py-0 rounded-t"></div>
             </div>
         </div>
-        <div class="container mx-auto flex flex-wrap">
+        {{-- <div class="container mx-auto flex flex-wrap">
             <div class="lg:w-2/3 mx-auto">
                 <div class="flex flex-wrap w-full bg-gray-100 py-32 px-10 relative mb-4">
                     <img alt="gallery"
@@ -588,7 +588,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> --}}
     </section>
     <!-- Change the colour #f8fafc to match the previous section colour -->
 

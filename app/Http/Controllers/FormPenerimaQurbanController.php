@@ -59,7 +59,8 @@ class FormPenerimaQurbanController extends Controller
         if ($request->hasFile('image')) {
             $file = $request->file('image');
             $filename = time() . Str::slug($request->name) . '.' . $file->getClientOriginalExtension();
-            $file->storeAs('public/products', $filename);
+            // $file->storeAs('public/products', $filename);
+            $file->move(public_path('penerima'), $filename);
 
             $penerima = FormPenerimaQurban::create([
                 'name' => $request->name,
@@ -107,8 +108,9 @@ class FormPenerimaQurbanController extends Controller
         if ($request->hasFile('image')) {
             $file = $request->file('image');
             $filename = time() . Str::slug($request->name) . '.' . $file->getClientOriginalExtension();
-            $file->storeAs('public/products', $filename);
-            File::delete(storage_path('app/public/products/' . $penerima->image));
+            // $file->storeAs('public/products', $filename);
+            $file->move(public_path('penerima'), $filename);
+            File::delete(public_path('penerima'), $filename);
         }
 
         $penerima->update([

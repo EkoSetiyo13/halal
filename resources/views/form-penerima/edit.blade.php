@@ -85,7 +85,7 @@
                                 <div class="form-group">
                                     <label for="image">Foto Produk</label>
                                     <br>
-                                    <img src="{{ asset('storage/products/' . $penerima->image) }}" width="100px" height="100px" alt="{{ $penerima->name }}">
+                                    <img src="{{ asset('penerima/' . $penerima->image) }}" width="100px" height="100px" alt="{{ $penerima->name }}">
                                     <hr>
                                     <input type="file" name="image" class="form-control">
                                     <p><strong>Biarkan kosong jika tidak ingin mengganti gambar</strong></p>
