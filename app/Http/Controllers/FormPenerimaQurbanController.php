@@ -15,7 +15,7 @@ class FormPenerimaQurbanController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth');        
+        $this->middleware('auth');
     }
 
     public function index()
@@ -31,7 +31,7 @@ class FormPenerimaQurbanController extends Controller
                 $penerima = $penerima->where('name', 'LIKE', '%' . request()->q . '%');
             }
         }
-        
+
         $penerima = $penerima->paginate(10);
         return view('form-penerima.index', compact('penerima'));
     }
@@ -52,7 +52,7 @@ class FormPenerimaQurbanController extends Controller
             'jumlah_lain' => 'required|integer',
             'user_id' => 'required|integer',
             'no_wa' => 'required|string',
-            'image' => 'required|image|mimes:png,jpeg,jpg',
+            'image' => 'image|mimes:png,jpeg,jpg',
             'alamat' => 'required|string',
         ]);
 
@@ -67,6 +67,25 @@ class FormPenerimaQurbanController extends Controller
                 'slug' => $request->name,
                 'description' => $request->description,
                 'image' => $filename,
+                'jumlah_sapi' => $request->jumlah_sapi,
+                'jumlah_kambing' => $request->jumlah_kambing,
+                'jumlah_kerbau' => $request->jumlah_kerbau,
+                'jumlah_lain' => $request->jumlah_lain,
+                'jumlah_warga' => $request->jumlah_warga,
+                'user_id' => $request->user_id,
+                'status' => $request->status,
+                'alamat' => $request->alamat,
+                'map_alamat' => $request->map_alamat,
+                'no_wa' => $request->no_wa,
+                'is_pelapor' => $request->is_pelapor,
+            ]);
+            return redirect(route('form-penerima.index'))->with(['success' => 'Produk Baru Ditambahkan']);
+        } else {
+            $penerima = FormPenerimaQurban::create([
+                'name' => $request->name,
+                'slug' => $request->name,
+                'description' => $request->description,
+                'image' => '',
                 'jumlah_sapi' => $request->jumlah_sapi,
                 'jumlah_kambing' => $request->jumlah_kambing,
                 'jumlah_kerbau' => $request->jumlah_kerbau,
@@ -139,5 +158,4 @@ class FormPenerimaQurbanController extends Controller
         $penerima->delete();
         return redirect(route('form-penerima.index'))->with(['success' => 'Produk Sudah Dihapus']);
     }
-
 }

@@ -56,13 +56,16 @@ Route::group(['prefix' => 'admin', 'middleware' => 'is_admin'], function () {
 });
 
 
-Route::group(['prefix' => 'member', 'middleware' => 'is_penyuplai'], function () {
-    Route::resource('form-penyuplai', 'FormPenyuplaiQurbanController')->except(['show']);
-});
+// Route::group(['prefix' => 'member', 'middleware' => 'is_penyuplai'], function () {
+    
+// });
 
-Route::group(['prefix' => 'member', 'middleware' => 'is_penerima'], function () {
-    Route::resource('form-penerima', 'FormPenerimaQurbanController')->except(['show']);
-});
+// Route::group(['prefix' => 'member', 'middleware' => 'is_penerima'], function () {
+    
+// });
+
+Route::resource('member/form-penyuplai', 'FormPenyuplaiQurbanController')->except(['show']);
+Route::resource('member/form-penerima', 'FormPenerimaQurbanController')->except(['show']);
 
 Route::group(['prefix' => 'member'], function () {
     Route::resource('product', 'ProductController')->except(['show']);
