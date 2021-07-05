@@ -4,7 +4,7 @@ Auth::routes();
 
 // ========================================= Landing Page Kurban Mulai ============================================ //
 
-Route::group(['prefix' => 'kurban'], function () {
+Route::group(['prefix' => 'v1'], function () {
     Route::get('/', 'Ecommerce\FrontController@index')->name('front.index');
     Route::get('/product', 'Ecommerce\FrontController@product')->name('front.product');
     Route::get('/penerima', 'Ecommerce\FrontController@penerima')->name('front.penerima');
@@ -87,6 +87,13 @@ Route::fallback(function () {
 
 
 //================================== V2 Kurban =====================================//
+Route::group(['prefix' => 'kurban', 'namespace' => 'V2'], function () {
+
+    Route::group(['namespace' => 'Landing'], function () {
+        Route::get('/', 'LandingPageController@index');
+    });
+});
+
 Route::group(['prefix' => 'tes', 'namespace' => 'V2'], function () {
     Route::get('/', 'TestController@indexTailwind');
 
@@ -94,10 +101,9 @@ Route::group(['prefix' => 'tes', 'namespace' => 'V2'], function () {
         Route::get('/login', 'LoginController@index');
         Route::get('/register', 'RegisterController@index');
     });
-
+    
     Route::group(['namespace' => 'Landing'], function () {
         Route::get('/kurban', 'LandingPageController@index');
-       
     });
 });
 

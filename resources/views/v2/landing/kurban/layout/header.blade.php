@@ -21,7 +21,8 @@
             id="nav-content">
             <ul class="list-reset lg:flex justify-end flex-1 items-center">
                 <li class="mr-3">
-                    <a class="inline-block py-2 px-4 text-white hover:text-yellow-400 text-xl no-underline" href="#">Beranda</a>
+                    <a class="inline-block py-2 px-4 text-white hover:text-yellow-400 text-xl no-underline"
+                        href="#">Beranda</a>
                 </li>
                 <li class="mr-3">
                     <a class="inline-block text-white text-xl no-underline hover:text-yellow-400 hover:text-underline py-2 px-4"
@@ -41,10 +42,22 @@
                 </li>
 
             </ul>
-            <button id="navAction"
-                class="mx-auto lg:mx-0 hover:underline  bg-white text-black font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-                Masuk
-            </button>
+           
+            @if (Route::has('login'))
+                @auth
+                <a class="nav-link" href="{{ url('admin/halal') }}"><button id="navAction"
+                    class="mx-auto lg:mx-0 hover:underline  bg-white text-black font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                    Beranda
+                </button>
+            </a>
+                @else
+                    <a class="nav-link" href="{{ route('login') }}"><button id="navAction"
+                            class="mx-auto lg:mx-0 hover:underline  bg-white text-black font-bold rounded-full mt-4 lg:mt-0 py-4 px-8 shadow opacity-75 focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                            Masuk
+                        </button>
+                    </a>
+                @endauth
+            @endif
         </div>
     </div>
     <hr class="border-b border-gray-100 opacity-25 my-0 py-0" />
