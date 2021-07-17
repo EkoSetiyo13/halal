@@ -94,9 +94,10 @@ Route::group(['prefix' => '', 'namespace' => 'V2'], function () {
 
     Route::group(['namespace' => 'Landing'], function () {
         Route::get('/kurban', 'LandingPageController@index');
-    });
-    Route::group(['namespace' => 'Landing'], function () {
         Route::get('/qurban', 'LandingPageController@index');
+        Route::get('/kurban/penerima', 'LandingPageController@penerima');
+        Route::get('/kurban/penyedia', 'LandingPageController@penyuplai')->name('kurban.penyuplai');
+        Route::get('/kurban/penyedia/item/{id}', 'LandingPageController@penyuplaiItem')->name('kurban.penyuplai.item');
     });
 });
 

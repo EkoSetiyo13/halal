@@ -1,37 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('v2.landing.kurban.layout.app')
+@section('title')
+    <title>Kurban Pusat Kajian Halal ITS</title>
+@endsection
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>
-        Kurban Pusat Kajian Halal ITS
-    </title>
-    <link rel="icon" href="{{ asset('/ecommerce/img/logo_halal.png') }}" type="image/png">
-    <meta name="description" content="" />
-    <meta name="keywords" content="" />
-    <meta name="author" content="" />
-    <link rel="stylesheet" href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" />
-    <!--Replace with your tailwind.css once created-->
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" />
-    <!-- Define your primary here - use online tools to find a primary matching your branding-->
-    <style>
-        .primary {
-            background: linear-primary(90deg, #d53369 0%, #daae51 100%);
-        }
+@section('content')
 
-        .primary {
-            background: #0c48a8
-        }
-
-    </style>
-</head>
-
-<body class="leading-normal tracking-normal text-white primary" style="font-family: 'Source Sans Pro', sans-serif;">
-    <!--Nav-->
-    @include('v2.landing.kurban.layout.header')
-    <!--Hero-->
     <div class="pt-40 pb-40" id="beranda">
         <div class="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
             <!--Left Col-->
@@ -114,8 +87,7 @@
                             class="mx-auto lg:mx-0 hover:underline primary text-white font-bold rounded-full my-4 py-2 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
                             Daftar ke website
                         </button>
-                        <a
-                            href="https://intip.in/daftarpenyuplai">
+                        <a href="https://intip.in/daftarpenyuplai">
                             <button
                                 class="mx-auto lg:mx-0 hover:underline primary text-white font-bold rounded-full my-4 py-2 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
                                 Daftar melalui admin
@@ -179,8 +151,7 @@
                             stroke="#f2f2f2" stroke-miterlimit="10" stroke-width="2" />
                         <path transform="translate(-11.5 -150.75)"
                             d="M325.38,467.23l8.3,13,35.53,55.59a66.5,66.5,0,0,1-103.32-8.57l43.54-84.94.91,1.43"
-                            fill="none" stroke="#f2f2f2" stroke-linecap="round" stroke-linejoin="round"
-                            stroke-width="2" />
+                            fill="none" stroke="#f2f2f2" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" />
                         <path transform="translate(-11.5 -150.75)"
                             d="M385.31,507a66.46,66.46,0,0,1-16.1,28.82l-35.53-55.59,15.69-24.78a.66.66,0,0,1,1.1,0C353.76,460.32,371,486,385.31,507Z"
                             fill="none" stroke="#f2f2f2" stroke-miterlimit="10" stroke-width="2" />
@@ -365,8 +336,7 @@
                                 class="mx-auto lg:mx-0 hover:underline primary text-white font-bold rounded-full my-4 py-2 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
                                 Daftar ke website
                             </button>
-                            <a
-                                href="https://intip.in/daftarpenerima"> 
+                            <a href="https://intip.in/daftarpenerima">
                                 <button
                                     class="mx-auto lg:mx-0 hover:underline primary text-white font-bold rounded-full my-4 py-2 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
                                     Daftar melalui admin
@@ -431,10 +401,10 @@
                 <div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
                     <!--Card 1-->
                     @forelse($penyuplai as $row)
-                        <a href="#" class="flex flex-wrap no-underline hover:no-underline">
+                        <a href="{{route('kurban.penyuplai.item', ['id' => $row->id])}}" class="flex flex-wrap no-underline hover:no-underline">
                             <div class="rounded overflow-hidden shadow-lg">
-                                <img style="height: 200px; width: 300px" src="{{ asset('storage/penyedia-kurban/' . $row->image) }}"
-                                    alt="Mountain">
+                                <img style="height: 200px; width: 300px"
+                                    src="{{ asset('storage/penyedia-kurban/' . $row->image) }}" alt="Mountain">
                                 <div class="px-6 py-4">
                                     <div class="font-bold text-xl mb-2 text-black"> {{ $row->name }}</div>
                                     <p class="text-gray-700 text-base">
@@ -467,10 +437,13 @@
                 </div>
             </div>
             <h1 class="w-full text-x1 font-bold leading-tight text-center text-gray-800">
-                <button
-                    class="mx-auto lg:mx-0 hover:underline primary text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-                    Penyuplai Kurban Lainnya
-                </button>
+                <a href="{{route('kurban.penyuplai')}}">
+                    <button
+                        class="mx-auto lg:mx-0 hover:underline primary text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                        Penyuplai Kurban Lainnya
+                    </button>
+                </a>
+
             </h1>
         </div>
 
@@ -490,8 +463,8 @@
                     @forelse($penerima as $row)
                         <a href="#" class="flex flex-wrap no-underline hover:no-underline">
                             <div class="rounded overflow-hidden shadow-lg">
-                                <img style="height: 200px; width: 300px" src="{{ asset('storage/penerima-kurban/' . $row->image) }}"
-                                    alt="Mountain">
+                                <img style="height: 200px; width: 300px"
+                                    src="{{ asset('storage/penerima-kurban/' . $row->image) }}" alt="Mountain">
                                 <div class="px-6 py-4">
                                     <div class="font-bold text-xl mb-2 text-black"> {{ $row->name }}</div>
                                     <p class="text-gray-700 text-base">
@@ -521,10 +494,12 @@
                 </div>
             </div>
             <h1 class="w-full text-x1 font-bold leading-tight text-center text-gray-800">
-                <button
-                    class="mx-auto lg:mx-0 hover:underline primary text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-                    Lembaga Penerima Kurban Lainnya
-                </button>
+                <a href="/kurban/penerima">
+                    <button
+                        class="mx-auto lg:mx-0 hover:underline primary text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
+                        Penyuplai Kurban Lainnya
+                    </button>
+                </a>
             </h1>
         </div>
 
@@ -540,154 +515,63 @@
             </div>
         </div>
         {{-- <div class="container mx-auto flex flex-wrap">
-            <div class="lg:w-2/3 mx-auto">
-                <div class="flex flex-wrap w-full bg-gray-100 py-32 px-10 relative mb-4">
-                    <img alt="gallery"
-                        class="w-full object-cover h-full object-center block opacity-25 absolute inset-0"
-                        src="https://dummyimage.com/820x340">
-                    <div class="text-center relative z-10 w-full">
-                        <h2 class="text-2xl text-gray-900 font-medium title-font mb-2">Shooting Stars</h2>
-                        <p class="leading-relaxed">Skateboard +1 mustache fixie paleo lumbersexual.</p>
-                        <a class="mt-3 text-indigo-500 inline-flex items-center">Learn More
-                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-                                <path d="M5 12h14M12 5l7 7-7 7"></path>
-                            </svg>
-                        </a>
-                    </div>
+        <div class="lg:w-2/3 mx-auto">
+            <div class="flex flex-wrap w-full bg-gray-100 py-32 px-10 relative mb-4">
+                <img alt="gallery"
+                    class="w-full object-cover h-full object-center block opacity-25 absolute inset-0"
+                    src="https://dummyimage.com/820x340">
+                <div class="text-center relative z-10 w-full">
+                    <h2 class="text-2xl text-gray-900 font-medium title-font mb-2">Shooting Stars</h2>
+                    <p class="leading-relaxed">Skateboard +1 mustache fixie paleo lumbersexual.</p>
+                    <a class="mt-3 text-indigo-500 inline-flex items-center">Learn More
+                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
+                            <path d="M5 12h14M12 5l7 7-7 7"></path>
+                        </svg>
+                    </a>
                 </div>
-                <div class="flex flex-wrap -mx-2">
-                    <div class="px-2 w-1/2">
-                        <div class="flex flex-wrap w-full bg-gray-100 sm:py-24 py-16 sm:px-10 px-6 relative">
-                            <img alt="gallery"
-                                class="w-full object-cover h-full object-center block opacity-25 absolute inset-0"
-                                src="https://dummyimage.com/542x460">
-                            <div class="text-center relative z-10 w-full">
-                                <h2 class="text-xl text-gray-900 font-medium title-font mb-2">Shooting Stars</h2>
-                                <p class="leading-relaxed">Skateboard +1 mustache fixie paleo lumbersexual.</p>
-                                <a class="mt-3 text-indigo-500 inline-flex items-center">Learn More
-                                    <svg fill="none" stroke="currentColor" stroke-linecap="round"
-                                        stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2"
-                                        viewBox="0 0 24 24">
-                                        <path d="M5 12h14M12 5l7 7-7 7"></path>
-                                    </svg>
-                                </a>
-                            </div>
+            </div>
+            <div class="flex flex-wrap -mx-2">
+                <div class="px-2 w-1/2">
+                    <div class="flex flex-wrap w-full bg-gray-100 sm:py-24 py-16 sm:px-10 px-6 relative">
+                        <img alt="gallery"
+                            class="w-full object-cover h-full object-center block opacity-25 absolute inset-0"
+                            src="https://dummyimage.com/542x460">
+                        <div class="text-center relative z-10 w-full">
+                            <h2 class="text-xl text-gray-900 font-medium title-font mb-2">Shooting Stars</h2>
+                            <p class="leading-relaxed">Skateboard +1 mustache fixie paleo lumbersexual.</p>
+                            <a class="mt-3 text-indigo-500 inline-flex items-center">Learn More
+                                <svg fill="none" stroke="currentColor" stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2"
+                                    viewBox="0 0 24 24">
+                                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                                </svg>
+                            </a>
                         </div>
                     </div>
-                    <div class="px-2 w-1/2">
-                        <div class="flex flex-wrap w-full bg-gray-100 sm:py-24 py-16 sm:px-10 px-6 relative">
-                            <img alt="gallery"
-                                class="w-full object-cover h-full object-center block opacity-25 absolute inset-0"
-                                src="https://dummyimage.com/542x420">
-                            <div class="text-center relative z-10 w-full">
-                                <h2 class="text-xl text-gray-900 font-medium title-font mb-2">Shooting Stars</h2>
-                                <p class="leading-relaxed">Skateboard +1 mustache fixie paleo lumbersexual.</p>
-                                <a class="mt-3 text-indigo-500 inline-flex items-center">Learn More
-                                    <svg fill="none" stroke="currentColor" stroke-linecap="round"
-                                        stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2"
-                                        viewBox="0 0 24 24">
-                                        <path d="M5 12h14M12 5l7 7-7 7"></path>
-                                    </svg>
-                                </a>
-                            </div>
+                </div>
+                <div class="px-2 w-1/2">
+                    <div class="flex flex-wrap w-full bg-gray-100 sm:py-24 py-16 sm:px-10 px-6 relative">
+                        <img alt="gallery"
+                            class="w-full object-cover h-full object-center block opacity-25 absolute inset-0"
+                            src="https://dummyimage.com/542x420">
+                        <div class="text-center relative z-10 w-full">
+                            <h2 class="text-xl text-gray-900 font-medium title-font mb-2">Shooting Stars</h2>
+                            <p class="leading-relaxed">Skateboard +1 mustache fixie paleo lumbersexual.</p>
+                            <a class="mt-3 text-indigo-500 inline-flex items-center">Learn More
+                                <svg fill="none" stroke="currentColor" stroke-linecap="round"
+                                    stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2"
+                                    viewBox="0 0 24 24">
+                                    <path d="M5 12h14M12 5l7 7-7 7"></path>
+                                </svg>
+                            </a>
                         </div>
                     </div>
                 </div>
             </div>
-        </div> --}}
+        </div>
+    </div> --}}
     </section>
     <!-- Change the colour #f8fafc to match the previous section colour -->
 
-
-    <!--Footer-->
-    @include('v2.landing.kurban.layout.footer')
-    <!-- jQuery if you need it
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  -->
-    <script>
-        var scrollpos = window.scrollY;
-        var header = document.getElementById("header");
-        var navcontent = document.getElementById("nav-content");
-        var navaction = document.getElementById("navAction");
-        var brandname = document.getElementById("brandname");
-        var toToggle = document.querySelectorAll(".toggleColour");
-
-        document.addEventListener("scroll", function() {
-            /*Apply classes for slide in bar*/
-            scrollpos = window.scrollY;
-
-            if (scrollpos > 10) {
-                header.classList.add("primary");
-                navaction.classList.remove("bg-white");
-                navaction.classList.add("bg-white");
-                navaction.classList.remove("text-gray-800");
-                // navaction.classList.add("text-white");
-                //Use to switch toggleColour colours
-                for (var i = 0; i < toToggle.length; i++) {
-                    toToggle[i].classList.add("text-gray-800");
-                    toToggle[i].classList.remove("text-white");
-                }
-                header.classList.add("shadow");
-                navcontent.classList.remove("bg-gray-100");
-                navcontent.classList.add("bg-white");
-            } else {
-                header.classList.remove("bg-white");
-                navaction.classList.remove("primary");
-                navaction.classList.add("bg-white");
-                navaction.classList.remove("text-white");
-                navaction.classList.add("text-gray-800");
-                //Use to switch toggleColour colours
-                for (var i = 0; i < toToggle.length; i++) {
-                    toToggle[i].classList.add("text-white");
-                    toToggle[i].classList.remove("text-gray-800");
-                }
-
-                header.classList.remove("shadow");
-                navcontent.classList.remove("bg-white");
-                navcontent.classList.add("bg-gray-100");
-            }
-        });
-    </script>
-    <script>
-        /*Toggle dropdown list*/
-        /*https://gist.github.com/slavapas/593e8e50cf4cc16ac972afcbad4f70c8*/
-
-        var navMenuDiv = document.getElementById("nav-content");
-        var navMenu = document.getElementById("nav-toggle");
-
-        document.onclick = check;
-
-        function check(e) {
-            var target = (e && e.target) || (event && event.srcElement);
-
-            //Nav Menu
-            if (!checkParent(target, navMenuDiv)) {
-                // click NOT on the menu
-                if (checkParent(target, navMenu)) {
-                    // click on the link
-                    if (navMenuDiv.classList.contains("hidden")) {
-                        navMenuDiv.classList.remove("hidden");
-                    } else {
-                        navMenuDiv.classList.add("hidden");
-                    }
-                } else {
-                    // click both outside link and outside menu, hide menu
-                    navMenuDiv.classList.add("hidden");
-                }
-            }
-        }
-
-        function checkParent(t, elm) {
-            while (t.parentNode) {
-                if (t == elm) {
-                    return true;
-                }
-                t = t.parentNode;
-            }
-            return false;
-        }
-    </script>
-</body>
-
-</html>
+@endsection
