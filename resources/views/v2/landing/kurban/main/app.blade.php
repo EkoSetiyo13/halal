@@ -461,7 +461,7 @@
             <div class="w-full mb-4">
                 <div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
                     @forelse($penerima as $row)
-                        <a href="#" class="flex flex-wrap no-underline hover:no-underline">
+                        <a href="{{route('kurban.penerima.item', ['id' => $row->id])}}" class="flex flex-wrap no-underline hover:no-underline">
                             <div class="rounded overflow-hidden shadow-lg">
                                 <img style="height: 200px; width: 300px"
                                     src="{{ asset('storage/penerima-kurban/' . $row->image) }}" alt="Mountain">
@@ -494,7 +494,7 @@
                 </div>
             </div>
             <h1 class="w-full text-x1 font-bold leading-tight text-center text-gray-800">
-                <a href="/kurban/penerima">
+                <a href="{{route('kurban.penerima')}}">
                     <button
                         class="mx-auto lg:mx-0 hover:underline primary text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
                         Penyuplai Kurban Lainnya

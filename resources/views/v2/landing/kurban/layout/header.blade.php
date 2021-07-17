@@ -22,7 +22,7 @@
             <ul class="list-reset lg:flex justify-end flex-1 items-center">
                 <li class="mr-3">
                     <a class="inline-block py-2 px-4 text-white hover:text-yellow-400 text-xl no-underline"
-                        href="#beranda">Beranda</a>
+                        href="{{ url('/kurban') }}#beranda">Beranda</a>
                 </li>
                 <li class="mr-3">
                     <a class="inline-block text-white text-xl no-underline hover:text-yellow-400 hover:text-underline py-2 px-4"
@@ -30,15 +30,15 @@
                 </li>
                 <li class="mr-3">
                     <a class="inline-block text-white text-xl no-underline hover:text-yellow-400 hover:text-underline py-2 px-4"
-                        href="#penyuplai-kurban">Penyuplai Kurban</a>
+                        href="{{ url('/kurban') }}#penyuplai-kurban">Penyuplai Kurban</a>
                 </li>
                 <li class="mr-3">
                     <a class="inline-block text-white text-xl no-underline hover:text-yellow-400 hover:text-underline py-2 px-4"
-                        href="#penerima-kurban">Penerima Kurban</a>
+                        href="{{ url('/kurban') }}#penerima-kurban">Penerima Kurban</a>
                 </li>
                 <li class="mr-3">
                     <a class="inline-block text-white text-xl no-underline hover:text-yellow-400 hover:text-underline py-2 px-4"
-                        href="#galeri">Galeri</a>
+                        href="{{ url('/kurban') }}#galeri">Galeri</a>
                 </li>
 
             </ul>

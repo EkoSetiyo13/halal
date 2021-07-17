@@ -29,16 +29,21 @@ class LandingPageController extends Controller
         $penerima = FormPenerimaQurban::orderBy('created_at', 'DESC')->paginate(2);
         return view('v2.landing.kurban.main.penerima-kurban', compact('penerima'));
     }
+    public function penerimaItem($id)
+    {
+        $penerima = FormPenerimaQurban::find($id);
+        return view('v2.landing.kurban.main.item-penerima-kurban', compact('penerima'));
+    }
 
     public function penyuplai()
     {
         $penyuplai = FormPenyuplaiQurban::orderBy('created_at', 'DESC')->paginate(2);
-        return view('v2.landing.kurban.main.penyedia-kurban', compact('penyuplai'));
+        return view('v2.landing.kurban.main.penyuplai-kurban', compact('penyuplai'));
     }
 
     public function penyuplaiItem($id)
     {
         $penyuplai = FormPenyuplaiQurban::find($id);
-        return view('v2.landing.kurban.main.item', compact('penyuplai'));
+        return view('v2.landing.kurban.main.item-penyuplai-kurban', compact('penyuplai'));
     }
 }
