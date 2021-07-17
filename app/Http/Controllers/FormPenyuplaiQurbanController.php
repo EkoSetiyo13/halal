@@ -45,9 +45,8 @@ class FormPenyuplaiQurbanController extends Controller
 
         $file = $request->file('image');
         if ($file) {
-            $filename = time() . Str::slug($request->name . 'A') . '.' . $file->getClientOriginalExtension();
-            // $file->storeAs('public/products', $filename);
-            $file->move(public_path('penyedia'), $filename);
+            $filename = time() . Str::slug($request->name. 'A') . '.' . $file->getClientOriginalExtension();
+            $file->storeAs('public/penyedia-kurban', $filename);
         } else {
             $filename = "";
         }
@@ -55,18 +54,16 @@ class FormPenyuplaiQurbanController extends Controller
 
         $file2 = $request->file('image2');
         if ($file2) {
-            $filename2 = time() . Str::slug($request->name . 'B') . '.' . $file2->getClientOriginalExtension();
-            // $file->storeAs('public/products', $filename2);
-            $file2->move(public_path('penyedia'), $filename2);
+            $filename2 = time() . Str::slug($request->name. 'B') . '.' . $file2->getClientOriginalExtension();
+            $file2->storeAs('public/penyedia-kurban', $filename2);
         } else {
             $filename2 = "";
         }
 
         $file3 = $request->file('image3');
         if ($file3) {
-            $filename3 = time() . Str::slug($request->name . 'C') . '.' . $file3->getClientOriginalExtension();
-            // $file->storeAs('public/products', $filename3);
-            $file3->move(public_path('penyedia'), $filename3);
+            $filename3 = time() . Str::slug($request->name. 'C') . '.' . $file3->getClientOriginalExtension();
+            $file3->storeAs('public/penyedia-kurban', $filename3);
         } else {
             $filename3 = "";
         }
@@ -110,29 +107,26 @@ class FormPenyuplaiQurbanController extends Controller
         $filename3 = $penyuplai->image3;
         if ($request->hasFile('image')) {
             $file = $request->file('image');
-            $filename = time() . Str::slug($request->name .  'A') . '.' . $file->getClientOriginalExtension();
-            $file->move(public_path('penyedia'), $filename);
-            File::delete(public_path('penyedia'), $filename);
-        } else {
-            $filename = "";
+            // $filename = time() . Str::slug($request->name .  'A') . '.' . $file->getClientOriginalExtension();
+            // $file->move(public_path('penyedia'), $filename);
+            // File::delete(public_path('penyedia'), $filename);
+            $filename = time() . Str::slug($request->name. 'A') . '.' . $file->getClientOriginalExtension();
+            $file->storeAs('public/penyedia-kurban', $filename);
+            File::delete(storage_path('app/public/penyedia-kurban/' . $penyuplai->image));
         }
 
         if ($request->hasFile('image2')) {
             $file2 = $request->file('image2');
-            $filename2 = time() . Str::slug($request->name . 'B') . '.' . $file2->getClientOriginalExtension();
-            $file2->move(public_path('penyedia'), $filename2);
-            File::delete(public_path('penyedia'), $filename2);
-        } else {
-            $filename2 = "";
+            $filename2 = time() . Str::slug($request->name. 'B') . '.' . $file2->getClientOriginalExtension();
+            $file2->storeAs('public/penyedia-kurban', $filename2);
+            File::delete(storage_path('app/public/penyedia-kurban/' . $penyuplai->image2));
         }
 
         if ($request->hasFile('image3')) {
             $file3 = $request->file('image3');
-            $filename3 = time() . Str::slug($request->name . 'C') . '.' . $file3->getClientOriginalExtension();
-            $file3->move(public_path('penyedia'), $filename3);
-            File::delete(public_path('penyedia'), $filename3);
-        } else {
-            $filename3 = "";
+            $filename3 = time() . Str::slug($request->name. 'C') . '.' . $file3->getClientOriginalExtension();
+            $file3->storeAs('public/penyedia-kurban', $filename3);
+            File::delete(storage_path('app/public/penyedia-kurban/' . $penyuplai->image3));
         }
 
         $penyuplai->update([

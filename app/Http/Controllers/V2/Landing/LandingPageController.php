@@ -16,10 +16,11 @@ class LandingPageController extends Controller
     {
         $products = Product::orderBy('created_at', 'DESC')->paginate(10);
         $penerima = FormPenerimaQurban::where('status', '=', 1)->orderBy('created_at', 'DESC')->paginate(3);
-        $penyuplai = FormPenyuplaiQurban::where('status', '=', 1)->orderBy('created_at', 'DESC')->paginate(33);
+        $penyuplai = FormPenyuplaiQurban::where('status', '=', 1)->orderBy('created_at', 'DESC')->paginate(3);
         $total_penerima = FormPenerimaQurban::where('status', '=', 1)->count();
         $total_penyuplai = FormPenyuplaiQurban::where('status', '=', 1)->count();
         $post1  = Post::find(1);
-        return view('v2.landing.kurban.layout.app', compact('products', 'penerima', 'penyuplai', 'post1', 'total_penerima', 'total_penyuplai'));
+        // dd($penyuplai);
+        return view('v2.landing.kurban.main.app', compact('products', 'penerima', 'penyuplai', 'post1', 'total_penerima', 'total_penyuplai'));
     }
 }

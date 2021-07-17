@@ -30,7 +30,7 @@
 						@forelse($penyuplai as $row)
 						<div class="col-md-3 col-sm-6 mb-3">
 							<div class="card border-warning">
-								<img src="{{ asset('storage/products/' . $row->image) }}" alt="{{ $row->name }}" class="card-img-top" style="height: 200px">
+								<img src="{{ asset('storage/products/' . $row->name ', '. $row->image) }}" alt="{{ $row->name }}" class="card-img-top" style="height: 200px">
 					
 								<div class="card-body">
 									<div class="card-title"><h4>
