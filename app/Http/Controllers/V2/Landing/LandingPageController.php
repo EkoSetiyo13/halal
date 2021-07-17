@@ -26,7 +26,7 @@ class LandingPageController extends Controller
 
     public function penerima()
     {
-        $penerima = FormPenerimaQurban::orderBy('created_at', 'DESC')->paginate(2);
+        $penerima = FormPenerimaQurban::orderBy('created_at', 'DESC')->paginate(6);
         return view('v2.landing.kurban.main.penerima-kurban', compact('penerima'));
     }
     public function penerimaItem($id)
@@ -37,7 +37,7 @@ class LandingPageController extends Controller
 
     public function penyuplai()
     {
-        $penyuplai = FormPenyuplaiQurban::orderBy('created_at', 'DESC')->paginate(2);
+        $penyuplai = FormPenyuplaiQurban::orderBy('created_at', 'DESC')->paginate(6);
         return view('v2.landing.kurban.main.penyuplai-kurban', compact('penyuplai'));
     }
 

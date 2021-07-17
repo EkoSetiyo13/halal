@@ -26,7 +26,7 @@
                 </li>
                 <li class="mr-3">
                     <a class="inline-block text-white text-xl no-underline hover:text-yellow-400 hover:text-underline py-2 px-4"
-                        href="#cara-pendaftaran">Cara Pendaftaran</a>
+                        href="{{ url('/kurban') }}#cara-pendaftaran">Cara Pendaftaran</a>
                 </li>
                 <li class="mr-3">
                     <a class="inline-block text-white text-xl no-underline hover:text-yellow-400 hover:text-underline py-2 px-4"

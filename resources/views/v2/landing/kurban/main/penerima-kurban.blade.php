@@ -5,35 +5,10 @@
 
 @section('content')
 
-    <div class="pt-40 pb-40" id="beranda">
-        <div class="container px-3 mx-auto flex flex-wrap flex-col md:flex-row items-center">
-            <!--Left Col-->
-            <div class="flex flex-col w-full md:w-2/5 justify-center items-start text-center md:text-left">
-                <p class="uppercase tracking-loose w-full">Salurkan Kurbanmu disini</p>
-                <h1 class="my-4 text-5xl font-bold leading-tight">
-                    Pusat Kajian Halal
-                </h1>
-                <p class="leading-normal text-2xl mb-8">
-                    Setiap satu helai rambut kurban adalah satu kebaikan. Maka tebarlah kebaikan di hari Idul Adha yang
-                    mulia ini. <b> (HR Ahmad dan Ibnu Majah) </b>
-                </p>
-            </div>
-            <!--Right Col-->
-            <div class="w-full md:w-1/5">
-
-            </div>
-            <div class="w-full md:w-2/5">
-                <div class="grid grid-cols-2">
-                    <div><img
-                            style=" -webkit-filter: brightness(0) invert(1); filter: brightness(0) invert(1); display: block; margin-left: auto; margin-right: auto;"
-                            class="w-full " src="{{ asset('/v2/other/image/siluet-sapi.png') }}" /></div>
-                    <!-- ... -->
-                    <div><img
-                            style="display: block; margin-left: auto; margin-right: auto; -webkit-filter: brightness(0) invert(1); filter: brightness(0) invert(1);"
-                            class="w-full" src="{{ asset('/v2/other/image/goat.png') }}" /></div>
-                </div>
-            </div>
-        </div>
+    <div class="pt-20 pb-20" id="beranda">
+        <h1 class="my-4 text-5xl text-center font-bold leading-tight">
+            Lembaga Penyedia Kurban
+        </h1>
     </div>
     <div class="relative -mt-12 lg:-mt-24">
         <svg viewBox="0 0 1428 174" version="1.1" xmlns="http://www.w3.org/2000/svg"
@@ -60,82 +35,26 @@
     </div>
 
 
-    <section class="bg-white border-b py-8" id="penyuplai-kurban">
+    <section class="bg-white border-b py-8" id="Penyedia-kurban">
         <div class="container mx-auto flex flex-wrap pt-4 pb-12">
-            <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
-                Penyuplai Kurban
-            </h1>
-            <div class="w-full mb-4">
-                <div class="h-1 mx-auto primary w-64 opacity-25 my-0 py-0 rounded-t"></div>
-            </div>
-            <div class="w-full mb-4">
-                <div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
-                    <!--Card 1-->
-                    @forelse($penyuplai as $row)
-                        <a href="#" class="flex flex-wrap no-underline hover:no-underline">
-                            <div class="rounded overflow-hidden shadow-lg">
-                                <img style="height: 200px; width: 300px"
-                                    src="{{ asset('storage/penyedia-kurban/' . $row->image) }}" alt="Mountain">
-                                <div class="px-6 py-4">
-                                    <div class="font-bold text-xl mb-2 text-black"> {{ $row->name }}</div>
-                                    <p class="text-gray-700 text-base">
-                                        <b>Alamat</b>
-                                        <br>
-                                        {{ $row->alamat }}
-                                        <br>
-                                        <br>
-                                        <b>Keterangan</b>
-                                        <br>
-                                        {{ substr($row->description, -100) }}
-
-                                    </p>
-                                </div>
-                                <div class="px-6 pt-4 pb-2">
-                                    <span
-                                        class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#surabaya</span>
-                                    <span
-                                        class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#kambing</span>
-                                    <span
-                                        class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#sapi</span>
-                                </div>
-                            </div>
-
-
-                        </a>
-                    @empty
-                    @endforelse
-
-                </div>
-            </div>
-            <h1 class="w-full text-x1 font-bold leading-tight text-center text-gray-800">
-                <button
-                    class="mx-auto lg:mx-0 hover:underline primary text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-                    Penyuplai Kurban Lainnya
-                </button>
-            </h1>
-        </div>
-
-    </section>
-
-
-    <section class="bg-white border-b py-8" id="penerima-kurban">
-        <div class="container mx-auto flex flex-wrap pt-4 pb-12">
-            <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
-                Lembaga Penerima Kurban
-            </h1>
+            {{-- <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
+                Lembaga Penyedia Kurban
+            </h1> --}}
             <div class="w-full mb-4">
                 <div class="h-1 mx-auto primary w-64 opacity-25 my-0 py-0 rounded-t"></div>
             </div>
             <div class="w-full mb-4">
                 <div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5">
                     @forelse($penerima as $row)
-                        <a href="#" class="flex flex-wrap no-underline hover:no-underline">
+                        <a href="{{route('kurban.penerima.item', ['id' => $row->id])}}" class="flex flex-wrap no-underline hover:no-underline">
                             <div class="rounded overflow-hidden shadow-lg">
-                                <img style="height: 200px; width: 300px"
-                                    src="{{ asset('storage/penerima-kurban/' . $row->image) }}" alt="Mountain">
+                                <img style="height: 300px; width: 300px"
+                                    src="{{ asset('storage/penyedia-kurban/' . $row->image) }}" alt="Mountain">
                                 <div class="px-6 py-4">
                                     <div class="font-bold text-xl mb-2 text-black"> {{ $row->name }}</div>
-                                    <p class="text-gray-700 text-base">
+                                    <div class=" mb-2 text-black"> <b>Alamat :</b> {{ $row->alamat }}
+                                    </div>
+                                    {{-- <p class="text-gray-700 text-base">
                                         <b>Alamat</b>
                                         <br>
                                         {{ $row->alamat }}
@@ -145,9 +64,9 @@
                                         <br>
                                         {{ substr($row->description, -100) }}
 
-                                    </p>
+                                    </p> --}}
                                 </div>
-                                <div class="px-6 pt-4 pb-2">
+                                <div class="px-6 pb-2">
                                     <span
                                         class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#surabaya</span>
                                     <span
@@ -158,86 +77,23 @@
                             </div>
                         </a>
                     @empty
+                        <div class="col-md-12">
+                            <h3 class="text-center">Tidak ada produk</h3>
+                        </div>
                     @endforelse
+
+                </div>
+                <div class="mt-2 w-full my-2 text-xl font-bold leading-tight text-center text-gray-800">
+                    {{ $penerima->links('vendor.pagination.custom') }}
                 </div>
             </div>
-            <h1 class="w-full text-x1 font-bold leading-tight text-center text-gray-800">
-                <button
-                    class="mx-auto lg:mx-0 hover:underline primary text-white font-bold rounded-full my-6 py-4 px-8 shadow-lg focus:outline-none focus:shadow-outline transform transition hover:scale-105 duration-300 ease-in-out">
-                    Lembaga Penerima Kurban Lainnya
-                </button>
-            </h1>
-        </div>
 
+
+
+        </div>
     </section>
 
-    <section class="bg-white border-b py-8" id="galeri">
-        <div class="container mx-auto flex flex-wrap pt-4 pb-12">
-            <h1 class="w-full my-2 text-5xl font-bold leading-tight text-center text-gray-800">
-                Galery
-            </h1>
-            <div class="w-full mb-4">
-                <div class="h-1 mx-auto primary w-64 opacity-25 my-0 py-0 rounded-t"></div>
-            </div>
-        </div>
-        {{-- <div class="container mx-auto flex flex-wrap">
-        <div class="lg:w-2/3 mx-auto">
-            <div class="flex flex-wrap w-full bg-gray-100 py-32 px-10 relative mb-4">
-                <img alt="gallery"
-                    class="w-full object-cover h-full object-center block opacity-25 absolute inset-0"
-                    src="https://dummyimage.com/820x340">
-                <div class="text-center relative z-10 w-full">
-                    <h2 class="text-2xl text-gray-900 font-medium title-font mb-2">Shooting Stars</h2>
-                    <p class="leading-relaxed">Skateboard +1 mustache fixie paleo lumbersexual.</p>
-                    <a class="mt-3 text-indigo-500 inline-flex items-center">Learn More
-                        <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                            stroke-width="2" class="w-4 h-4 ml-2" viewBox="0 0 24 24">
-                            <path d="M5 12h14M12 5l7 7-7 7"></path>
-                        </svg>
-                    </a>
-                </div>
-            </div>
-            <div class="flex flex-wrap -mx-2">
-                <div class="px-2 w-1/2">
-                    <div class="flex flex-wrap w-full bg-gray-100 sm:py-24 py-16 sm:px-10 px-6 relative">
-                        <img alt="gallery"
-                            class="w-full object-cover h-full object-center block opacity-25 absolute inset-0"
-                            src="https://dummyimage.com/542x460">
-                        <div class="text-center relative z-10 w-full">
-                            <h2 class="text-xl text-gray-900 font-medium title-font mb-2">Shooting Stars</h2>
-                            <p class="leading-relaxed">Skateboard +1 mustache fixie paleo lumbersexual.</p>
-                            <a class="mt-3 text-indigo-500 inline-flex items-center">Learn More
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round"
-                                    stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2"
-                                    viewBox="0 0 24 24">
-                                    <path d="M5 12h14M12 5l7 7-7 7"></path>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="px-2 w-1/2">
-                    <div class="flex flex-wrap w-full bg-gray-100 sm:py-24 py-16 sm:px-10 px-6 relative">
-                        <img alt="gallery"
-                            class="w-full object-cover h-full object-center block opacity-25 absolute inset-0"
-                            src="https://dummyimage.com/542x420">
-                        <div class="text-center relative z-10 w-full">
-                            <h2 class="text-xl text-gray-900 font-medium title-font mb-2">Shooting Stars</h2>
-                            <p class="leading-relaxed">Skateboard +1 mustache fixie paleo lumbersexual.</p>
-                            <a class="mt-3 text-indigo-500 inline-flex items-center">Learn More
-                                <svg fill="none" stroke="currentColor" stroke-linecap="round"
-                                    stroke-linejoin="round" stroke-width="2" class="w-4 h-4 ml-2"
-                                    viewBox="0 0 24 24">
-                                    <path d="M5 12h14M12 5l7 7-7 7"></path>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> --}}
-    </section>
-    <!-- Change the colour #f8fafc to match the previous section colour -->
+
+
 
 @endsection
