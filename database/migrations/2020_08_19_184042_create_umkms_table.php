@@ -30,6 +30,10 @@ class CreateUmkmsTable extends Migration
             $table->string('email');
             $table->string('instagram');
             $table->string('facebook');
+            $table->string('bpom')->nullable();
+            $table->string('pirt')->nullable();
+            $table->decimal('lat', 10, 6)->nullable();
+            $table->decimal('long', 10, 6)->nullable();
             $table->timestamps();
         });
     }
