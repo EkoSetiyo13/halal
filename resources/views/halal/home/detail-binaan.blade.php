@@ -27,14 +27,12 @@
         <div class="col-lg-4">
           <div class="s_product_img">
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-              @if(!empty($binaan->image))
-
+              @if(empty($binaan->image))
                 <div class="carousel-inner">
                   <div class="carousel-item active">
                     <p class="text-center" style="padding-bottom : 20px"> Tidak Ada Gambar Produk </p>
                   </div>
                 </div>
-
               @else
                 <div class="carousel-inner">
                   <div class="carousel-item active">
