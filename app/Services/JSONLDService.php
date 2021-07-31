@@ -18,13 +18,15 @@ class JSONLDService
 
         $fulladdress = "$alamat, $desa. $kecamatan, $kota";
 
+        $namaProduk = $binaan->nama_produk ?? '';
+
         $jsonld = [
             '@context' => 'https://schema.org',
             '@type' => 'Product',
             'name' => $binaan->nama_produk ?? '',
-            'manufacturer' => [
+            'brand' => [
                 '@type' => 'Organization',
-                'name' => $binaan->nama_umkm,
+                'name' => $binaan->nama_umkm ?? '',
                 'founder' => [
                     '@type' => 'Person',
                     'name' => $binaan->nama_pemilik ?? ''
@@ -32,7 +34,9 @@ class JSONLDService
                 'address' => $fulladdress ?? '',
                 'identifier' => $binaan->no_umkm ?? '',
                 'telephone' => $binaan->no_wa ?? ''
-            ]
+            ],
+            'description' => !empty($namaProduk) ? "$namaProduk halal oleh " . $binaan->nama_umkm ?? '' : '',
+            'sku' => $binaan->no_umkm . '-HALAL-1'
         ];
         if (!empty($binaan->image ?? '')) {
             $filename = $binaan->image;
