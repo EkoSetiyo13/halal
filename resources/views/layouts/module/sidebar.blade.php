@@ -29,7 +29,7 @@
             <li class="nav-item">
                 <a class="nav-link" href="#navbar-web" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-dashboard">
                   <i class="ni ni-world-2 text-primary"></i>
-                  <span class="nav-link-text">Webiste</span>
+                  <span class="nav-link-text">Website</span>
                 </a>
                 <div class="collapse" id="navbar-web">
                 <ul class="nav">                     
