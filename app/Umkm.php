@@ -2,28 +2,35 @@
 
 namespace App;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
+use Illuminate\Database\Eloquent\Model;
 
 class Umkm extends Model
 {
     protected $fillable = [
-        'no_umkm', 
-        'nama_pemilik', 
-        'nama_umkm', 
-        'nama_produk', 
+        'no_umkm',
+        'nama_pemilik',
+        'nama_umkm',
+        'nama_produk',
         'tipe_binaan',
-        'alamat', 
-        'desa', 
+        'alamat',
+        'desa',
         'kecamatan',
-        'kota', 
-        'no_wa',  
-        'email', 
-        'instagram', 
-        'facebook', 
-        'image', 
-        'status'
+        'kota',
+        'no_wa',
+        'email',
+        'instagram',
+        'facebook',
+        'image',
+        'status',
+        'bpom',
+        'pirt',
+        'google_map',
+        'tokopedia',
+        'shopee',
+        'bukalapak',
+        'website',
+        'video'
     ];
 
     public function getStatusLabelAttribute()
@@ -36,7 +43,7 @@ class Umkm extends Model
 
     public function setSlugAttribute($value)
     {
-        $this->attributes['nama_pemilik'] = Str::slug($value); 
+        $this->attributes['nama_pemilik'] = Str::slug($value);
     }
 
 }

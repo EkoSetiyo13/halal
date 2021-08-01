@@ -42,6 +42,9 @@ Route::get('/data-mahasiswa', 'Halal\HalalController@dataMahasiswa')->name('data
 // ========================================= Dashboard Mulai ============================================ //
 
 Route::group(['prefix' => 'admin', 'middleware' => 'is_admin'], function () {
+    Route::get('/', function() {
+        return redirect()->route('admin.halal');
+    });
     Route::get('/home', 'HomeController@adminHome')->name('admin.home');
     Route::get('/halal', 'HomeController@adminHalal')->name('admin.halal');
     Route::resource('category', 'CategoryController')->except(['create', 'show']);
