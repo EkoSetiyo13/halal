@@ -32,8 +32,13 @@ class CreateUmkmsTable extends Migration
             $table->string('facebook');
             $table->string('bpom')->nullable();
             $table->string('pirt')->nullable();
-            $table->decimal('lat', 10, 6)->nullable();
-            $table->decimal('long', 10, 6)->nullable();
+            $table->text('google_map')->nullable();
+            $table->string('tokopedia')->nullable();
+            $table->string('shopee')->nullable();
+            $table->string('bukalapak')->nullable();
+            $table->string('website')->nullable();
+            $table->string('video')->nullable();
+
             $table->timestamps();
         });
     }
