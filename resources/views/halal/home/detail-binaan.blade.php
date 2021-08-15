@@ -184,6 +184,21 @@
                       </tr>
                       <tr>
                         <td>
+                          <h5>Google Map</h5>
+                        </td>
+                        <td>
+                          <h5>
+                            :
+                            @if($binaan->google_map ?? false)
+                              <a href="{{ $binaan->google_map }}">Google Map</a>
+                            @else
+                              -
+                            @endif
+                          </h5>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
                           <h5>Website/Toko Onine</h5>
                         </td>
                         <td>
