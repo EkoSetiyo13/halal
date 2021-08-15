@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+  @yield('title')
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="icon" href="{{ asset('/ecommerce/img/logo_halal.png') }}" type="image/png">
@@ -58,22 +59,10 @@
           border: 0;
           outline: 0;
           background: none;
-          width: 0;
-          caret-color: transparent;
           line-height: 40px;
-          transition: width 0.4s linear;
-      }
-
-      .searchbar:hover > .search_input {
           padding: 0 10px;
           width: 450px;
-          caret-color: red;
           transition: width 0.4s linear;
-      }
-
-      .searchbar:hover > .search_icon {
-          background: white;
-          color: #e74c3c;
       }
 
       .search_icon {
@@ -88,7 +77,6 @@
           text-decoration: none;
       }
   </style>
-
 </head>
 
 <body>
@@ -166,7 +154,7 @@
             <a href="https://www.instagram.com/itshalalcenter/?hl=id" style="color:white">
               <i class="fa fa-instagram"></i>
             </a>
-            <a href="itshalalcenter@its.ac.id" style="color:white">
+            <a href="mailto:itshalalcenter@its.ac.id" style="color:white">
               <i class="fa fa-envelope"></i>
             </a>
             <a href="https://play.google.com/store/apps/developer?id=Nur+Aini+R+%28Pusat+Kajian+Halal+ITS%29"

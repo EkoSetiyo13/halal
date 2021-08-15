@@ -194,6 +194,14 @@
           @component('layouts.components.input_error', ['active' => $errors->has('bpom'), 'msg'=> $errors->first('bpom')])
           @endcomponent
         </div>
+        <div class="form-group">
+          <label for="sertifikat_halal" class="form-control-label">Sertifikat Halal</label>
+          <input type="text" name="sertifikat_halal" class="form-control"
+                 value="{{ old('sertifikat_halal') ?? $umkm->sertifikat_halal ?? null }}"
+                 placeholder="Sertifikat Halal">
+          @component('layouts.components.input_error', ['active' => $errors->has('sertifikat_halal'), 'msg'=> $errors->first('sertifikat_halal')])
+          @endcomponent
+        </div>
         @if(!empty($umkm->image ?? null))
           <div class="row justify-content-center">
             <img class="img-responsive" src="{{ asset('storage/products/' . $umkm->image) }}" style="max-height: 300px"

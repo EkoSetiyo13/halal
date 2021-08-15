@@ -27,9 +27,9 @@ class CreateUmkmsTable extends Migration
             $table->boolean('status')->default(true);
             $table->string('image')->nullable();
             $table->string('no_wa');
-            $table->string('email');
-            $table->string('instagram');
-            $table->string('facebook');
+            $table->string('email')->nullable();
+            $table->string('instagram')->nullable();
+            $table->string('facebook')->nullable();
             $table->string('bpom')->nullable();
             $table->string('pirt')->nullable();
             $table->text('google_map')->nullable();
@@ -38,7 +38,7 @@ class CreateUmkmsTable extends Migration
             $table->string('bukalapak')->nullable();
             $table->string('website')->nullable();
             $table->string('video')->nullable();
-
+            $table->string('sertifikat_halal')->nullable();
             $table->timestamps();
         });
     }

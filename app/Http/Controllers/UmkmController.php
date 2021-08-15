@@ -20,11 +20,6 @@ use App\Exports\UmkmsExport;
 
 class UmkmController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     public function index()
     {
         $umkms = Umkm::orderBy('id', 'DESC')->get();

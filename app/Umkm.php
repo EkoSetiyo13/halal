@@ -3,7 +3,9 @@
 namespace App;
 
 use Illuminate\Support\Str;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Eloquent\Model;
+use SimpleSoftwareIO\QrCode\Facades\QrCode as QRCode;
 
 class Umkm extends Model
 {
@@ -30,7 +32,8 @@ class Umkm extends Model
         'shopee',
         'bukalapak',
         'website',
-        'video'
+        'video',
+        'sertifikat_halal'
     ];
 
     public function getStatusLabelAttribute()
@@ -46,4 +49,76 @@ class Umkm extends Model
         $this->attributes['nama_pemilik'] = Str::slug($value);
     }
 
+    public static function getActiveUMKM($pagination = 9)
+    {
+        return self::where([
+            ['status', true],
+            ['nama_umkm', '!=', '-'],
+        ])
+            ->orderBy('no_umkm', 'ASC')
+            ->paginate($pagination);
+    }
+
+    public static function getActiveKader($pagination = 9)
+    {
+        return self::where([
+            ['status', true],
+            ['nama_umkm', '=', '-'],
+        ])
+            ->orderBy('no_umkm', 'ASC')
+            ->paginate($pagination);
+    }
+
+    public static function fullTextSearchBinaan($query = '', $pagination = 9)
+    {
+        $documentColumns = [
+            'no_umkm',
+            'nama_umkm',
+            'nama_pemilik',
+            'nama_produk'
+        ];
+        if (trim($query) === '') {
+            return self::getActiveUMKM();
+        } else {
+            return self::fullTextSearch($documentColumns, $query, $pagination);
+        }
+    }
+
+    public static function fullTextSearchKader($query = '', $pagination = 9)
+    {
+        $documentColumns = [
+            'no_umkm',
+            'nama_pemilik'
+        ];
+        if (trim($query) === '') {
+            return self::getActiveUMKM();
+        } else {
+            return self::fullTextSearch($documentColumns, $query, $pagination);
+        }
+    }
+
+    public static function fullTextSearch($columns, $query, $pagination)
+    {
+        $documentColumnsStr = join(" || ' ' || ", $columns);
+        return self::whereRaw(
+            "to_tsvector($documentColumnsStr) @@ to_tsquery(?) = TRUE", [$query]
+        )->paginate($pagination);
+    }
+
+    public function getQRCode($type = 'binaan', $size = 1000)
+    {
+        $url = route('detail.' . $type, ['no_binaan' => $this->no_umkm]);
+        return [
+            'data:image/png;base64,' . base64_encode(QRCode::format('png')
+                ->size($size)
+                ->errorCorrection('H')
+                ->generate($url)),
+
+            'data:image/png;base64,' . base64_encode(QRCode::format('png')
+                ->merge('assets/logo_halal.png', 0.3, true)
+                ->size($size)
+                ->errorCorrection('H')
+                ->generate($url))
+        ];
+    }
 }
