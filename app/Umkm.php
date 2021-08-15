@@ -51,22 +51,32 @@ class Umkm extends Model
 
     public static function getActiveUMKM($pagination = 9)
     {
-        return self::where([
+        $q = self::where([
             ['status', true],
             ['nama_umkm', '!=', '-'],
         ])
-            ->orderBy('no_umkm', 'ASC')
-            ->paginate($pagination);
+            ->orderBy('no_umkm', 'ASC');
+
+        if ($pagination !== -1) {
+            return $q->paginate($pagination);
+        } else {
+            return $q->get();
+        }
     }
 
     public static function getActiveKader($pagination = 9)
     {
-        return self::where([
+        $q = self::where([
             ['status', true],
             ['nama_umkm', '=', '-'],
         ])
-            ->orderBy('no_umkm', 'ASC')
-            ->paginate($pagination);
+            ->orderBy('no_umkm', 'ASC');
+
+        if ($pagination !== -1) {
+            return $q->paginate($pagination);
+        } else {
+            return $q->get();
+        }
     }
 
     public static function fullTextSearchBinaan($query = '', $pagination = 9)

@@ -19,9 +19,13 @@ Route::group(['prefix' => 'v1'], function () {
 // ========================================= Landing Page Halal Mulai ============================================ //
 Route::get('/', 'Halal\HalalController@home')->name('halal');
 Route::get('/kader', 'Halal\HalalController@kader')->name('kader');
+Route::get('/kader/json', 'Halal\HalalController@kaderJson')->name('kader.json');
 Route::get('/kader/{no_binaan}', 'Halal\HalalController@detailKader')->name('detail.kader');
+Route::get('/kader/{no_binaan}/json', 'Halal\HalalController@detailKaderJson')->name('detail.kader.json');
 Route::get('/binaan', 'Halal\HalalController@binaan')->name('binaan');
+Route::get('/binaan/json', 'Halal\HalalController@binaanJson')->name('binaan.json');
 Route::get('/binaan/{no_binaan}', 'Halal\HalalController@detailBinaan')->name('detail.binaan');
+Route::get('/binaan/{no_binaan}/json', 'Halal\HalalController@detailBinaanJson')->name('detail.binaan.json');
 Route::get('/data-dosen', 'Halal\HalalController@dataDosen')->name('data.dosen');
 Route::get('/data-mahasiswa', 'Halal\HalalController@dataMahasiswa')->name('data.mahasiswa');
 // ========================================= Landing Page Halal Akhir ============================================ //

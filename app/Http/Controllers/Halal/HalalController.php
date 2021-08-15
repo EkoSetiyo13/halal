@@ -15,7 +15,7 @@ class HalalController extends Controller
         $binaan = Umkm::all()->random(10);
         //return response()->json($binaan);
         return view('halal.home.example', compact('binaan'));
-}
+    }
 
     public function binaan(Request $request)
     {
@@ -24,11 +24,23 @@ class HalalController extends Controller
         return view('halal.home.binaan', compact('umkms', 'query'));
     }
 
+    public function binaanJSON(Request $request)
+    {
+        $umkms = Umkm::getActiveUMKM(-1);
+        return response()->json($umkms->all());
+    }
+
     public function kader(Request $request)
     {
         $query = $request->query('q') ?? '';
-        $umkms = !empty($query) ? Umkm::fullTextSearchKader($query) :  Umkm::getActiveKader();
+        $umkms = !empty($query) ? Umkm::fullTextSearchKader($query) : Umkm::getActiveKader();
         return view('halal.home.kader', compact('umkms', 'query'));
+    }
+
+    public function kaderJson(Request $request)
+    {
+        $umkms = Umkm::getActiveKader(-1);
+        return response()->json($umkms->all());
     }
 
 
@@ -67,6 +79,22 @@ class HalalController extends Controller
         return view('halal.home.detail-binaan', compact('binaan', 'plainQRCode', 'logoQRCode', 'jsonld'));
     }
 
+    public function detailBinaanJson($no_binaan) {
+        $binaan = Umkm::where([
+            ['nama_umkm', '!=', '-'],
+            ['status', '=', true],
+            ['no_umkm', $no_binaan]
+        ])->first();
+
+        if ($binaan == null) {
+            return response()->json([
+                'message' => 'No data'
+            ]);
+        } else {
+            return response()->json($binaan);
+        }
+    }
+
     public function detailKader($no_binaan)
     {
         $binaan = Umkm::where([
@@ -82,5 +110,21 @@ class HalalController extends Controller
         list($plainQRCode, $logoQRCode) = $binaan->getQRCode('kader', 1000);
 
         return view('halal.home.detail-kader', compact('binaan', 'plainQRCode', 'logoQRCode'));
+    }
+
+    public function detailKaderJson($no_binaan) {
+        $binaan = Umkm::where([
+            ['nama_umkm', '=', '-'],
+            ['status', '=', true],
+            ['no_umkm', $no_binaan]
+        ])->first();
+
+        if ($binaan == null) {
+            return response()->json([
+                'message' => 'No data'
+            ]);
+        } else {
+            return response()->json($binaan);
+        }
     }
 }
