@@ -203,7 +203,7 @@
                         </td>
                         <td>
                           <h5>:
-                            @foreach(['bukalapak', 'shopee', 'tokopedia', 'website'] as $field)
+                            @foreach(['bukalapak', 'shopee', 'tokopedia', 'website', 'produkdesa'] as $field)
                               @if($binaan->{$field} ?? false)
                                 <a href="{{ $binaan->{$field} }}">{{ ucfirst($field) }}</a>
                               @endif

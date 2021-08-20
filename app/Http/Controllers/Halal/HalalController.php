@@ -14,7 +14,7 @@ class HalalController extends Controller
     {
         $binaan = Umkm::all()->random(10);
         //return response()->json($binaan);
-        return view('halal.home.example', compact('binaan'));
+        return view('halal.home.index', compact('binaan'));
     }
 
     public function binaan(Request $request)

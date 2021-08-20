@@ -164,6 +164,14 @@
             @endcomponent
           </div>
           <div class="col-md-6 mb-3">
+            <label class="form-control-label" for="produkdesa">Produk Desa</label>
+            <input type="text" name="produkdesa" class="form-control"
+                   value="{{ old('produkdesa') ?? $umkm->produkdesa ?? null }}"
+                   placeholder="Link Produk Desa">
+            @component('layouts.components.input_error', ['active' => $errors->has('produkdesa'), 'msg'=> $errors->first('produkdesa')])
+            @endcomponent
+          </div>
+          <div class="col-md-6 mb-3">
             <label class="form-control-label" for="website">Website</label>
             <input type="text" name="website" class="form-control"
                    value="{{ old('website') ?? $umkm->website ?? null }}"

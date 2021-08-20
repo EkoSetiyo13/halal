@@ -54,7 +54,9 @@ class UMKMRequest extends FormRequest
             'nama_produk' => 'required|string|max:255',
             'bpom' => 'nullable|string|max:255',
             'image' => 'image',
-            'video' => 'nullable|string|max:255'
+            'video' => 'nullable|string|max:255',
+            'sertifikat_halal' => 'nullable|string|max:255',
+            'produk_desa' => 'nullable|string|max:255'
         ];
     }
 }
