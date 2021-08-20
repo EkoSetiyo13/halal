@@ -28,6 +28,7 @@ Route::get('/binaan/{no_binaan}', 'Halal\HalalController@detailBinaan')->name('d
 Route::get('/binaan/{no_binaan}/json', 'Halal\HalalController@detailBinaanJson')->name('detail.binaan.json');
 Route::get('/data-dosen', 'Halal\HalalController@dataDosen')->name('data.dosen');
 Route::get('/data-mahasiswa', 'Halal\HalalController@dataMahasiswa')->name('data.mahasiswa');
+Route::get('/tanya-halal', 'Halal\HalalController@tanyaHalal')->name('tanya-halal');
 // ========================================= Landing Page Halal Akhir ============================================ //
 
 // ========================================= Dashboard Mulai ============================================ //

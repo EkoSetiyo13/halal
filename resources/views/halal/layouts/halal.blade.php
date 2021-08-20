@@ -190,11 +190,6 @@
 <script src="{{ asset('ecommerce/vendors/counter-up/jquery.counterup.js') }}"></script>
 <script src="{{ asset('ecommerce/js/mail-script.js') }}"></script>
 <script src="{{ asset('ecommerce/js/theme.js') }}"></script>
-{{-- <script src="{{ asset('ecommerce/js/jquery.slim.min.js') }}"></script>
-<script src="{{ asset('ecommerce/js/bootstrap.bundle.min.js') }}"></script> --}}
-
-{{-- <script src="assets/assets/js/jquery-2.1.0.min.js"></script> --}}
-
 <!-- Bootstrap -->
 <script src="assets/assets/js/popper.js"></script>
 <script src="assets/assets/js/bootstrap.min.js"></script>
@@ -211,14 +206,12 @@
 
 <!-- Global Init -->
 <script src="assets/assets/js/custom.js"></script>
-
 <script type="text/javascript">
     $('#topheader .navbar-nav a').on('click', function () {
         $('#topheader .navbar-nav').find('li.active').removeClass('active');
         $(this).parent('li').addClass('active');
     });
 </script>
-
 <script type="text/javascript">
     function Copy() {
         var copyText = document.getElementById("myQrCode");
@@ -228,7 +221,6 @@
         alert("Copied the text: " + copyText.value);
     }
 </script>
-
 <script type="text/javascript">
     function CopyLogo() {
         var copyText = document.getElementById("myQrCodeLogo");
@@ -238,7 +230,6 @@
         alert("Copied the text: " + copyText.value);
     }
 </script>
-
-
+@yield('script')
 </body>
 </html>

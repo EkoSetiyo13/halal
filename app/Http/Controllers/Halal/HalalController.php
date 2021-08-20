@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Halal;
 
 use App\Umkm;
+use App\Services\TanyaHalal;
 use Illuminate\Http\Request;
 use App\Services\JSONLDService;
 use App\Http\Controllers\Controller;
-use SimpleSoftwareIO\QrCode\Facades\QrCode;
 
 class HalalController extends Controller
 {
@@ -79,7 +79,8 @@ class HalalController extends Controller
         return view('halal.home.detail-binaan', compact('binaan', 'plainQRCode', 'logoQRCode', 'jsonld'));
     }
 
-    public function detailBinaanJson($no_binaan) {
+    public function detailBinaanJson($no_binaan)
+    {
         $binaan = Umkm::where([
             ['nama_umkm', '!=', '-'],
             ['status', '=', true],
@@ -112,7 +113,8 @@ class HalalController extends Controller
         return view('halal.home.detail-kader', compact('binaan', 'plainQRCode', 'logoQRCode'));
     }
 
-    public function detailKaderJson($no_binaan) {
+    public function detailKaderJson($no_binaan)
+    {
         $binaan = Umkm::where([
             ['nama_umkm', '=', '-'],
             ['status', '=', true],
@@ -126,5 +128,12 @@ class HalalController extends Controller
         } else {
             return response()->json($binaan);
         }
+    }
+
+    public function tanyaHalal(Request $request)
+    {
+        $query = $request->query('q', '');
+        $products = empty($query) ? [] : TanyaHalal::tanyaHalal($query);
+        return view('halal.home.tanya-halal', ['query' => $query, 'products' => $products]);
     }
 }
