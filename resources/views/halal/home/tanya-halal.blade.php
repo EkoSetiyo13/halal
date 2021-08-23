@@ -72,7 +72,7 @@
               <tr>
                 <th scope="row">{{ $loop->iteration }}</th>
                 <td>{{ $product->produk }}</td>
-                <td>{{ $product->perusahaan }}</td>
+                <td><a href="{{ route('detail.binaan', ['no_binaan' => $product->sertifikat])  }}">{{ $product->perusahaan }}</a></td>
                 <td>{{ $product->sertifikat }}</td>
                 <td>{{ $product->tanggal }}</td>
                 <td>{{ $product->penerbit }}</td>

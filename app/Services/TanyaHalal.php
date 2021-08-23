@@ -37,7 +37,7 @@ class TanyaHalal
                     "'$penerbit' as penerbit"
                 ])
             )
-            ->whereRaw("lower($whereDocBinaan) LIKE '%$query%'")
+            ->whereRaw("lower($whereDocBinaan) LIKE '%$query%' AND nama_umkm != '-'")
             ->limit($limit)
             ->get()
             ->toArray();
