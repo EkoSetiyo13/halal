@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
+
 use App\FormPenerimaQurban;
 use App\FormPenyuplaiQurban;
 use App\User;
@@ -28,18 +29,20 @@ class HomeController extends Controller
      */
     public function index()
     {
-        if(Auth::user()->nama_role == 2)
-        {
+
+        //Permission Binaan Halal v2
+        if (Auth::user()->nama_role == 'binaan') {
+            return redirect('admin/halal');
+        }
+
+        //Permission Lama
+        if (Auth::user()->nama_role == 2) {
             return redirect('member/form-penyuplai');
-        }
-        elseif (Auth::user()->nama_role == 3) 
-        {
+        } elseif (Auth::user()->nama_role == 3) {
             return redirect('member/form-penerima');
-        }
-        else {
+        } else {
             return view('error');
         }
-        
     }
 
     public function adminHome()
@@ -50,7 +53,7 @@ class HomeController extends Controller
         $postinganPenerimaNonAktif = FormPenerimaQurban::where('status', '=', 0)->count();
         $postinganPenyuplai = FormPenyuplaiQurban::where('status', '=', 1)->count();
         $postinganPenyuplaiNonAktif = FormpenyuplaiQurban::where('status', '=', 0)->count();
-        
+
 
         $penyuplaiAdmin1 = FormPenyuplaiQurban::where('user_id', '=', '1')->count();
         $penerimaAdmin1 = FormPenerimaQurban::where('user_id', '=', '1')->count();
@@ -92,13 +95,15 @@ class HomeController extends Controller
         $total_umkm = Umkm::all()->count();
         $total_kader = Umkm::Where('nama_umkm', '=', '-')->count();
         $total_umkm_aktif = $umkms = Umkm::Where('status', '=', true)->Where('nama_umkm', '!=', '-')->count();
-
-
-
         return view('dashboard.halal', compact(
             'total_umkm',
             'total_kader',
             'total_umkm_aktif'
         ));
+    }
+
+    public function memberHalal()
+    {
+        return view('dashboard.member');
     }
 }

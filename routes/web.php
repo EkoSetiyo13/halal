@@ -66,6 +66,11 @@ Route::group(['middleware' => 'is_admin'], function () {
 Route::fallback(function () {
     return view('error');
 });
+Route::group(['middleware' => 'is_member'], function () {
+    Route::group(['prefix' => 'member'], function () {
+        Route::get('/halal', 'HomeController@memberHalal');
+    });
+});
 
 
 //================================== V2 Kurban =====================================//
@@ -80,6 +85,11 @@ Route::group(['namespace' => 'V2'], function () {
     });
 });
 
+Route::get('/register/binaan', 'Auth\RegisterBinaanController@viewBinaan');
+Route::post('/register/binaan', 'Auth\RegisterBinaanController@createBinaan');
+Route::get('/login/binaan', 'Auth\LoginBinaanController@viewLogin');
+Route::post('/login/binaan', 'Auth\LoginBinaanController@login');
+Route::get('/login/check', 'Auth\LoginBinaanController@checkLogin');
 /**
  * Working in progress?
  */

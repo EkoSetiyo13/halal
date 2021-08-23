@@ -20,7 +20,8 @@ class UmkmController extends Controller
 {
     public function index()
     {
-        $umkms = Umkm::orderBy('id', 'DESC')->get();
+        $umkms = Umkm::orderBy('id', 'ASC')->get();
+        // return $umkms;
         return view('umkm.index', compact('umkms'));
     }
 
