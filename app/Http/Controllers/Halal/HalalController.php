@@ -134,6 +134,7 @@ class HalalController extends Controller
     {
         $query = $request->query('q', '');
         $products = empty($query) ? [] : TanyaHalal::tanyaHalal($query);
+
         return view('halal.home.tanya-halal', ['query' => $query, 'products' => $products]);
     }
 }

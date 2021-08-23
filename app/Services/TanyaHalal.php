@@ -19,13 +19,15 @@ class TanyaHalal
                 'penerbit'
             )
             ->whereRaw("lower($whereDoc) LIKE '%$query%'")
-            ->limit($limit);
+            ->limit($limit)
+            ->get()
+            ->toArray();
 
         $tanggal = '31-march-2022';
-        $penerbit = 'HALAL ITS';
+        $penerbit = 'Binaan Halal ITS';
 
-        $whereDocUMKM = join(" || ' ' || ", ['nama_produk', 'nama_umkm', 'no_umkm', "'$tanggal $penerbit'"]);
-        $query = DB::table('umkms')
+        $whereDocBinaan = join(" || ' ' || ", ['nama_produk', 'nama_umkm', 'no_umkm', "'$tanggal $penerbit'"]);
+        $binaan = DB::table('umkms')
             ->selectRaw(
                 join(', ', [
                     'nama_produk AS produk',
@@ -35,14 +37,14 @@ class TanyaHalal
                     "'$penerbit' as penerbit"
                 ])
             )
-            ->whereRaw("lower($whereDocUMKM) LIKE '%$query%'")
+            ->whereRaw("lower($whereDocBinaan) LIKE '%$query%'")
             ->limit($limit)
-            ->union($mui);
-
-        return $query->get()->toArray();
+            ->get()
+            ->toArray();
+        return compact('mui', 'binaan');
     }
 
-    public static function tanyaHalal($query, $limit = 10)
+    public static function tanyaHalal($query, $limit = 15)
     {
         $query = strtolower($query);
         return Cache::remember("tanyaHalal:$query", 86400, function () use ($query, $limit) {

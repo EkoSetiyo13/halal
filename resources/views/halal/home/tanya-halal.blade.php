@@ -25,32 +25,64 @@
           </form>
         </div>
       </div>
+      @if(!empty($products))
       <div class="row justify-content-center">
-        <table class="table col-12 col-md-6">
-          <thead>
-          <tr>
-            <th scope="col">#</th>
-            <th scope="col">Produk</th>
-            <th scope="col">Perusahaan/UMKM</th>
-            <th scope="col">Sertifikat</th>
-            <th scope="col">Tanggal</th>
-            <th scope="col">Penerbit</th>
-          </tr>
-          </thead>
-          <tbody>
-          @foreach($products as $product)
+        <h4 class="col-12 text-center mb-3">Produk Terdaftar MUI</h4>
+        <div class="col-12 mb-3 row justify-content-center">
+          <table class="table col-12 col-md-6">
+            <thead>
             <tr>
-              <th scope="row">{{ $loop->iteration }}</th>
-              <td>{{ $product->produk }}</td>
-              <td>{{ $product->perusahaan }}</td>
-              <td>{{ $product->sertifikat }}</td>
-              <td>{{ $product->tanggal }}</td>
-              <td>{{ $product->penerbit }}</td>
+              <th scope="col">#</th>
+              <th scope="col">Produk</th>
+              <th scope="col">Perusahaan/UMKM</th>
+              <th scope="col">Sertifikat</th>
+              <th scope="col">Tanggal</th>
+              <th scope="col">Penerbit</th>
             </tr>
-          @endforeach
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+            @foreach($products['mui'] ?? [] as $product)
+              <tr>
+                <th scope="row">{{ $loop->iteration }}</th>
+                <td>{{ $product->produk }}</td>
+                <td>{{ $product->perusahaan }}</td>
+                <td>{{ $product->sertifikat }}</td>
+                <td>{{ $product->tanggal }}</td>
+                <td>{{ $product->penerbit }}</td>
+              </tr>
+            @endforeach
+            </tbody>
+          </table>
+        </div>
+        <h4 class="col-12 text-center mb-3">Produk Binaan Halal ITS</h4>
+        <div class="col-12 mb-3 row justify-content-center">
+          <table class="table col-12 col-md-6">
+            <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Produk</th>
+              <th scope="col">Perusahaan/UMKM</th>
+              <th scope="col">Sertifikat</th>
+              <th scope="col">Tanggal</th>
+              <th scope="col">Binaan</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach($products['binaan'] ?? [] as $product)
+              <tr>
+                <th scope="row">{{ $loop->iteration }}</th>
+                <td>{{ $product->produk }}</td>
+                <td>{{ $product->perusahaan }}</td>
+                <td>{{ $product->sertifikat }}</td>
+                <td>{{ $product->tanggal }}</td>
+                <td>{{ $product->penerbit }}</td>
+              </tr>
+            @endforeach
+            </tbody>
+          </table>
+        </div>
       </div>
+      @endif
     </div>
   </section>
   <!--================End Category Product Area =================-->
