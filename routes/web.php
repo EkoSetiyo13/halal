@@ -38,6 +38,7 @@ Route::group(['middleware' => 'is_admin'], function () {
             return redirect()->route('admin.halal');
         });
         Route::get('/home', 'HomeController@adminHome')->name('admin.home');
+        
         Route::get('/halal', 'HomeController@adminHalal')->name('admin.halal');
         Route::resource('category', 'CategoryController')->except(['create', 'show']);
         Route::resource('user', 'UserController')->except(['create', 'show']);
@@ -91,6 +92,8 @@ Route::post('/register/binaan', 'Auth\RegisterBinaanController@createBinaan');
 Route::get('/login/binaan', 'Auth\LoginBinaanController@viewLogin');
 Route::post('/login/binaan', 'Auth\LoginBinaanController@login');
 Route::get('/login/check', 'Auth\LoginBinaanController@checkLogin');
+
+Route::get('/chart', 'HomeController@chart');
 /**
  * Working in progress?
  */

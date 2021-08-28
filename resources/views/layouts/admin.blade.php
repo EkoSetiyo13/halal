@@ -24,17 +24,13 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
     <!-- Icons -->
     <link rel="stylesheet" href="{{ asset('/argon/assets/vendor/nucleo/css/nucleo.css') }}" type="text/css">
-    <link rel="stylesheet" href="{{ asset('/argon/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css') }}"
-        type="text/css">
+    <link rel="stylesheet" href="{{ asset('/argon/assets/vendor/@fortawesome/fontawesome-free/css/all.min.css') }}" type="text/css">
     <!-- Page plugins -->
     <!-- Argon CSS -->
     <link rel="stylesheet" href="{{ asset('/argon/assets/css/argon.css?v=1.1.0') }}" type="text/css">
-    <link rel="stylesheet"
-        href="{{ asset('/argon/assets/vendor/datatables.net-bs4/css/dataTables.bootstrap4.min.css') }}">
-    <link rel="stylesheet"
-        href="{{ asset('/argon/assets/vendor/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css') }}">
-    <link rel="stylesheet"
-        href="{{ asset('/argon/assets/vendor/datatables.net-select-bs4/css/select.bootstrap4.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('/argon/assets/vendor/datatables.net-bs4/css/dataTables.bootstrap4.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('/argon/assets/vendor/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('/argon/assets/vendor/datatables.net-select-bs4/css/select.bootstrap4.min.css') }}">
 </head>
 
 <body>
@@ -48,8 +44,7 @@
                 </a>
                 <div class="ml-auto">
                     <!-- Sidenav toggler -->
-                    <div class="sidenav-toggler d-none d-xl-block" data-action="sidenav-unpin"
-                        data-target="#sidenav-main">
+                    <div class="sidenav-toggler d-none d-xl-block" data-action="sidenav-unpin" data-target="#sidenav-main">
                         <div class="sidenav-toggler-inner">
                             <i class="sidenav-toggler-line"></i>
                             <i class="sidenav-toggler-line"></i>
@@ -79,6 +74,7 @@
     </div>
     <!-- Argon Scripts -->
     <!-- Core -->
+    @yield('js')
     <script src="{{ asset('/argon/assets/vendor/jquery/dist/jquery.min.js') }}"></script>
     <script src="{{ asset('/argon/assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('/argon/assets/vendor/js-cookie/js.cookie.js') }}"></script>
@@ -92,7 +88,7 @@
     <script src="{{ asset('/argon/assets/js/argon.js?v=1.1.0') }}"></script>
     <!-- Demo JS - remove this in your project -->
     <script src="{{ asset('/argon/assets/js/demo.min.js') }}"></script>
-
+   
     <script>
         // Restricts input for the given textbox to the given inputFilter.
         function setInputFilter(textbox, inputFilter) {

@@ -4,7 +4,7 @@
 
 <!-- TAG YANG DIAPIT OLEH SECTION('TITLE') AKAN ME-REPLACE @YIELD('TITLE') PADA MASTER LAYOUTS -->
 @section('title')
-    <title>Dashboard</title>
+<title>Dashboard</title>
 @endsection
 
 @section('content')
@@ -54,8 +54,60 @@
         </div>
     </div>
 
-    
+    <div class="container-fluid">
+        <div class="col-xl-6">
+            <div id="pie_chart" style="width:400px; height:500px;">
+            </div>
+        </div>
+    </div>
 
-    
+
+
+
+
+
+
 </main>
+@endsection
+
+@section('js')
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+<script type="text/javascript">
+    var analytics = <?php echo $kota; ?>
+
+    google.charts.load('current', {
+        'packages': ['corechart']
+    });
+    google.charts.setOnLoadCallback(drawChart);
+
+
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable(analytics);
+        var options = {
+            title: 'Binaan Berdasarkan Asal Kota'
+        };
+        var chart = new google.visualization.PieChart(document.getElementById('pie_chart'));
+        chart.draw(data, options);
+    }
+</script>
+
+<script type="text/javascript">
+    var bpom = <?php echo $kota; ?>
+
+    google.charts.load('current', {
+        'packages': ['corechart']
+    });
+    google.charts.setOnLoadCallback(drawChart);
+
+
+    function drawChart() {
+        var data = google.visualization.arrayToDataTable(bpom);
+        var options = {
+            title: 'Binaan Berdasarkan Asal Kota'
+        };
+        var chart = new google.visualization.PieChart(document.getElementById('pie_chart_bpom'));
+        chart.draw(data, options);
+    }
+</script>
 @endsection

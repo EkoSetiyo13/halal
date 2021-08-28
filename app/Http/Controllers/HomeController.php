@@ -7,6 +7,8 @@ use App\FormPenyuplaiQurban;
 use App\User;
 use App\Umkm;
 use Auth;
+use Illuminate\Support\Facades\DB;
+
 
 use Illuminate\Http\Request;
 
@@ -95,15 +97,47 @@ class HomeController extends Controller
         $total_umkm = Umkm::all()->count();
         $total_kader = Umkm::Where('nama_umkm', '=', '-')->count();
         $total_umkm_aktif = $umkms = Umkm::Where('status', '=', true)->Where('nama_umkm', '!=', '-')->count();
+        $data = DB::table('umkms')
+            ->select(
+                DB::raw('kota as kota'),
+                DB::raw('count(*) as number')
+            )
+            ->groupBy('kota')
+            ->get();
+        $arrayKota[] = ['Kota', 'Number'];
+        foreach ($data as $key => $value) {
+            $arrayKota[++$key] = [$value->kota, $value->number];
+        }
+        $kota = json_encode($arrayKota);
+        
         return view('dashboard.halal', compact(
             'total_umkm',
             'total_kader',
-            'total_umkm_aktif'
+            'total_umkm_aktif',
+            'kota',
         ));
     }
 
     public function memberHalal()
     {
         return view('dashboard.member');
+    }
+
+    public function chart()
+    {
+
+        $data = DB::table('umkms')
+            ->select(
+                DB::raw('kota as kota'),
+                DB::raw('count(*) as number')
+            )
+            ->groupBy('kota')
+            ->get();
+        $array[] = ['Kota', 'Number'];
+        foreach ($data as $key => $value) {
+            $array[++$key] = [$value->kota, $value->number];
+        }
+        // dd(json_encode($array));
+        return view('google-pie-chart')->with('kota', json_encode($array));
     }
 }
