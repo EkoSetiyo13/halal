@@ -19,19 +19,19 @@
               <div class="card-header">
                 <h4 class="card-title">
                   Data UMKM
-                  <div class="float-right">
+                  <!-- <div class="float-right">
                     <a href="{{ route('binaan.create') }}" class="btn btn-primary btn-sm">Tambah</a>
-                  </div>
+                  </div> -->
                 </h4>
               </div>
-              <div class="card-header">
+              <!-- <div class="card-header">
                 <div class="button-action" style="margin-bottom: 20px">
                   <button type="button" class="btn btn-success" data-toggle="modal" data-target="#import">
                     IMPORT
                   </button>
                   <a href="{{ route('users.export') }}" class="btn btn-primary btn-md">EXPORT</a>
                 </div>
-              </div>
+              </div> -->
               @if (session('success'))
                 <div class="alert alert-success">{{ session('success') }}</div>
               @endif
