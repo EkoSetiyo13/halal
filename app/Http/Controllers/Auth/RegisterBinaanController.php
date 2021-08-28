@@ -28,6 +28,6 @@ class RegisterBinaanController extends Controller
             'is_member' => $request['is_member'],
             'nama_role' => $request['nama_role'],
         ]);
-        return view('auth.login');
+        return redirect('/login');
     }
 }

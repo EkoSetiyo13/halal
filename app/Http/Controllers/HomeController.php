@@ -109,12 +109,12 @@ class HomeController extends Controller
             $arrayKota[++$key] = [$value->kota, $value->number];
         }
         $kota = json_encode($arrayKota);
-        
+
         return view('dashboard.halal', compact(
             'total_umkm',
             'total_kader',
             'total_umkm_aktif',
-            'kota',
+            'kota'
         ));
     }
 
