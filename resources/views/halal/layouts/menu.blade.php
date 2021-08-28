@@ -36,7 +36,7 @@
                 @if (Auth::user()->is_admin == 1)
                     <a class="nav-link" href="{{ url('admin/halal') }}" style="color:white">Dashboard</a>
                 @elseif (Auth::user()->nama_role == 'binaan')
-                    <a class="nav-link" href="{{ url('member/halal') }}" style="color:white">Dashboard</a>
+                    <a class="nav-link" href="{{ url('member/halal/binaan') }}" style="color:white">Dashboard</a>
                 @else
                     <a class="nav-link" href="{{ url('/') }}" style="color:white">Dashboard</a>
                 @endif

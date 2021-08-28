@@ -16,7 +16,7 @@
                data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
             <h1>Pusat Kajian Halal</h1>
             <p>Halal lifestyle advocate</p>
-            <a href="/binaan" class="main-button-slider">Lihat Binaan</a>
+            <a href="/register/binaan" class="main-button-slider">Daftar Binaan</a>
           </div>
           <div class="col-lg-5 col-md-6 col-sm-12 col-xs-12"
                data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">

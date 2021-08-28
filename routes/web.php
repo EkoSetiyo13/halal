@@ -67,8 +67,9 @@ Route::fallback(function () {
     return view('error');
 });
 Route::group(['middleware' => 'is_member'], function () {
-    Route::group(['prefix' => 'member'], function () {
-        Route::get('/halal', 'HomeController@memberHalal');
+    Route::group(['prefix' => 'member', 'namespace' => 'Halal'], function () {
+        Route::get('/halal', 'BinaanController@dashboardMember');
+        Route::resource('halal/binaan', 'BinaanController')->except(['daftar.binaan']);
     });
 });
 
