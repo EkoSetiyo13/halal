@@ -56,7 +56,7 @@
 
     <div class="container-fluid">
         <div class="col-xl-6">
-            <div id="pie_chart" style="width:400px; height:500px;">
+            <div id="pie_chart" style="width:1000px; height:1000px;">
             </div>
         </div>
     </div>
