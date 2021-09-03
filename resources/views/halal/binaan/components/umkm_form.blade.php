@@ -25,25 +25,27 @@
           @endcomponent
         </div>
         <div class="form-group">
-          <label for="status" class="form-control-label">Status<span class="text-danger">*</span></label>
+          <!-- <label for="status" class="form-control-label">Status<span class="text-danger">*</span></label>
           <select name="status" class="form-control" required>
             <option value="1" {{ (old('status') ?? $umkm->status ?? null ) == '1' ? 'selected':'' }}>Aktif</option>
             <option value="0" {{ (old('status') ?? $umkm->status ?? null ) == '0' ? 'selected':'' }}>Tidak Aktif
             </option>
-          </select>
+          </select> -->
+          <input type="hidden" name="status" class="form-control" value="0" required>
           @component('layouts.components.input_error', ['active' => $errors->has('status'), 'msg'=> $errors->first('status')])
           @endcomponent
         </div>
         <div class="form-group">
-          <label for="tipe_binaan" class="form-control-label">Tipe Binaan<span class="text-danger">*</span></label>
-          <select name="tipe_binaan" class="form-control" required>
+          <!-- <label for="tipe_binaan" class="form-control-label">Tipe Binaan<span class="text-danger">*</span></label> -->
+          <!-- <select name="tipe_binaan" class="form-control" required>
             <option value="A" {{ (old('tipe_binaan') ?? $umkm->tipe_binaan ?? null) === 'A' ? 'selected':'' }}>A
             </option>
             <option value="B" {{ (old('tipe_binaan') ?? $umkm->tipe_binaan ?? null) === 'B' ? 'selected':'' }}>B
             </option>
             <option value="C" {{ (old('tipe_binaan') ?? $umkm->tipe_binaan ?? null) === 'C' ? 'selected':'' }}>C
             </option>
-          </select>
+          </select> -->
+          <input type="hidden" name="tipe_binaan" class="form-control" value="C" required>
           @component('layouts.components.input_error', ['active' => $errors->has('tipe_binaan'), 'msg'=> $errors->first('tipe_binaan')])
           @endcomponent
         </div>

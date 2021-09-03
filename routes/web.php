@@ -64,13 +64,18 @@ Route::group(['middleware' => 'is_admin'], function () {
     });
 });
 // ========================================= Dashboard Akhir ============================================ //
-Route::fallback(function () {
-    return view('error');
-});
+// Route::fallback(function () {
+//     return view('error');
+// });
 Route::group(['middleware' => 'is_member'], function () {
     Route::group(['prefix' => 'member', 'namespace' => 'Halal'], function () {
-        Route::get('/halal', 'BinaanController@dashboardMember');
-        Route::resource('halal/binaan', 'BinaanController')->except(['daftar.binaan']);
+        // Route::get('/halal', 'BinaanController@dashboardMember');
+        // Route::get('halal/binaan', 'BinaanController@index')->name('binaan.index');
+        // Route::get('halal/binaan/{id}/edit', 'BinaanController@edit')->name('binaan.edit');
+        // Route::get('halal/binaan/create', 'BinaanController@create')->name('binaan.create');
+        // Route::post('halal/binaan', 'BinaanController@store')->name('binaan.store');
+        // Route::post('halal/binaan', 'BinaanController@destroy')->name('binaan.destroy');
+        Route::resource('halal/binaan', 'BinaanController');
     });
 });
 
@@ -89,9 +94,7 @@ Route::group(['namespace' => 'V2'], function () {
 
 Route::get('/register/binaan', 'Auth\RegisterBinaanController@viewBinaan');
 Route::post('/register/binaan', 'Auth\RegisterBinaanController@createBinaan');
-Route::get('/login/binaan', 'Auth\LoginBinaanController@viewLogin');
-Route::post('/login/binaan', 'Auth\LoginBinaanController@login');
-Route::get('/login/check', 'Auth\LoginBinaanController@checkLogin');
+
 
 Route::get('/chart', 'HomeController@chart');
 /**

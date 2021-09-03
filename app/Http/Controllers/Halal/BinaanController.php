@@ -23,6 +23,7 @@ class BinaanController extends Controller
         $user = Auth::user();
         $umkms = Umkm::orderBy('id', 'ASC')->where('user_id', $user->id)->get();
         // return $umkms;
+       
         return view('halal.binaan.index', compact('umkms'));
     }
 
@@ -45,7 +46,7 @@ class BinaanController extends Controller
         $umkm->setAttribute('image', $filename);
         $umkm->save();
 
-        return redirect()->route('halal.binaan.index')->with(['success' => 'Produk Baru Ditambahkan']);
+        return redirect()->route('binaan.index')->with(['success' => 'Produk Baru Ditambahkan']);
     }
 
     public function edit($id)
@@ -69,17 +70,17 @@ class BinaanController extends Controller
 
         $umkm->fill($request->all());
         $umkm->setAttribute('image', $filename);
-        dd($umkm);
+        // dd($umkm);
         $umkm->save();
         
 
-        return redirect(route('halal.binaan.index'))->with(['success' => 'Data UMKM Diperbaharui']);
+        return redirect(route('binaan.index'))->with(['success' => 'Data UMKM Diperbaharui']);
     }
 
     public function destroy($id)
     {
         $umkm = Umkm::find($id);
         $umkm->delete();
-        return redirect(route('halal.binaan.index'))->with(['success' => 'UMKM Dihapus']);
+        return redirect(route('binaan.index'))->with(['success' => 'UMKM Dihapus']);
     }
 }

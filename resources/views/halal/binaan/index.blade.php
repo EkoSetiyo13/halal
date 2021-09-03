@@ -19,9 +19,9 @@
               <div class="card-header">
                 <h4 class="card-title">
                   Data UMKM
-                  <!-- <div class="float-right">
+                  <div class="float-right">
                     <a href="{{ route('binaan.create') }}" class="btn btn-primary btn-sm">Tambah</a>
-                  </div> -->
+                  </div>
                 </h4>
               </div>
               <!-- <div class="card-header">
@@ -39,7 +39,7 @@
                 <div class="alert alert-danger">{{ session('error') }}</div>
               @endif
               <div class="table-responsive py-4">
-                @component('umkm.components.umkm_table', compact('umkms'))
+                @component('halal.binaan.components.umkm_table', compact('umkms'))
                 @endcomponent
               </div>
             </div>

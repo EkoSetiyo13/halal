@@ -12,7 +12,7 @@
     </ol>
     <div class="container-fluid">
       <div class="animated fadeIn">
-        <form action="{{ route('umkm.update', $umkm->id) }}" method="post" enctype="multipart/form-data">
+        <form action="{{ route('binaan.update', $umkm->id) }}" method="post" enctype="multipart/form-data">
           @csrf
           @method('PUT')
           @component('umkm.components.umkm_form', ['errors' => $errors, 'umkm' => $umkm ?? []])

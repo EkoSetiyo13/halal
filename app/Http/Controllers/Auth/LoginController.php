@@ -33,7 +33,7 @@ class LoginController extends Controller
         } else if (Auth::user()->nama_role == 'penyuplai') {
             return '/member/form-penyuplai';
         } else if (Auth::user()->nama_role == 'binaan') {
-            return '/member/halal';
+            return '/member/halal/binaan';
         } else {
             return '/member/form-penyuplai';
         }
