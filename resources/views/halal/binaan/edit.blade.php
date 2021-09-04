@@ -15,7 +15,7 @@
         <form action="{{ route('binaan.update', $umkm->id) }}" method="post" enctype="multipart/form-data">
           @csrf
           @method('PUT')
-          @component('umkm.components.umkm_form', ['errors' => $errors, 'umkm' => $umkm ?? []])
+          @component('halal.binaan.components.umkm_form', ['errors' => $errors, 'umkm' => $umkm ?? []])
           @endcomponent
         </form>
       </div>
