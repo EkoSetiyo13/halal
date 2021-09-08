@@ -97,7 +97,7 @@ class HomeController extends Controller
         $total_umkm = Umkm::all()->count();
         $total_kader = Umkm::Where('nama_umkm', '=', '-')->count();
         $total_umkm_aktif = $umkms = Umkm::Where('status', '=', true)->Where('nama_umkm', '!=', '-')->count();
-        $data = DB::table('umkms')
+        $data = DB::table('umkms')->Where('nama_umkm', '!=', '-')->Where('kota', '!=', '-')
             ->select(
                 DB::raw('kota as kota'),
                 DB::raw('count(*) as number')

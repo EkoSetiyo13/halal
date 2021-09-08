@@ -24,7 +24,7 @@
                 <strong>{{ $umkm->no_umkm }}</strong><br>
             </td>
             <td>{{ $umkm->nama_umkm }}</td>
-            {{-- <td>{{ $umkm->nama_produk }}</td> --}}
+            <td>{{ $umkm->kota }}</td>
             <td>{!! $umkm->status_label !!}</td>
             <td>
                 <form action="{{ route('umkm.destroy', $umkm->id) }}" method="post">
