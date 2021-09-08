@@ -19,31 +19,31 @@
     </tfoot>
     <tbody>
         @forelse ($umkms as $umkm)
-            <tr>
-                <td>
-                    <strong>{{ $umkm->no_umkm }}</strong><br>
-                </td>
-                <td>{{ $umkm->nama_umkm }}</td>
-                {{-- <td>{{ $umkm->nama_produk }}</td> --}}
-                <td>{!! $umkm->status_label !!}</td>
-                <td>
-                    <form action="{{ route('umkm.destroy', $umkm->id) }}" method="post">
-                        @csrf
-                        @method('DELETE')
-                        <a href="{{ route('umkm.edit', $umkm->id) }}" class="btn btn-warning btn-sm">Edit</a>
-                        <button class="btn btn-danger btn-sm">Hapus</button>
-                        {{-- @if (Auth::user()->is_admin == 1)
-              <a href="https://api.whatsapp.com/send?phone=62{{ substr($umkm->no_wa, 1) }}&text=Assalamualaikum," class="btn btn-success btn-sm">Chat Wa</a>
-          @else
+        <tr>
+            <td>
+                <strong>{{ $umkm->no_umkm }}</strong><br>
+            </td>
+            <td>{{ $umkm->nama_umkm }}</td>
+            {{-- <td>{{ $umkm->nama_produk }}</td> --}}
+            <td>{!! $umkm->status_label !!}</td>
+            <td>
+                <form action="{{ route('umkm.destroy', $umkm->id) }}" method="post">
+                    @csrf
+                    @method('DELETE')
+                    <a href="{{ route('umkm.edit', $umkm->id) }}" class="btn btn-warning btn-sm">Edit</a>
+                    <button class="btn btn-danger btn-sm">Hapus</button>
+                    @if (Auth::user()->is_admin == 1)
+                    <a target="_blank" href="https://api.whatsapp.com/send?phone=62{{ substr($umkm->no_wa, 1) }}&text=Assalamualaikum," class="btn btn-success btn-sm">Chat Wa</a>
+                    @else
 
-          @endif --}}
-                    </form>
-                </td>
-            </tr>
+                    @endif
+                </form>
+            </td>
+        </tr>
         @empty
-            <tr>
-                <td colspan="6" class="text-center">Tidak ada data</td>
-            </tr>
+        <tr>
+            <td colspan="6" class="text-center">Tidak ada data</td>
+        </tr>
         @endforelse
     </tbody>
 </table>
