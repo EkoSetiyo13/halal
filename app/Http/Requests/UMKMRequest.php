@@ -56,7 +56,9 @@ class UMKMRequest extends FormRequest
             'image' => 'image',
             'video' => 'nullable|string|max:255',
             'sertifikat_halal' => 'nullable|string|max:255',
-            'produk_desa' => 'nullable|string|max:255'
+            'produk_desa' => 'nullable|string|max:255',
+            'user_id' => 'nullable|integer',
+            'dosen' => 'nullable|string|max:255',
         ];
     }
 }

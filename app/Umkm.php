@@ -35,7 +35,8 @@ class Umkm extends Model
         'video',
         'sertifikat_halal',
         'produkdesa',
-        'user_id'
+        'user_id',
+        'dosen'
     ];
 
     public function getStatusLabelAttribute()

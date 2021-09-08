@@ -18,8 +18,18 @@ class RedirectIfAuthenticated
     public function handle($request, Closure $next, $guard = null)
     {
         if (Auth::guard($guard)->check()) {
-            return redirect('/home');
+            if (Auth::user()->is_admin == 1) {
+                return redirect('/admin/halal');
+            } else if (Auth::user()->nama_role == 'penyuplai') {
+                return redirect('/member/form-penyuplai');
+            } else if (Auth::user()->nama_role == 'binaan') {
+                return redirect('/member/halal/binaan');
+            } else {
+                return redirect('/member/form-penyuplai');
+            }
         }
+
+
 
         return $next($request);
     }
