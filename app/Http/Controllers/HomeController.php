@@ -97,6 +97,12 @@ class HomeController extends Controller
         $total_umkm = Umkm::all()->count();
         $total_kader = Umkm::Where('nama_umkm', '=', '-')->count();
         $total_umkm_aktif = $umkms = Umkm::Where('status', '=', true)->Where('nama_umkm', '!=', '-')->count();
+
+        $total_umkm_bpom = Umkm::Where('bpom', '!=', null)->count();
+        $total_umkm_pirt = Umkm::Where('pirt', '!=', null)->count();
+        $total_umkm_sertifikat_halal = Umkm::Where('sertifikat_halal', '!=', null)->count();
+
+        //Chart
         $data = DB::table('umkms')->Where('nama_umkm', '!=', '-')->Where('kota', '!=', '-')
             ->select(
                 DB::raw('kota as kota'),
@@ -104,16 +110,22 @@ class HomeController extends Controller
             )
             ->groupBy('kota')
             ->get();
+
         $arrayKota[] = ['Kota', 'Number'];
+
         foreach ($data as $key => $value) {
             $arrayKota[++$key] = [$value->kota, $value->number];
         }
         $kota = json_encode($arrayKota);
 
+
         return view('dashboard.halal', compact(
             'total_umkm',
             'total_kader',
             'total_umkm_aktif',
+            'total_umkm_bpom',
+            'total_umkm_sertifikat_halal',
+            'total_umkm_pirt',
             'kota'
         ));
     }

@@ -13,8 +13,12 @@
         </div>
         <div class="form-group">
           <label for="dosen" class="form-control-label">Nama Dosen Binaan<span class="text-danger">*</span></label>
-          <input type="text" name="dosen" class="form-control" value="{{ old('dosen') ?? $umkm->dosen ??null }}" placeholder="Nama Dosen Binaan" required>
-          @component('layouts.components.input_error', ['active' => $errors->has('nama_pemilik'), 'msg'=> $errors->first('nama_pemilik')])
+          <input type="text" name="dosen" class="form-control" value="{{ old('dosen') ?? $umkm->dosen ??null }}" placeholder="Nama Dosen Binaan">
+        </div>
+        <div class="form-group">
+          <label for="pirt" class="form-control-label">P-IRT</label>
+          <input type="text" name="pirt" class="form-control" value="{{ old('pirt') ?? $umkm->pirt ?? null }}" placeholder="Nomor P-IRT">
+          @component('layouts.components.input_error', ['active' => $errors->has('pirt'), 'msg'=> $errors->first('pirt')])
           @endcomponent
         </div>
         <div class="form-group">

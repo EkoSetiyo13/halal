@@ -27,23 +27,48 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="callout callout-info">
-                                        <small class="text-muted">Jumlah Binaan</small>
+                                        <strong class="text-muted">Jumlah Binaan</strong>
                                         <br>
                                         <strong class="h4"> {{$total_umkm}} </strong>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="callout callout-danger">
-                                        <small class="text-muted">Jumlah Binaan UMKM</small>
+                                        <strong class="text-muted">Jumlah Binaan UMKM</strong>
                                         <br>
                                         <strong class="h4"> {{$total_umkm_aktif}} </strong>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="callout callout-primary">
-                                        <small class="text-muted">Jumlah Binaan Kader</small>
+                                        <strong class="text-muted">Jumlah Binaan Kader</strong>
                                         <br>
                                         <strong class="h4"> {{$total_kader}} </strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-4">
+                                    <div class="callout callout-info">
+                                        <strong class="text-muted">Jumlah Binaan (BPOM)</strong>
+                                        <br>
+                                        <strong class="h4"> {{$total_umkm_bpom}} </strong>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="callout callout-danger">
+                                        <strong class="text-muted">Jumlah Binaan (Sertifikat Halal)</strong>
+                                        <br>
+                                        <strong class="h4"> {{$total_umkm_sertifikat_halal}} </strong>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="callout callout-primary">
+                                        <strong class="text-muted">Jumlah Binaan (PIRT)</strong>
+                                        <br>
+                                        <strong class="h4"> {{$total_umkm_pirt}} </strong>
                                     </div>
                                 </div>
                             </div>
@@ -55,18 +80,15 @@
     </div>
 
     <div class="container-fluid">
-        <div class="col-xl-6">
-            <div id="pie_chart" style="width:1000px; height:1000px;">
+        <div class="animated fadeIn">
+            <div class="row">
+                <div class="col-md-12">
+                    <div id="pie_chart" style="width:1200px; height:400px;">
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-
-
-
-
-
-
-
 </main>
 @endsection
 
