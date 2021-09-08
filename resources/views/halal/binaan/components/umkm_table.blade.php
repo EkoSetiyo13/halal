@@ -4,6 +4,7 @@
             <th>Nomer Binaan</th>
             <th scope="col">Nama UKM</th>
             {{-- <th scope="col">Nama Produk</th> --}}
+            <!-- <th scope="col">Kota</th> -->
             <th>Status</th>
             <th>Aksi</th>
         </tr>
