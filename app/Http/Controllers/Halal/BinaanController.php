@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Str;
 use Maatwebsite\Excel\Facades\Excel;
 use Illuminate\Support\Facades\Storage;
-
+use File;
 use App\Umkm;
 use App\Imports\UmkmsImport;
 use App\Exports\UmkmsExport;
