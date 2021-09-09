@@ -99,6 +99,7 @@ Route::post('/register/binaan', 'Auth\RegisterBinaanController@createBinaan');
 
 
 Route::get('/chart', 'HomeController@chart');
+Route::get('/sql', 'ExampleController@checkSql');
 /**
  * Working in progress?
  */
