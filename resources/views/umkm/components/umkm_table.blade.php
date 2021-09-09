@@ -4,7 +4,8 @@
             <th>Nomer Binaan</th>
             <th scope="col">Nama UKM</th>
             {{-- <th scope="col">Nama Produk</th> --}}
-            <th scope="col">Kota</th>
+            <!-- <th scope="col">Kota</th> -->
+            <th scope="col">Capaian</th>
             <th>Status</th>
             <th>Aksi</th>
         </tr>
@@ -26,7 +27,11 @@
                 <strong>{{ $umkm->no_umkm }}</strong><br>
             </td>
             <td>{{ $umkm->nama_umkm }}</td>
-            <td>{{ $umkm->kota }}</td>
+            <td>
+                <span class="badge badge-primary">{{ $umkm->pirt ? 'pirt' : '' }}</span>
+                <span class="badge badge-primary">{{ $umkm->bpom ? 'bpom' : '' }}</span>
+                <span class="badge badge-primary">{{ $umkm->sertifikat_halal ? 'sertifikat_halal' : '' }}</span>
+            </td>
             <td>{!! $umkm->status_label !!}</td>
             <td>
                 <form action="{{ route('umkm.destroy', $umkm->id) }}" method="post">
