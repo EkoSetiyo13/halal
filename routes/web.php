@@ -24,7 +24,7 @@ Route::get('/kader', 'Halal\HalalController@kader')->name('kader');
 Route::get('/kader/json', 'Halal\HalalController@kaderJson')->name('kader.json');
 Route::get('/kader/{no_binaan}', 'Halal\HalalController@detailKader')->name('detail.kader');
 Route::get('/kader/{no_binaan}/json', 'Halal\HalalController@detailKaderJson')->name('detail.kader.json');
-Route::get('/binaan', 'Halal\HalalController@binaan')->name('binaan');
+Route::get('/binaana', 'Halal\HalalController@binaan')->name('binaan');
 Route::get('/binaan/json', 'Halal\HalalController@binaanJson')->name('binaan.json');
 Route::get('/binaan/{no_binaan}', 'Halal\HalalController@detailBinaan')->name('detail.binaan');
 Route::get('/binaan/{no_binaan}/json', 'Halal\HalalController@detailBinaanJson')->name('detail.binaan.json');
