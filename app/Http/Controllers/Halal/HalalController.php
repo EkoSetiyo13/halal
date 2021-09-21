@@ -27,6 +27,11 @@ class HalalController extends Controller
     public function binaanJSON(Request $request)
     {
         $umkms = Umkm::getActiveUMKM(-1);
+        $umkms = $umkms->map(function ($umkm) {
+            unset($umkm['id']);
+            unset($umkm['user_id']);
+            return $umkm;
+        });
         return response()->json($umkms->all());
     }
 
@@ -40,6 +45,11 @@ class HalalController extends Controller
     public function kaderJson(Request $request)
     {
         $umkms = Umkm::getActiveKader(-1);
+        $umkms = $umkms->map(function ($umkm) {
+            unset($umkm['id']);
+            unset($umkm['user_id']);
+            return $umkm;
+        });
         return response()->json($umkms->all());
     }
 
@@ -92,6 +102,8 @@ class HalalController extends Controller
                 'message' => 'No data'
             ]);
         } else {
+            unset($binaan['id']);
+            unset($binaan['user_id']);
             return response()->json($binaan);
         }
     }
@@ -126,6 +138,8 @@ class HalalController extends Controller
                 'message' => 'No data'
             ]);
         } else {
+            unset($binaan['id']);
+            unset($binaan['user_id']);
             return response()->json($binaan);
         }
     }
