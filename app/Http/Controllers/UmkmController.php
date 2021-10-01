@@ -12,8 +12,10 @@ use Auth;
 use File;
 
 use App\Umkm;
+use App\City;
 use App\Imports\UmkmsImport;
 use App\Exports\UmkmsExport;
+
 
 
 class UmkmController extends Controller
@@ -27,20 +29,25 @@ class UmkmController extends Controller
 
     public function create()
     {
-        return view('umkm.create');
+        $cities = City::get();
+        $umkms = Umkm::orderBy('id', 'ASC')->get();
+        return view('umkm.create', compact('cities', 'umkms'));
     }
 
     public function store(UMKMRequest $request)
     {
+
         $filename = null;
         if ($request->hasFile('image')) {
             $file = $request->file('image');
             $filename = time() . Str::slug($request->nama_pemilik) . '.' . $file->getClientOriginalExtension();
             $file->storeAs('public/products', $filename);
         }
+        $city = City::find($request->cities_id);
 
         $umkm = new Umkm;
         $umkm->fill($request->all());
+        $umkm->kota = $city->name;
         $umkm->setAttribute('image', $filename);
         $umkm->save();
 
@@ -50,7 +57,8 @@ class UmkmController extends Controller
     public function edit($id)
     {
         $umkm = Umkm::find($id);
-        return view('umkm.edit', compact('umkm'));
+        $cities = City::get();
+        return view('umkm.edit', compact('umkm', "cities"));
     }
 
     public function update(UMKMRequest $request, $id)
@@ -66,7 +74,9 @@ class UmkmController extends Controller
             File::delete(storage_path('app/public/products/' . $umkm->image));
         }
 
+        $city = City::find($request->cities_id);
         $umkm->fill($request->all());
+        $umkm->kota = $city->name;
         $umkm->setAttribute('image', $filename);
         $umkm->save();
 
@@ -118,5 +128,12 @@ class UmkmController extends Controller
     public function export()
     {
         return Excel::download(new UmkmsExport(), 'users.xlsx');
+    }
+
+    public function searchCities(Request $request)
+    {
+        $search = $request->get('name');
+        $data = City::where('name', 'LIKE', '%' . $search . '%')->get();
+        return response()->json($data);
     }
 }

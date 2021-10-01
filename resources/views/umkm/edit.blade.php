@@ -1,24 +1,24 @@
 @extends('layouts.admin')
 
 @section('title')
-  <title>Edit UMKM</title>
+<title>Edit UMKM</title>
 @endsection
 
 @section('content')
-  <main class="main">
-    <ol class="breadcrumb">
-      {{-- <li class="breadcrumb-item">Home</li>
+<main class="main">
+  <ol class="breadcrumb">
+    {{-- <li class="breadcrumb-item">Home</li>
       <li class="breadcrumb-item active">Product</li> --}}
-    </ol>
-    <div class="container-fluid">
-      <div class="animated fadeIn">
-        <form action="{{ route('umkm.update', $umkm->id) }}" method="post" enctype="multipart/form-data">
-          @csrf
-          @method('PUT')
-          @component('umkm.components.umkm_form', ['errors' => $errors, 'umkm' => $umkm ?? []])
-          @endcomponent
-        </form>
-      </div>
+  </ol>
+  <div class="container-fluid">
+    <div class="animated fadeIn">
+      <form action="{{ route('umkm.update', $umkm->id) }}" method="post" enctype="multipart/form-data">
+        @csrf
+        @method('PUT')
+        @component('umkm.components.umkm_form', compact('umkm', 'cities'), ['errors' => $errors, 'umkm' => $umkm ?? []])
+        @endcomponent
+      </form>
     </div>
-  </main>
+  </div>
+</main>
 @endsection

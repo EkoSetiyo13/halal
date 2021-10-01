@@ -32,7 +32,7 @@ Route::get('/data-dosen', 'Halal\HalalController@dataDosen')->name('data.dosen')
 Route::get('/data-mahasiswa', 'Halal\HalalController@dataMahasiswa')->name('data.mahasiswa');
 Route::get('/tanya-halal', 'Halal\HalalController@tanyaHalal')->name('tanya-halal');
 // ========================================= Landing Page Halal Akhir ============================================ //
-
+Route::get('cities/index', 'UmkmController@searchCities')->name('cities');
 // ========================================= Dashboard Mulai ============================================ //
 Route::group(['middleware' => 'is_admin'], function () {
     Route::group(['prefix' => 'admin'], function () {

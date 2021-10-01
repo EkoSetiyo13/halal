@@ -36,7 +36,8 @@ class Umkm extends Model
         'sertifikat_halal',
         'produkdesa',
         'user_id',
-        'dosen'
+        'dosen',
+        'cities_id',
     ];
 
     public function getStatusLabelAttribute()

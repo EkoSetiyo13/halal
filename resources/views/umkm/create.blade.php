@@ -10,7 +10,7 @@
       <div class="animated fadeIn">
         <form action="{{ route('umkm.store') }}" method="post" enctype="multipart/form-data">
           @csrf
-          @component('umkm.components.umkm_form', ['errors' => $errors, 'umkm' => $umkm ?? []])
+          @component('umkm.components.umkm_form', compact('cities'), ['errors' => $errors, 'umkm' => $umkm ?? []])
           @endcomponent
         </form>
       </div>

@@ -85,12 +85,19 @@
             @component('layouts.components.input_error', ['active' => $errors->has('kecamatan'), 'msg'=> $errors->first('kecamatan')])
             @endcomponent
           </label>
-          <label for="kota" class="form-control-label col">Kab/Kota <span class="text-danger">*</span>
-            <input type="text" name="kota" class="form-control" value="{{ old('kota') ?? $umkm->kota ?? null }}" required>
-            @component('layouts.components.input_error', ['active' => $errors->has('kota'), 'msg'=> $errors->first('kota')])
-            @endcomponent
+          <label for="kota" class="form-control-label col">Kab/Kota
+            <input type="text" name="kota" class="form-control" value="{{ old('kota') ?? $umkm->kota ?? null }}">
+          </label>
+          <label for="cities_id" class="form-control-label col">Kab/Kota <span class="text-danger">*</span>
+            <select name="cities_id" class="form-control" data-toggle="select">
+              <option>-</option>
+              @foreach ($cities as $data)
+              <option value={{$data->id}} {{ (old('cities_id') ?? $umkm->cities_id ?? null ) == $data->id ? 'selected':'' }}>{{$data->name}}</option>
+              @endforeach
+            </select>
           </label>
         </div>
+
         <div class="form-group">
           <label for="google_map" class="form-control-label">Google Map</label>
           <input type="text" name="google_map" class="form-control" value="{{ old('google_map') ?? $umkm->google_map ?? null }}" placeholder="https://www.google.com/maps/place/Sepuluh+Nopember+Institute+of+Technology+(ITS)/@-7.2762443,112.7986227,15z/data=!4m5!3m4!1s0x2dd7fa1323221a93:0x306c3c99adedb258!8m2!3d-7.282356!4d112.7949253">

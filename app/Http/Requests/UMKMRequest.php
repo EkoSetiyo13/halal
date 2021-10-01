@@ -41,7 +41,7 @@ class UMKMRequest extends FormRequest
             'alamat' => 'required|string|max:255',
             'desa' => 'required|string|max:255',
             'kecamatan' => 'required|string|max:255',
-            'kota' => 'required|string|max:255',
+            'kota' => 'nullable||string|max:255',
             'google_map' => 'nullable|string',
             'no_wa' => 'required|string|max:255',
             'email' => 'nullable|email',
@@ -59,6 +59,7 @@ class UMKMRequest extends FormRequest
             'produk_desa' => 'nullable|string|max:255',
             'user_id' => 'nullable|integer',
             'dosen' => 'nullable|string|max:255',
+            'cities_id' => 'nullable|integer',
         ];
     }
 }
