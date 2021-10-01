@@ -10,11 +10,19 @@ use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
+use App\Setting;
+
 class RegisterBinaanController extends Controller
 {
     public function viewBinaan()
     {
-        return view('auth.register_binaan');
+        $data = Setting::first();
+        $regis_active = $data->is_active_registration_binaan;
+        if ($regis_active) {
+            return view('auth.register_binaan');
+        } else {
+            return view('error');
+        }
     }
 
     protected function createBinaan(Request $request)

@@ -1,4 +1,5 @@
 <?php
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -40,7 +41,7 @@ Route::group(['middleware' => 'is_admin'], function () {
             return redirect()->route('admin.halal');
         });
         Route::get('/home', 'HomeController@adminHome')->name('admin.home');
-        
+
         Route::get('/halal', 'HomeController@adminHalal')->name('admin.halal');
         Route::resource('category', 'CategoryController')->except(['create', 'show']);
         Route::resource('user', 'UserController')->except(['create', 'show']);
@@ -51,6 +52,9 @@ Route::group(['middleware' => 'is_admin'], function () {
         Route::resource('umkm', 'UmkmController')->except(['daftar.umkm']);
         Route::get('kader-halal', 'UmkmController@kader')->name('umkm.kader');
         Route::get('umkm-halal', 'UmkmController@umkm')->name('umkm.umkm');
+        Route::get('setting', 'Halal\SettingController@SettingView')->name('setting.index');
+        Route::get('setting/regis', 'Halal\SettingController@switchStatusRegis')->name('setting.regis-binaan');
+
     });
 
     Route::group(['prefix' => 'member'], function () {
