@@ -44,7 +44,9 @@
                           <img width="300px" src="{{ $logoQRCode }}">
                         </a>
                         <p>*Pasang kode ini di web anda untuk menampilkan QR Code anda di web</p>
-                        <p><b>*Berlaku hingga Agustus 2022</b></p>
+                        <p><b>*Berlaku hingga <?php setlocale(LC_ALL, 'id_ID.UTF8', 'id_ID.UTF-8', 'id_ID.8859-1', 'id_ID', 'IND.UTF8', 'IND.UTF-8', 'IND.8859-1', 'IND', 'Indonesian.UTF8', 'Indonesian.UTF-8', 'Indonesian.8859-1', 'Indonesian', 'Indonesia', 'id', 'ID', 'en_US.UTF8', 'en_US.UTF-8', 'en_US.8859-1', 'en_US', 'American', 'ENG', 'English');
+                                              echo strftime("%B") . "\n";
+                                              echo strftime("%Y") + 2 . "\n"; ?></b></p>
                         <textarea readonly rows="15" id="myQrCodeLogo" name="description" placeholder="informasi mengenai deskripsi yang menarik" id="description" class="form-control"><a href="{{ $urlBinaan }}"><img src="{{ $logoQRCode }}"></a></textarea>
                       </td>
                     </tr>
