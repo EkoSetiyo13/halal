@@ -26,7 +26,7 @@
 
     <li class="nav-item">
         <a class="nav-link" href="#navbar-web" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-dashboard">
-            <i class="ni ni-world-2 text-primary"></i>
+            <i class="ni ni-world-2 text-red"></i>
             <span class="nav-link-text">Website</span>
         </a>
         <div class="collapse" id="navbar-web">
@@ -50,7 +50,7 @@
 
     <li class="nav-item">
         <a class="nav-link" href="#navbar-dashboards" data-toggle="collapse" role="button" aria-expanded="false" aria-controls="navbar-dashboard">
-            <i class="ni ni-book-bookmark text-primary"></i>
+            <i class="ni ni-istanbul text-primary"></i>
             <span class="nav-link-text">Manajemen Qurban</span>
         </a>
         <div class="collapse" id="navbar-dashboards">
@@ -131,7 +131,7 @@
     </li>
     @else
     @endif
-    
+
     @if (Auth::user()->is_member == true && Auth::user()->nama_role == "binaan")
     <li class="nav-item">
         <a class="nav-link" href="{{ route('binaan.index') }}">
@@ -147,6 +147,16 @@
         <a class="nav-link" href="{{ route('user.index') }}">
             <i class="ni ni-single-02 text-info"></i>
             <span class="nav-link-text">Manajemen User</span>
+        </a>
+    </li>
+    @else
+    @endif
+
+    @if (Auth::user()->is_admin == true)
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('setting.index') }}">
+            <i class="ni ni-settings-gear-65 text-green"></i>
+            <span class="nav-link-text">Pengaturan</span>
         </a>
     </li>
     @else
