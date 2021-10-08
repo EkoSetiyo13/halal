@@ -18,7 +18,6 @@ class CreateCitiesSeeder extends Seeder
         $dataUser = Reader::createFromPath(database_path('seeds/csv/cities.csv'), 'r');
         $dataUser->setDelimiter(',');
         $dataUser->setHeaderOffset(0);
-        DB::connection('pgsql')->statement("TRUNCATE TABLE ONLY cities RESTART IDENTITY CASCADE");
         foreach ($dataUser as $data) {
             City::create([
                 'province_id' => $this->nullChecker($data['province_id']),
