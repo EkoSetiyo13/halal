@@ -25,8 +25,5 @@ class AddDosenColumn extends Migration
      */
     public function down()
     {
-        Schema::table('umkms', function (Blueprint $table) {
-            //
-        });
     }
 }
