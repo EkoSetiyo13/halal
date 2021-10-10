@@ -1,9 +1,9 @@
 <?php
 
+use App\City;
+use League\Csv\Reader;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-use League\Csv\Reader;
-use App\City;
 
 
 class CreateCitiesSeeder extends Seeder
