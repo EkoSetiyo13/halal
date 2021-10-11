@@ -115,7 +115,7 @@ class Umkm extends Model
     {
         $documentColumnsStr = join(" || ' ' || ", $columns);
         return self::whereRaw(
-            "to_tsvector($documentColumnsStr) @@ to_tsquery(?) = TRUE", [$query]
+            "to_tsvector($documentColumnsStr) @@ websearch_to_tsquery('english', ?) = TRUE", [$query]
         )->paginate($pagination);
     }
 
