@@ -12,15 +12,15 @@
     <div class="header-text">
       <div class="container">
         <div class="row">
-          <div class="left-text col-lg-7 col-md-6 col-sm-12 col-xs-12"
+          <div class="left-text col-lg-5 col-md-6 col-sm-12 col-xs-12"
                data-scroll-reveal="enter left move 30px over 0.6s after 0.4s">
-            <h1>Pusat Kajian Halal</h1>
+            <h2 style="color: white; font-size : 50px">Pusat Kajian Halal</h2>
             <p>Halal lifestyle advocate</p>
             <a href="/register/binaan" class="main-button-slider">Daftar Binaan</a>
           </div>
-          <div class="col-lg-5 col-md-6 col-sm-12 col-xs-12"
+          <div class="col-lg-7 col-md-6 col-sm-12 col-xs-12"
                data-scroll-reveal="enter right move 30px over 0.6s after 0.4s">
-            <img src="assets/assets/images/slider-icon.png" class="rounded img-fluid d-block mx-auto"
+            <img src="assets/img-banner.jpeg" class="rounded img-fluid d-block mx-auto"
                  alt="First Vector Graphic">
           </div>
         </div>
