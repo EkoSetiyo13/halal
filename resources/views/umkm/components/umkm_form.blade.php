@@ -85,9 +85,9 @@
             @component('layouts.components.input_error', ['active' => $errors->has('kecamatan'), 'msg'=> $errors->first('kecamatan')])
             @endcomponent
           </label>
-          <label for="kota" class="form-control-label col">Kab/Kota
+          <!-- <label for="kota" class="form-control-label col">Kab/Kota
             <input type="text" name="kota" class="form-control" value="{{ old('kota') ?? $umkm->kota ?? null }}">
-          </label>
+          </label> -->
           <label for="cities_id" class="form-control-label col">Kab/Kota <span class="text-danger">*</span>
             <select name="cities_id" class="form-control" data-toggle="select">
               <option>-</option>
