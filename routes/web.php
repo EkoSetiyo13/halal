@@ -5,21 +5,7 @@ use Illuminate\Support\Facades\Route;
 
 Auth::routes();
 
-// ========================================= Landing Page Kurban Mulai ============================================ //
-Route::group(['prefix' => 'v1'], function () {
-    Route::get('/', 'Ecommerce\FrontController@index')->name('front.index');
-    Route::get('/product', 'Ecommerce\FrontController@product')->name('front.product');
-    Route::get('/penerima', 'Ecommerce\FrontController@penerima')->name('front.penerima');
-    Route::get('/penyuplai', 'Ecommerce\FrontController@penyuplai')->name('front.penyuplai');
-    Route::get('/cara-pendaftaran', 'Ecommerce\FrontController@kontak')->name('front.cara-pendaftaran');
-    Route::get('/category/{slug}', 'Ecommerce\FrontController@categoryProduct')->name('front.category');
-    Route::get('/product/{slug}', 'Ecommerce\FrontController@show')->name('front.show_product');
-    Route::get('/penerima/{slug}', 'Ecommerce\FrontController@showPenerima')->name('front.show_penerima');
-    Route::get('/penyuplai/{slug}', 'Ecommerce\FrontController@showPenyuplai')->name('front.show_penyuplai');
-});
-// ========================================= Landing Page Kurban Akhir ============================================ //
-
-// ========================================= Landing Page Halal Mulai ============================================ //
+// ========================================= Landing Page Module Halal ============================================ //
 Route::get('/', 'Halal\HalalController@home')->name('halal');
 Route::get('/kader', 'Halal\HalalController@kader')->name('kader');
 Route::get('/kader/json', 'Halal\HalalController@kaderJson')->name('kader.json');
@@ -32,8 +18,7 @@ Route::get('/binaan/{no_binaan}/json', 'Halal\HalalController@detailBinaanJson')
 Route::get('/data-dosen', 'Halal\HalalController@dataDosen')->name('data.dosen');
 Route::get('/data-mahasiswa', 'Halal\HalalController@dataMahasiswa')->name('data.mahasiswa');
 Route::get('/tanya-halal', 'Halal\HalalController@tanyaHalal')->name('tanya-halal');
-// ========================================= Landing Page Halal Akhir ============================================ //
-Route::get('cities/index', 'UmkmController@searchCities')->name('cities');
+
 // ========================================= Dashboard Mulai ============================================ //
 Route::group(['middleware' => 'is_admin'], function () {
     Route::group(['prefix' => 'admin'], function () {
@@ -54,7 +39,6 @@ Route::group(['middleware' => 'is_admin'], function () {
         Route::get('umkm-halal', 'UmkmController@umkm')->name('umkm.umkm');
         Route::get('setting', 'Halal\SettingController@SettingView')->name('setting.index');
         Route::get('setting/regis', 'Halal\SettingController@switchStatusRegis')->name('setting.regis-binaan');
-
     });
 
     Route::group(['prefix' => 'member'], function () {
@@ -70,23 +54,17 @@ Route::group(['middleware' => 'is_admin'], function () {
     });
 });
 // ========================================= Dashboard Akhir ============================================ //
-// Route::fallback(function () {
-//     return view('error');
-// });
+Route::fallback(function () {
+    return view('error');
+});
 Route::group(['middleware' => 'is_member'], function () {
     Route::group(['prefix' => 'member', 'namespace' => 'Halal'], function () {
-        // Route::get('/halal', 'BinaanController@dashboardMember');
-        // Route::get('halal/binaan', 'BinaanController@index')->name('binaan.index');
-        // Route::get('halal/binaan/{id}/edit', 'BinaanController@edit')->name('binaan.edit');
-        // Route::get('halal/binaan/create', 'BinaanController@create')->name('binaan.create');
-        // Route::post('halal/binaan', 'BinaanController@store')->name('binaan.store');
-        // Route::post('halal/binaan', 'BinaanController@destroy')->name('binaan.destroy');
         Route::resource('halal/binaan', 'BinaanController');
     });
 });
 
 
-//================================== V2 Kurban =====================================//
+//================================== Landing Page Module Kurban =====================================//
 Route::group(['namespace' => 'V2'], function () {
     Route::group(['namespace' => 'Landing'], function () {
         Route::get('/kurban', 'LandingPageController@index');
@@ -101,28 +79,3 @@ Route::group(['namespace' => 'V2'], function () {
 Route::get('/register/binaan', 'Auth\RegisterBinaanController@viewBinaan');
 Route::post('/register/binaan', 'Auth\RegisterBinaanController@createBinaan');
 
-
-Route::get('/chart', 'HomeController@chart');
-Route::get('/sql', 'ExampleController@checkSql');
-/**
- * Working in progress?
- */
-//Route::group(['prefix' => 'tes', 'namespace' => 'V2'], function () {
-//    Route::get('/', 'TestController@indexTailwind');
-//
-//    Route::group(['namespace' => 'Auth'], function () {
-//        Route::get('/login', 'LoginController@index');
-//        Route::get('/register', 'RegisterController@index');
-//    });
-//
-//    Route::group(['namespace' => 'Landing'], function () {
-//        Route::get('/kurban', 'LandingPageController@index');
-//    });
-//});
-//
-//Route::group(['prefix' => 'dashboard', 'namespace' => 'V2\Dashboard'], function () {
-//    Route::get('/', 'MainController@index');
-//    Route::group(['prefix' => 'kurban', 'namespace' => 'ManagementKurban'], function () {
-//        Route::get('/tambah', 'PenyuplaiKurbanController@index');
-//    });
-//});
