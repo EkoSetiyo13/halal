@@ -28,6 +28,7 @@
                                               $date = new DateTime($dateQRCode);
                                               echo strftime("%B", $date->getTimestamp()) . "\n";
                                               echo strftime("%Y", $date->getTimestamp()) + 2 . "\n";
+                                              echo 'ini dari status_date'.$dateQRCode;
                                               ?></b></p>
                         <textarea readonly rows="15" id="myQrCode" name="description" placeholder="informasi mengenai deskripsi yang menarik" id="description" class="form-control"><a href="{{ $urlBinaan }}"><img src="{{ $plainQRCode }}"></a></textarea>
                       </td>
