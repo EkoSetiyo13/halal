@@ -160,6 +160,7 @@
   </div>
   @component('halal.home.components.qrcode', [
     'idBinaan' => $binaan->no_umkm,
+    'dateQRCode' => $binaan->status_date,
     'plainQRCode' => $plainQRCode,
     'logoQRCode' => $logoQRCode,
     'urlBinaan' => route('detail.kader', ['no_binaan' => $binaan->no_umkm])

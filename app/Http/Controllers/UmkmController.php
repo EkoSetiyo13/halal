@@ -36,7 +36,6 @@ class UmkmController extends Controller
 
     public function store(UMKMRequest $request)
     {
-
         $filename = null;
         if ($request->hasFile('image')) {
             $file = $request->file('image');

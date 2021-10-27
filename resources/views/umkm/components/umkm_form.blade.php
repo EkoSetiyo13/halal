@@ -43,6 +43,12 @@
           @component('layouts.components.input_error', ['active' => $errors->has('status'), 'msg'=> $errors->first('status')])
           @endcomponent
         </div>
+        <div class="form-group row">
+          <label for="example-month-input" class="col-md-12 col-form-label form-control-label">Tanggal Mulai Aktif QrCode</label>
+          <div class="col-md-12">
+            <input class="form-control" name="status_date" type="month" value="{{ old('status_date') ?? $umkm->status_date ??null }}" id="example-month-input">
+          </div>
+        </div>
         <div class="form-group">
           <label for="tipe_binaan" class="form-control-label">Tipe Binaan<span class="text-danger">*</span></label>
           <select name="tipe_binaan" class="form-control" required>

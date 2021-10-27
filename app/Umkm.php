@@ -38,6 +38,7 @@ class Umkm extends Model
         'user_id',
         'dosen',
         'cities_id',
+        'status_date',
     ];
 
     public function getStatusLabelAttribute()

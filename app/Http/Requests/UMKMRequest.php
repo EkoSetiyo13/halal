@@ -60,6 +60,7 @@ class UMKMRequest extends FormRequest
             'user_id' => 'nullable|integer',
             'dosen' => 'nullable|string|max:255',
             'cities_id' => 'nullable|integer',
+            'status_date' => 'nullable|string',
         ];
     }
 }
