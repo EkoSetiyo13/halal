@@ -201,13 +201,13 @@
             <input type="file" name="image" class="custom-file-input" accept="image/png,image/jpeg,image/jpg">
             <label class="custom-file-label form-control" for="image">Foto</label>
           </div>
-          @component('layouts.components.input_error', ['active' => $errors->has('image'), 'msg'=> $errors->first('image')])
+          <!-- @component('layouts.components.input_error', ['active' => $errors->has('image'), 'msg'=> $errors->first('image')])
           @endcomponent
           <script>
             document.querySelector('.custom-file-input[name="image"]').addEventListener('change', function(e) {
               e.target.nextElementSibling.innerText = e.target.files[0].name;
             })
-          </script>
+          </script> -->
         </div>
         <div class="form-group">
           <label for="video" class="form-control-label">Video</label>
