@@ -34,7 +34,7 @@ class UmkmController extends Controller
         return view('umkm.create', compact('cities', 'umkms'));
     }
 
-    public function store(UMKMRequest $request)
+    public function store(Request $request)
     {
         $filename = null;
         if ($request->hasFile('image')) {
@@ -60,11 +60,10 @@ class UmkmController extends Controller
         return view('umkm.edit', compact('umkm', "cities"));
     }
 
-    public function update(UMKMRequest $request, $id)
+    public function update(Request $request, $id)
     {
 
         $umkm = Umkm::find($id);
-
         $filename = $umkm->image;
         if ($request->hasFile('image')) {
             $file = $request->file('image');
