@@ -16,12 +16,6 @@
           <input type="text" name="dosen" class="form-control" value="{{ old('dosen') ?? $umkm->dosen ??null }}" placeholder="Nama Dosen Binaan">
         </div>
         <div class="form-group">
-          <label for="pirt" class="form-control-label">P-IRT</label>
-          <input type="text" name="pirt" class="form-control" value="{{ old('pirt') ?? $umkm->pirt ?? null }}" placeholder="Nomor P-IRT">
-          @component('layouts.components.input_error', ['active' => $errors->has('pirt'), 'msg'=> $errors->first('pirt')])
-          @endcomponent
-        </div>
-        <div class="form-group">
           <label for="nama_umkm" class="form-control-label">Nama UMKM<span class="text-danger">*</span></label>
           <input type="text" name="nama_umkm" class="form-control" value="{{ old('nama_umkm') ?? $umkm->nama_umkm ?? null }}" placeholder="Nama UMKM" required>
           @component('layouts.components.input_error', ['active' => $errors->has('nama_umkm'), 'msg'=> $errors->first('nama_umkm')])

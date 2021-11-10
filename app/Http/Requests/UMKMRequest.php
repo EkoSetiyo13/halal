@@ -53,7 +53,7 @@ class UMKMRequest extends FormRequest
             'website' => 'nullable|string|max:255',
             'nama_produk' => 'required|string|max:255',
             'bpom' => 'nullable|string|max:255',
-            'image' => 'image',
+            'image' => 'nullable|image|mimes:png,jpeg,jpg',
             'video' => 'nullable|string|max:255',
             'sertifikat_halal' => 'nullable|string|max:255',
             'produk_desa' => 'nullable|string|max:255',
